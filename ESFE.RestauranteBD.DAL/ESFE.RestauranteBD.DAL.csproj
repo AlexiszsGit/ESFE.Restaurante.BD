@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ESFE.SysDesarrollo.EN\ESFE.Restaurante.EN.csproj" />
+    <ProjectReference Include="..\ESFE.SysDesarrollo.EN\ESFE.RestauranteBD.EN.csproj" />
   </ItemGroup>
 
 </Project>

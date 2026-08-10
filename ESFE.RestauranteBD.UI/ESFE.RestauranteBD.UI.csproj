@@ -20,7 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ESFE.RestauranteBD.DAL\ESFE.RestauranteBD.DAL.csproj" />
     <ProjectReference Include="..\ESFE.RestauranteBD.LN\ESFE.RestauranteBD.LN.csproj" />
-    <ProjectReference Include="..\ESFE.SysDesarrollo.EN\ESFE.Restaurante.EN.csproj" />
+    <ProjectReference Include="..\ESFE.SysDesarrollo.EN\ESFE.RestauranteBD.EN.csproj" />
   </ItemGroup>
 
 </Project>

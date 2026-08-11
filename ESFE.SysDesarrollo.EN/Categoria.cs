@@ -4,10 +4,9 @@ using System.Text;
 
 namespace ESFE.RestauranteBD.EN
 {
-    public class Cliente
+    public class Categoria
     {
-        public string IdCliente { get; set; }
+        public string IdCategoria { get; set; }
         public string Nombre { get; set; }
-        public string Telefono { get; set; }
     }
 }

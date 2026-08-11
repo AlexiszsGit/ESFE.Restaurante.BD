@@ -9,6 +9,6 @@ namespace ESFE.Restaurante.EN
      public int IdCliente  { get; set; }
      public string NombreAlexis  { get; set; }
      public string Email { get; set; }
-       GWWWWWWWWWWWWWWWWWWWWWWAGDDDDDDDDDDDDDDDDDDD
+        hola a todos 
     }
 }

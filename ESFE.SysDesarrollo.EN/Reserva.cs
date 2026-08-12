@@ -11,6 +11,6 @@ namespace ESFE.RestauranteBD.EN
         public string Hora { get; set; }
         public int Personas { get; set; }
         public string IdCliente { get; set; }
-        public string IdMesa { get; set; }fff
+        public string IdMesa { get; set; }
     }
 }

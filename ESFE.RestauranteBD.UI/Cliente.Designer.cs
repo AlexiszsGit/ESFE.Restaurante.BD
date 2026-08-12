@@ -33,84 +33,65 @@
             label3 = new Label();
             txtIdCliente = new TextBox();
             txtNombre = new TextBox();
-            btnGuardar = new Button();
-            btnModificar = new Button();
-            btnEliminar = new Button();
             dgvClientes = new DataGridView();
             txtTelefono = new MaskedTextBox();
+            btnEliminar = new Button();
+            btmModificar = new Button();
+            btnGuardar = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(92, 82);
+            label1.Font = new Font("Segoe UI", 10.125F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(82, 270);
             label1.Name = "label1";
-            label1.Size = new Size(124, 32);
+            label1.Size = new Size(139, 37);
             label1.TabIndex = 0;
             label1.Text = "ID Cliente:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(92, 182);
+            label2.Font = new Font("Segoe UI", 10.125F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(82, 370);
             label2.Name = "label2";
-            label2.Size = new Size(219, 32);
+            label2.Size = new Size(246, 37);
             label2.TabIndex = 1;
             label2.Text = "Nombre Completo:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(92, 296);
+            label3.Font = new Font("Segoe UI", 10.125F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(82, 484);
             label3.Name = "label3";
-            label3.Size = new Size(112, 32);
+            label3.Size = new Size(124, 37);
             label3.TabIndex = 2;
             label3.Text = "Telefono:";
             // 
             // txtIdCliente
             // 
-            txtIdCliente.Location = new Point(329, 82);
+            txtIdCliente.Location = new Point(345, 268);
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(200, 39);
             txtIdCliente.TabIndex = 3;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(329, 182);
+            txtNombre.Location = new Point(345, 368);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(200, 39);
             txtNombre.TabIndex = 4;
             // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(92, 416);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(150, 46);
-            btnGuardar.TabIndex = 6;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            btnModificar.Location = new Point(329, 416);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(150, 46);
-            btnModificar.TabIndex = 7;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(207, 528);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(150, 46);
-            btnEliminar.TabIndex = 8;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            // 
             // dgvClientes
             // 
+            dgvClientes.BackgroundColor = Color.FromArgb(64, 64, 64);
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Location = new Point(631, 104);
             dgvClientes.Name = "dgvClientes";
@@ -120,23 +101,75 @@
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(329, 296);
+            txtTelefono.Location = new Point(345, 482);
             txtTelefono.Mask = "0000-0000";
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(200, 39);
             txtTelefono.TabIndex = 10;
             txtTelefono.MaskInputRejected += txtTelefono_MaskInputRejected;
             // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.Crimson;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(225, 774);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(150, 46);
+            btnEliminar.TabIndex = 14;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btmModificar
+            // 
+            btmModificar.BackColor = Color.RoyalBlue;
+            btmModificar.FlatAppearance.BorderSize = 0;
+            btmModificar.FlatStyle = FlatStyle.Flat;
+            btmModificar.ForeColor = Color.White;
+            btmModificar.Location = new Point(384, 655);
+            btmModificar.Name = "btmModificar";
+            btmModificar.Size = new Size(150, 46);
+            btmModificar.TabIndex = 13;
+            btmModificar.Text = "Modificar";
+            btmModificar.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.BackColor = Color.ForestGreen;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(71, 655);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(150, 46);
+            btnGuardar.TabIndex = 12;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Gold;
+            label5.Location = new Point(50, 59);
+            label5.Name = "label5";
+            label5.Size = new Size(510, 50);
+            label5.TabIndex = 15;
+            label5.Text = "RESTAURANTEBD - CLIENTE";
+            // 
             // Cliente
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
             ClientSize = new Size(2226, 1231);
+            Controls.Add(label5);
+            Controls.Add(btnEliminar);
+            Controls.Add(btmModificar);
+            Controls.Add(btnGuardar);
             Controls.Add(txtTelefono);
             Controls.Add(dgvClientes);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnModificar);
-            Controls.Add(btnGuardar);
             Controls.Add(txtNombre);
             Controls.Add(txtIdCliente);
             Controls.Add(label3);
@@ -156,10 +189,11 @@
         private Label label3;
         private TextBox txtIdCliente;
         private TextBox txtNombre;
-        private Button btnGuardar;
-        private Button btnModificar;
-        private Button btnEliminar;
         private DataGridView dgvClientes;
         private MaskedTextBox txtTelefono;
+        private Button btnEliminar;
+        private Button btmModificar;
+        private Button btnGuardar;
+        private Label label5;
     }
 }

@@ -10,7 +10,7 @@ namespace ESFE.RestauranteBD.UI
 {
     public partial class Bebida : Form
     {
-        private List<ESFE.RestauranteBD.EN.Bebida> listaBebidas = new List<ESFE.RestauranteBD.EN.Bebida> ();
+        private List<ESFE.RestauranteBD.EN.Bebida> listaBebidas = new List<ESFE.RestauranteBD.EN.Bebida>();
         public Bebida()
         {
             InitializeComponent();
@@ -85,6 +85,16 @@ namespace ESFE.RestauranteBD.UI
             textBox3.Clear();
             textBox1.Focus();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 

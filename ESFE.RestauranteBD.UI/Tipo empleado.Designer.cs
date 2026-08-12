@@ -42,86 +42,95 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(287, 25);
+            lblTitulo.Location = new Point(466, 40);
+            lblTitulo.Margin = new Padding(5, 0, 5, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(238, 20);
+            lblTitulo.Size = new Size(379, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "GESTION DE TIPOS DE EMPLEADO";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(166, 133);
+            lblNombre.Location = new Point(270, 213);
+            lblNombre.Margin = new Padding(5, 0, 5, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(67, 20);
+            lblNombre.Size = new Size(107, 32);
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre:";
             // 
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
-            lblDescripcion.Location = new Point(166, 215);
+            lblDescripcion.Location = new Point(270, 344);
+            lblDescripcion.Margin = new Padding(5, 0, 5, 0);
             lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(90, 20);
+            lblDescripcion.Size = new Size(143, 32);
             lblDescripcion.TabIndex = 2;
             lblDescripcion.Text = "Descripcion:";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(319, 126);
+            txtNombre.Location = new Point(518, 202);
+            txtNombre.Margin = new Padding(5, 5, 5, 5);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(125, 27);
+            txtNombre.Size = new Size(201, 39);
             txtNombre.TabIndex = 3;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(319, 208);
+            txtDescripcion.Location = new Point(518, 333);
+            txtDescripcion.Margin = new Padding(5, 5, 5, 5);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(125, 27);
+            txtDescripcion.Size = new Size(201, 41);
             txtDescripcion.TabIndex = 4;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(66, 385);
+            btnGuardar.Location = new Point(107, 616);
+            btnGuardar.Margin = new Padding(5, 5, 5, 5);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 29);
+            btnGuardar.Size = new Size(153, 46);
             btnGuardar.TabIndex = 5;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(183, 385);
+            btnModificar.Location = new Point(297, 616);
+            btnModificar.Margin = new Padding(5, 5, 5, 5);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(94, 29);
+            btnModificar.Size = new Size(153, 46);
             btnModificar.TabIndex = 6;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(299, 385);
+            btnEliminar.Location = new Point(486, 616);
+            btnEliminar.Margin = new Padding(5, 5, 5, 5);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(153, 46);
             btnEliminar.TabIndex = 7;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(410, 385);
+            btnLimpiar.Location = new Point(666, 616);
+            btnLimpiar.Margin = new Padding(5, 5, 5, 5);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(94, 29);
+            btnLimpiar.Size = new Size(153, 46);
             btnLimpiar.TabIndex = 8;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // Tipo_empleado
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(2001, 990);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
@@ -131,6 +140,7 @@
             Controls.Add(lblDescripcion);
             Controls.Add(lblNombre);
             Controls.Add(lblTitulo);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "Tipo_empleado";
             Text = "Tipo_empleado";
             ResumeLayout(false);

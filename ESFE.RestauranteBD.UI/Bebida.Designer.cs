@@ -38,6 +38,8 @@
             label5 = new Label();
             btnGuardar = new Button();
             btnLimpiar = new Button();
+            textBox4 = new TextBox();
+            btnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -150,12 +152,34 @@
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(962, 58);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(515, 39);
+            textBox4.TabIndex = 15;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.ForestGreen;
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(1510, 54);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(150, 46);
+            btnBuscar.TabIndex = 16;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // Bebida
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1970, 1124);
+            Controls.Add(btnBuscar);
+            Controls.Add(textBox4);
             Controls.Add(btnLimpiar);
             Controls.Add(btnGuardar);
             Controls.Add(label5);
@@ -185,5 +209,7 @@
         private Label label5;
         private Button btnGuardar;
         private Button btnLimpiar;
+        private TextBox textBox4;
+        private Button btnBuscar;
     }
 }

@@ -9,7 +9,7 @@ namespace ESFE.RestauranteBD.EN
         public string IdPostre { get; set; }
         public string IdBebida { get; set; }
         public string IdProducto { get; set; }
-        public string Idcategoria { get; set; }
+        public string IdCategoria { get; set; }
         public string IdPedido { get; set; }
 
 

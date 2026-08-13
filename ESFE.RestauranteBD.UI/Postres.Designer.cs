@@ -28,178 +28,206 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
-            comboBox1 = new ComboBox();
-            checkBox1 = new CheckBox();
-            button1 = new Button();
+            lblTitulo = new Label();
+            lblNombre = new Label();
+            lblPrecio = new Label();
+            lblTipoPostre = new Label();
+            txtNombre = new TextBox();
+            nudPrecio = new NumericUpDown();
+            cmbTipoPostre = new ComboBox();
+            chkDisponible = new CheckBox();
+            dgvPostres = new DataGridView();
             button2 = new Button();
+            btmModificar = new Button();
             button3 = new Button();
-            button4 = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)nudPrecio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPostres).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // lblTitulo
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(346, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = SystemColors.ActiveCaptionText;
+            lblTitulo.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.Gold;
+            lblTitulo.Location = new Point(346, 21);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(291, 24);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "MANTENIMIENTO DE POSTRES";
             // 
-            // label2
+            // lblNombre
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(27, 101);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 1;
-            label2.Text = "label2";
+            lblNombre.AutoSize = true;
+            lblNombre.BackColor = SystemColors.ActiveCaptionText;
+            lblNombre.ForeColor = Color.White;
+            lblNombre.Location = new Point(27, 101);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(67, 20);
+            lblNombre.TabIndex = 1;
+            lblNombre.Text = "Nombre:";
             // 
-            // label3
+            // lblPrecio
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(27, 175);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 2;
-            label3.Text = "label3";
+            lblPrecio.AutoSize = true;
+            lblPrecio.BackColor = SystemColors.ActiveCaptionText;
+            lblPrecio.ForeColor = Color.White;
+            lblPrecio.Location = new Point(27, 175);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(53, 20);
+            lblPrecio.TabIndex = 2;
+            lblPrecio.Text = "Precio:";
             // 
-            // label4
+            // lblTipoPostre
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(27, 245);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 3;
-            label4.Text = "label4";
+            lblTipoPostre.AutoSize = true;
+            lblTipoPostre.BackColor = SystemColors.ActiveCaptionText;
+            lblTipoPostre.ForeColor = Color.White;
+            lblTipoPostre.Location = new Point(27, 245);
+            lblTipoPostre.Name = "lblTipoPostre";
+            lblTipoPostre.Size = new Size(82, 20);
+            lblTipoPostre.TabIndex = 3;
+            lblTipoPostre.Text = "TipoPostre:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(128, 94);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 4;
+            txtNombre.Location = new Point(128, 94);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(125, 27);
+            txtNombre.TabIndex = 4;
             // 
-            // numericUpDown1
+            // nudPrecio
             // 
-            numericUpDown1.Location = new Point(128, 168);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(150, 27);
-            numericUpDown1.TabIndex = 5;
-            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            nudPrecio.Location = new Point(128, 168);
+            nudPrecio.Name = "nudPrecio";
+            nudPrecio.Size = new Size(150, 27);
+            nudPrecio.TabIndex = 5;
             // 
-            // comboBox1
+            // cmbTipoPostre
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(128, 237);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 6;
+            cmbTipoPostre.FormattingEnabled = true;
+            cmbTipoPostre.Location = new Point(128, 237);
+            cmbTipoPostre.Name = "cmbTipoPostre";
+            cmbTipoPostre.Size = new Size(151, 28);
+            cmbTipoPostre.TabIndex = 6;
             // 
-            // checkBox1
+            // chkDisponible
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(27, 306);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(101, 24);
-            checkBox1.TabIndex = 7;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            chkDisponible.AutoSize = true;
+            chkDisponible.BackColor = SystemColors.ActiveCaptionText;
+            chkDisponible.ForeColor = Color.White;
+            chkDisponible.Location = new Point(27, 306);
+            chkDisponible.Name = "chkDisponible";
+            chkDisponible.Size = new Size(103, 24);
+            chkDisponible.TabIndex = 7;
+            chkDisponible.Text = "Disponible";
+            chkDisponible.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // dgvPostres
             // 
-            button1.Location = new Point(7, 390);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 8;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            dgvPostres.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPostres.Location = new Point(308, 78);
+            dgvPostres.Name = "dgvPostres";
+            dgvPostres.RowHeadersWidth = 51;
+            dgvPostres.Size = new Size(443, 276);
+            dgvPostres.TabIndex = 12;
             // 
             // button2
             // 
-            button2.Location = new Point(107, 390);
+            button2.BackColor = Color.Crimson;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(251, 392);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 9;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            button2.Size = new Size(92, 29);
+            button2.TabIndex = 36;
+            button2.Text = "Eliminar";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // btmModificar
+            // 
+            btmModificar.BackColor = Color.RoyalBlue;
+            btmModificar.FlatAppearance.BorderSize = 0;
+            btmModificar.FlatStyle = FlatStyle.Flat;
+            btmModificar.ForeColor = Color.White;
+            btmModificar.Location = new Point(140, 392);
+            btmModificar.Margin = new Padding(2);
+            btmModificar.Name = "btmModificar";
+            btmModificar.Size = new Size(92, 29);
+            btmModificar.TabIndex = 35;
+            btmModificar.Text = "Modificar";
+            btmModificar.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            button3.Location = new Point(207, 390);
+            button3.BackColor = Color.ForestGreen;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(31, 392);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 10;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            button3.Size = new Size(92, 29);
+            button3.TabIndex = 34;
+            button3.Text = "Guardar";
+            button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // button1
             // 
-            button4.Location = new Point(307, 390);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 11;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(334, 94);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(443, 276);
-            dataGridView1.TabIndex = 12;
+            button1.BackColor = Color.FromArgb(128, 128, 255);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(368, 392);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 33;
+            button1.Text = "Limpiar";
+            button1.UseVisualStyleBackColor = false;
             // 
             // Postres
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
+            Controls.Add(btmModificar);
+            Controls.Add(button3);
             Controls.Add(button1);
-            Controls.Add(checkBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(numericUpDown1);
-            Controls.Add(textBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(dgvPostres);
+            Controls.Add(chkDisponible);
+            Controls.Add(cmbTipoPostre);
+            Controls.Add(nudPrecio);
+            Controls.Add(txtNombre);
+            Controls.Add(lblPrecio);
+            Controls.Add(lblTipoPostre);
+            Controls.Add(lblNombre);
+            Controls.Add(lblTitulo);
             Name = "Postres";
             Text = "Postres";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPostres).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox1;
-        private NumericUpDown numericUpDown1;
-        private ComboBox comboBox1;
-        private CheckBox checkBox1;
-        private Button button1;
+        private Label lblTitulo;
+        private Label lblNombre;
+        private Label lblPrecio;
+        private Label lblTipoPostre;
+        private TextBox txtNombre;
+        private NumericUpDown nudPrecio;
+        private ComboBox cmbTipoPostre;
+        private CheckBox chkDisponible;
+        private DataGridView dgvPostres;
         private Button button2;
+        private Button btmModificar;
         private Button button3;
-        private Button button4;
-        private DataGridView dataGridView1;
+        private Button button1;
     }
 }

@@ -114,7 +114,7 @@
             button2.TabIndex = 24;
             button2.Text = "Eliminar";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += this.button2_Click;
+            //button2.Click += this.button2_Click;
             // 
             // btmModificar
             // 
@@ -129,7 +129,7 @@
             btmModificar.TabIndex = 23;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
-            btmModificar.Click += this.btmModificar_Click;
+            //btmModificar.Click += this.btmModificar_Click;
             // 
             // button3
             // 
@@ -144,7 +144,7 @@
             button3.TabIndex = 22;
             button3.Text = "Guardar";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += this.button3_Click;
+            //button3.Click += this.button3_Click;
             // 
             // button1
             // 
@@ -157,7 +157,7 @@
             button1.TabIndex = 21;
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += this.button1_Click;
+            //button1.Click += this.button1_Click;
             // 
             // Tipo_empleado
             // 

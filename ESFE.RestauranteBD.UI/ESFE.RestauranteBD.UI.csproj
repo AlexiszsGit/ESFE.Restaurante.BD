@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ESFE.RestauranteBD.DAL\ESFE.RestauranteBD.DAL.csproj" />
     <ProjectReference Include="..\ESFE.RestauranteBD.LN\ESFE.RestauranteBD.LN.csproj" />
     <ProjectReference Include="..\ESFE.SysDesarrollo.EN\ESFE.RestauranteBD.EN.csproj" />

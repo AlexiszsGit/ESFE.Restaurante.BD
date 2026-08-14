@@ -184,13 +184,13 @@
         private Button btnAgregar;
         private Button btnActualizar;
         private Button btnEliminar;
-        private Button button1;
+        //private Button button1;
         private Button btnLimpiar;
         private DataGridView dgvMetodosDePago;
         private Label lblTitulo;
         private GroupBox grp;
-        private Label label4;
-        private Label label3;
+        //private Label label4;
+        //private Label label3;
         private Label lblDescripcion;
         private Label lblNombe;
         private TextBox txtDescricion;

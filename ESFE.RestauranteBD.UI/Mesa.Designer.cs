@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Mesa
+    partial class FrmMesa
     {
         /// <summary>
         /// Required designer variable.
@@ -179,7 +179,7 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // Mesa
+            // FrmMesa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -197,7 +197,7 @@
             Controls.Add(lblCapacidad);
             Controls.Add(lblNumero);
             Controls.Add(lblTitulo);
-            Name = "Mesa";
+            Name = "FrmMesa";
             Text = "Mesa";
             Load += Mesa_Load;
             ((System.ComponentModel.ISupportInitialize)nudCapacidad).EndInit();

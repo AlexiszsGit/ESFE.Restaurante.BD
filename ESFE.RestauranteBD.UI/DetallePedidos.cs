@@ -19,5 +19,10 @@ namespace ESFE.RestauranteBD.UI
         {
 
         }
+
+        private void DetallePedidos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

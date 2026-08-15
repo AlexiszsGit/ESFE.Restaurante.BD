@@ -6,8 +6,10 @@ namespace ESFE.RestauranteBD.EN
 {
     public class DetallePedidos
     {
-        public int IdDetalle { get; set; }
-        public string? IdPedido { get; set; }
+        public string IdDetalle { get; set; } = string.Empty;
+
+        public string IdPedido { get; set; } = string.Empty;
+
         public int Cantidad { get; set; }
     }
 }

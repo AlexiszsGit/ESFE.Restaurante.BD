@@ -24,5 +24,10 @@ namespace ESFE.RestauranteBD.UI
         {
 
         }
+
+        private void nudPrecio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

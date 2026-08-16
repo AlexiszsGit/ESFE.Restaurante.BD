@@ -60,6 +60,8 @@
             // lblId
             // 
             lblId.AutoSize = true;
+            lblId.BackColor = Color.SandyBrown;
+            lblId.ForeColor = SystemColors.Desktop;
             lblId.Location = new Point(37, 30);
             lblId.Name = "lblId";
             lblId.Size = new Size(20, 15);
@@ -69,6 +71,8 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
+            lblNombre.BackColor = Color.SandyBrown;
+            lblNombre.ForeColor = SystemColors.Desktop;
             lblNombre.Location = new Point(37, 66);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(54, 15);
@@ -78,6 +82,8 @@
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
+            lblDescripcion.BackColor = Color.SandyBrown;
+            lblDescripcion.ForeColor = SystemColors.Desktop;
             lblDescripcion.Location = new Point(37, 110);
             lblDescripcion.Name = "lblDescripcion";
             lblDescripcion.Size = new Size(72, 15);
@@ -103,6 +109,7 @@
             // 
             // grpDatosMenu
             // 
+            grpDatosMenu.BackColor = SystemColors.ControlDarkDark;
             grpDatosMenu.Controls.Add(cboEstado);
             grpDatosMenu.Controls.Add(nudPrecio);
             grpDatosMenu.Controls.Add(cboCategoria);
@@ -115,6 +122,7 @@
             grpDatosMenu.Controls.Add(lblId);
             grpDatosMenu.Controls.Add(lblDescripcion);
             grpDatosMenu.Controls.Add(lblNombre);
+            grpDatosMenu.ForeColor = SystemColors.ControlLightLight;
             grpDatosMenu.Location = new Point(12, 47);
             grpDatosMenu.Name = "grpDatosMenu";
             grpDatosMenu.Size = new Size(751, 170);
@@ -137,6 +145,7 @@
             nudPrecio.Name = "nudPrecio";
             nudPrecio.Size = new Size(120, 23);
             nudPrecio.TabIndex = 5;
+            nudPrecio.ValueChanged += nudPrecio_ValueChanged;
             // 
             // cboCategoria
             // 
@@ -149,6 +158,8 @@
             // lblEstado
             // 
             lblEstado.AutoSize = true;
+            lblEstado.BackColor = Color.SandyBrown;
+            lblEstado.ForeColor = SystemColors.Desktop;
             lblEstado.Location = new Point(415, 118);
             lblEstado.Name = "lblEstado";
             lblEstado.Size = new Size(45, 15);
@@ -158,6 +169,8 @@
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
+            lblPrecio.BackColor = Color.SandyBrown;
+            lblPrecio.ForeColor = SystemColors.Desktop;
             lblPrecio.Location = new Point(415, 66);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(43, 15);
@@ -167,6 +180,8 @@
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
+            lblCategoria.BackColor = Color.SandyBrown;
+            lblCategoria.ForeColor = SystemColors.Desktop;
             lblCategoria.Location = new Point(415, 26);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(61, 15);
@@ -189,6 +204,7 @@
             // 
             // txtId
             // 
+            txtId.BackColor = SystemColors.Window;
             txtId.Location = new Point(109, 30);
             txtId.Name = "txtId";
             txtId.Size = new Size(165, 23);
@@ -218,48 +234,58 @@
             // 
             // btnLimpiar
             // 
+            btnLimpiar.BackColor = Color.Red;
+            btnLimpiar.ForeColor = SystemColors.ControlLightLight;
             btnLimpiar.Location = new Point(610, 25);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(75, 23);
             btnLimpiar.TabIndex = 11;
             btnLimpiar.Text = "Limpiar ";
-            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // btnEliminar
             // 
+            btnEliminar.BackColor = Color.Red;
+            btnEliminar.ForeColor = SystemColors.ControlLightLight;
             btnEliminar.Location = new Point(466, 25);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 10;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnActualizar
             // 
+            btnActualizar.BackColor = Color.Green;
+            btnActualizar.ForeColor = SystemColors.ControlLightLight;
             btnActualizar.Location = new Point(319, 25);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(75, 23);
             btnActualizar.TabIndex = 9;
             btnActualizar.Text = "Actualizar ";
-            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.UseVisualStyleBackColor = false;
             // 
             // btnAgregar
             // 
+            btnAgregar.BackColor = Color.Green;
+            btnAgregar.ForeColor = SystemColors.ControlLightLight;
             btnAgregar.Location = new Point(186, 24);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 8;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             // 
             // btnNuevo
             // 
+            btnNuevo.BackColor = Color.Green;
+            btnNuevo.ForeColor = SystemColors.ControlLightLight;
             btnNuevo.Location = new Point(36, 24);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(75, 23);
             btnNuevo.TabIndex = 7;
             btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -277,6 +303,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
             Controls.Add(pnlBotones);

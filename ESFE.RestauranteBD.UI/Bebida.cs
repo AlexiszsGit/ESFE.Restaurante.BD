@@ -42,22 +42,22 @@ namespace ESFE.RestauranteBD.UI
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
-                string.IsNullOrWhiteSpace(textBox2.Text) ||
-                string.IsNullOrWhiteSpace(textBox3.Text))
+            if (string.IsNullOrWhiteSpace(txtIDBebida.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtPrecio.Text))
             {
                 MessageBox.Show("Por favor complete todos los cambios.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!decimal.TryParse(textBox3.Text, out decimal precio))
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
             {
                 MessageBox.Show("Ingrese un precio valido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             ESFE.RestauranteBD.EN.Bebida nuevaBebida = new ESFE.RestauranteBD.EN.Bebida
             {
-                IdBebida = textBox1.Text.Trim(),
-                Nombre = textBox2.Text.Trim(),
+                IdBebida = txtIDBebida.Text.Trim(),
+                Nombre = txtNombre.Text.Trim(),
                 Precio = precio
             };
 
@@ -80,10 +80,10 @@ namespace ESFE.RestauranteBD.UI
         // Método auxiliar para limpiar las cajas de texto
         private void Limpiar()
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox1.Focus();
+            txtIDBebida.Clear();
+            txtNombre.Clear();
+            txtPrecio.Clear();
+            txtIDBebida.Focus();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

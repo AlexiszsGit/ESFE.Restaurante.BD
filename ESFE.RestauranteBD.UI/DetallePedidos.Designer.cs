@@ -193,6 +193,7 @@
             Controls.Add(label1);
             Name = "DetallePedidos";
             Text = "DetallePedidos";
+            Load += DetallePedidos_Load;
             ((System.ComponentModel.ISupportInitialize)numCantidad).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvDetallePedidos).EndInit();
             ResumeLayout(false);

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Mesa : Form
+    public partial class FrmMesa : Form
     {
-        public Mesa()
+        public FrmMesa()
         {
             InitializeComponent();
         }

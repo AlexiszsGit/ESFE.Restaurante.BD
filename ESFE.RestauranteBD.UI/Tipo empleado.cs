@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Tipo_empleado : Form
+    public partial class FrmTipoEmpleado : Form
     {
-        public Tipo_empleado()
+        public FrmTipoEmpleado()
         {
             InitializeComponent();
         }

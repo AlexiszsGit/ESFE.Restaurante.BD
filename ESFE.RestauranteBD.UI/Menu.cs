@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Menu : Form
+    public partial class FrmMenu : Form
     {
-        public Menu()
+        public FrmMenu()
         {
             InitializeComponent();
         }
@@ -25,9 +25,23 @@ namespace ESFE.RestauranteBD.UI
 
         }
 
+       
+        
+            private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            // 1. Limpiar los campos de texto
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+
+            // 2. Si este botón fuera para abrir otro formulario (ej. Mesas):
+            // FrmMesa frm = new FrmMesa();
+            // frm.Show(); 
+        }
+
         private void nudPrecio_ValueChanged(object sender, EventArgs e)
         {
 
         }
     }
 }
+

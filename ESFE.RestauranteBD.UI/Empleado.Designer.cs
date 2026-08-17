@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Empleado
+    partial class FrmEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -190,7 +190,7 @@
             button3.Text = "Guardar";
             button3.UseVisualStyleBackColor = false;
             // 
-            // Empleado
+            // FrmEmpleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -210,7 +210,7 @@
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
             Controls.Add(lblTitulo);
-            Name = "Empleado";
+            Name = "FrmEmpleado";
             Text = "Empleado";
             Load += Empleado_Load;
             ResumeLayout(false);

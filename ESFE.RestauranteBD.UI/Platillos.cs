@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Platillos : Form
+    public partial class FrmPlatillos : Form
     {
-        public Platillos()
+        public FrmPlatillos()
         {
             InitializeComponent();
         }

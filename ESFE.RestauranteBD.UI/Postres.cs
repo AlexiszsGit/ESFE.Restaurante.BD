@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Postres : Form
+    public partial class FrmPostres : Form
     {
-        public Postres()
+        public FrmPostres()
         {
             InitializeComponent();
         }

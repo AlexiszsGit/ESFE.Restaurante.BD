@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Menu
+    partial class FrmMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -60,50 +60,44 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.BackColor = Color.SandyBrown;
-            lblId.ForeColor = SystemColors.Desktop;
-            lblId.Location = new Point(37, 30);
+            lblId.Location = new Point(42, 40);
             lblId.Name = "lblId";
-            lblId.Size = new Size(20, 15);
+            lblId.Size = new Size(25, 20);
             lblId.TabIndex = 0;
             lblId.Text = "Id:";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.BackColor = Color.SandyBrown;
-            lblNombre.ForeColor = SystemColors.Desktop;
-            lblNombre.Location = new Point(37, 66);
+            lblNombre.Location = new Point(42, 88);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(54, 15);
+            lblNombre.Size = new Size(67, 20);
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre:";
             // 
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
-            lblDescripcion.BackColor = Color.SandyBrown;
-            lblDescripcion.ForeColor = SystemColors.Desktop;
-            lblDescripcion.Location = new Point(37, 110);
+            lblDescripcion.Location = new Point(42, 147);
             lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(72, 15);
+            lblDescripcion.Size = new Size(90, 20);
             lblDescripcion.TabIndex = 2;
             lblDescripcion.Text = "Descripcion:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(397, 234);
+            label4.Location = new Point(454, 312);
             label4.Name = "label4";
-            label4.Size = new Size(0, 15);
+            label4.Size = new Size(0, 20);
             label4.TabIndex = 3;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(405, 242);
+            label5.Location = new Point(463, 323);
             label5.Name = "label5";
-            label5.Size = new Size(0, 15);
+            label5.Size = new Size(0, 20);
             label5.TabIndex = 4;
             label5.Click += label5_Click;
             // 
@@ -122,10 +116,11 @@
             grpDatosMenu.Controls.Add(lblId);
             grpDatosMenu.Controls.Add(lblDescripcion);
             grpDatosMenu.Controls.Add(lblNombre);
-            grpDatosMenu.ForeColor = SystemColors.ControlLightLight;
-            grpDatosMenu.Location = new Point(12, 47);
+            grpDatosMenu.Location = new Point(14, 63);
+            grpDatosMenu.Margin = new Padding(3, 4, 3, 4);
             grpDatosMenu.Name = "grpDatosMenu";
-            grpDatosMenu.Size = new Size(751, 170);
+            grpDatosMenu.Padding = new Padding(3, 4, 3, 4);
+            grpDatosMenu.Size = new Size(858, 227);
             grpDatosMenu.TabIndex = 5;
             grpDatosMenu.TabStop = false;
             grpDatosMenu.Text = "Datos del menu";
@@ -134,88 +129,87 @@
             // cboEstado
             // 
             cboEstado.FormattingEnabled = true;
-            cboEstado.Location = new Point(519, 115);
+            cboEstado.Location = new Point(593, 153);
+            cboEstado.Margin = new Padding(3, 4, 3, 4);
             cboEstado.Name = "cboEstado";
-            cboEstado.Size = new Size(121, 23);
+            cboEstado.Size = new Size(138, 28);
             cboEstado.TabIndex = 6;
             // 
             // nudPrecio
             // 
-            nudPrecio.Location = new Point(520, 66);
+            nudPrecio.Location = new Point(594, 88);
+            nudPrecio.Margin = new Padding(3, 4, 3, 4);
             nudPrecio.Name = "nudPrecio";
-            nudPrecio.Size = new Size(120, 23);
+            nudPrecio.Size = new Size(137, 27);
             nudPrecio.TabIndex = 5;
             nudPrecio.ValueChanged += nudPrecio_ValueChanged;
             // 
             // cboCategoria
             // 
             cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(519, 30);
+            cboCategoria.Location = new Point(593, 40);
+            cboCategoria.Margin = new Padding(3, 4, 3, 4);
             cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(121, 23);
+            cboCategoria.Size = new Size(138, 28);
             cboCategoria.TabIndex = 4;
             // 
             // lblEstado
             // 
             lblEstado.AutoSize = true;
-            lblEstado.BackColor = Color.SandyBrown;
-            lblEstado.ForeColor = SystemColors.Desktop;
-            lblEstado.Location = new Point(415, 118);
+            lblEstado.Location = new Point(474, 157);
             lblEstado.Name = "lblEstado";
-            lblEstado.Size = new Size(45, 15);
+            lblEstado.Size = new Size(57, 20);
             lblEstado.TabIndex = 8;
             lblEstado.Text = "Estado:";
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.BackColor = Color.SandyBrown;
-            lblPrecio.ForeColor = SystemColors.Desktop;
-            lblPrecio.Location = new Point(415, 66);
+            lblPrecio.Location = new Point(474, 88);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(43, 15);
+            lblPrecio.Size = new Size(53, 20);
             lblPrecio.TabIndex = 7;
             lblPrecio.Text = "Precio:";
             // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
-            lblCategoria.BackColor = Color.SandyBrown;
-            lblCategoria.ForeColor = SystemColors.Desktop;
-            lblCategoria.Location = new Point(415, 26);
+            lblCategoria.Location = new Point(474, 35);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(61, 15);
+            lblCategoria.Size = new Size(77, 20);
             lblCategoria.TabIndex = 6;
             lblCategoria.Text = "Categoría:";
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(131, 110);
+            txtDescripcion.Location = new Point(150, 147);
+            txtDescripcion.Margin = new Padding(3, 4, 3, 4);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(165, 23);
+            txtDescripcion.Size = new Size(188, 27);
             txtDescripcion.TabIndex = 3;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(131, 66);
+            txtNombre.Location = new Point(150, 88);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(165, 23);
+            txtNombre.Size = new Size(188, 27);
             txtNombre.TabIndex = 2;
             // 
             // txtId
             // 
-            txtId.BackColor = SystemColors.Window;
-            txtId.Location = new Point(109, 30);
+            txtId.Location = new Point(125, 40);
+            txtId.Margin = new Padding(3, 4, 3, 4);
             txtId.Name = "txtId";
-            txtId.Size = new Size(165, 23);
+            txtId.Size = new Size(188, 27);
             txtId.TabIndex = 1;
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(313, 8);
+            lblTitulo.Location = new Point(358, 11);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(139, 15);
+            lblTitulo.Size = new Size(172, 20);
             lblTitulo.TabIndex = 6;
             lblTitulo.Text = "Mantenimiento de Menu";
             // 
@@ -227,91 +221,90 @@
             pnlBotones.Controls.Add(btnActualizar);
             pnlBotones.Controls.Add(btnAgregar);
             pnlBotones.Controls.Add(btnNuevo);
-            pnlBotones.Location = new Point(12, 234);
+            pnlBotones.Location = new Point(14, 312);
+            pnlBotones.Margin = new Padding(3, 4, 3, 4);
             pnlBotones.Name = "pnlBotones";
-            pnlBotones.Size = new Size(764, 83);
+            pnlBotones.Size = new Size(873, 110);
             pnlBotones.TabIndex = 7;
             // 
             // btnLimpiar
             // 
-            btnLimpiar.BackColor = Color.Red;
-            btnLimpiar.ForeColor = SystemColors.ControlLightLight;
-            btnLimpiar.Location = new Point(610, 25);
+            btnLimpiar.Location = new Point(697, 33);
+            btnLimpiar.Margin = new Padding(3, 4, 3, 4);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.Size = new Size(86, 31);
             btnLimpiar.TabIndex = 11;
             btnLimpiar.Text = "Limpiar ";
             btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.Red;
-            btnEliminar.ForeColor = SystemColors.ControlLightLight;
-            btnEliminar.Location = new Point(466, 25);
+            btnEliminar.Location = new Point(533, 33);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.Size = new Size(86, 31);
             btnEliminar.TabIndex = 10;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnActualizar
             // 
-            btnActualizar.BackColor = Color.Green;
-            btnActualizar.ForeColor = SystemColors.ControlLightLight;
-            btnActualizar.Location = new Point(319, 25);
+            btnActualizar.Location = new Point(365, 33);
+            btnActualizar.Margin = new Padding(3, 4, 3, 4);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(75, 23);
+            btnActualizar.Size = new Size(86, 31);
             btnActualizar.TabIndex = 9;
             btnActualizar.Text = "Actualizar ";
             btnActualizar.UseVisualStyleBackColor = false;
             // 
             // btnAgregar
             // 
-            btnAgregar.BackColor = Color.Green;
-            btnAgregar.ForeColor = SystemColors.ControlLightLight;
-            btnAgregar.Location = new Point(186, 24);
+            btnAgregar.Location = new Point(213, 32);
+            btnAgregar.Margin = new Padding(3, 4, 3, 4);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.Size = new Size(86, 31);
             btnAgregar.TabIndex = 8;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
             // 
             // btnNuevo
             // 
-            btnNuevo.BackColor = Color.Green;
-            btnNuevo.ForeColor = SystemColors.ControlLightLight;
-            btnNuevo.Location = new Point(36, 24);
+            btnNuevo.Location = new Point(41, 32);
+            btnNuevo.Margin = new Padding(3, 4, 3, 4);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.Size = new Size(86, 31);
             btnNuevo.TabIndex = 7;
             btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = false;
+            btnNuevo.UseVisualStyleBackColor = true;
+           
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 323);
+            dataGridView1.Location = new Point(14, 431);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(764, 134);
+            dataGridView1.Size = new Size(873, 179);
             dataGridView1.TabIndex = 8;
             // 
-            // Menu
+            // FrmMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(dataGridView1);
             Controls.Add(pnlBotones);
             Controls.Add(lblTitulo);
             Controls.Add(grpDatosMenu);
             Controls.Add(label5);
             Controls.Add(label4);
-            Name = "Menu";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FrmMenu";
             grpDatosMenu.ResumeLayout(false);
             grpDatosMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();

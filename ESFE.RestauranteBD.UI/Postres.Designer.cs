@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Postres
+    partial class FrmPostres
     {
         /// <summary>
         /// Required designer variable.
@@ -187,7 +187,7 @@
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = false;
             // 
-            // Postres
+            // FrmPostres
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -206,7 +206,7 @@
             Controls.Add(lblTipoPostre);
             Controls.Add(lblNombre);
             Controls.Add(lblTitulo);
-            Name = "Postres";
+            Name = "FrmPostres";
             Text = "Postres";
             ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvPostres).EndInit();

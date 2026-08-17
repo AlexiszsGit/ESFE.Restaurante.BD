@@ -1,3 +1,5 @@
+using System;
+using System.Windows.Forms;
 using ESFE.RestauranteBD.EN;
 using ESFE.RestauranteBD.UI;
 
@@ -14,7 +16,7 @@ namespace ESFE.SysDesarrollo.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmMesa());
+            Application.Run(new FrmMenu());
         }
     }
 }

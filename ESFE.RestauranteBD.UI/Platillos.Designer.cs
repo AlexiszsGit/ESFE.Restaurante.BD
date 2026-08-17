@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Platillos
+    partial class FrmPlatillos
     {
         /// <summary>
         /// Required designer variable.
@@ -197,7 +197,7 @@
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = false;
             // 
-            // Platillos
+            // FrmPlatillos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -216,7 +216,7 @@
             Controls.Add(lblNombre);
             Controls.Add(lblPrecio);
             Controls.Add(lblCategoria);
-            Name = "Platillos";
+            Name = "FrmPlatillos";
             Text = "Platillos";
             Load += Platillos_Load;
             ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();

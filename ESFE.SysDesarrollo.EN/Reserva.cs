@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ESFE.RestauranteBD.EN
 {
-    internal class Reserva
+    public class Reserva
     {
         public string IdReserva { get; set; }
         public DateTime fechaReserva { get; set; }

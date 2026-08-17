@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ESFE.RestauranteBD.EN
 {
-    internal class Pago
+    public class Pago
     {
         public string IdPago { get; set; }
         public decimal total { get; set; }

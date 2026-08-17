@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ESFE.RestauranteBD.EN
 {
-    internal class Menu
+    public class Menu
     {
         public string IdPostre { get; set; }
         public string IdBebida { get; set; }

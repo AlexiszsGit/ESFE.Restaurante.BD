@@ -113,6 +113,7 @@
             btnGuardar.TabIndex = 6;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btmModificar
             // 
@@ -161,6 +162,7 @@
             lblNombreProducto.Size = new Size(273, 32);
             lblNombreProducto.TabIndex = 10;
             lblNombreProducto.Text = "[ Nombre del Producto ]";
+            lblNombreProducto.Click += lblNombreProducto_Click;
             // 
             // label5
             // 

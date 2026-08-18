@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using ESFE.RestauranteBD.LN;
 
 namespace ESFE.RestauranteBD.UI
 {
     public partial class DetallePedidos : Form
     {
+        private readonly DetallePedidosLN detallePedidosLN;
+
         public DetallePedidos()
         {
             InitializeComponent();

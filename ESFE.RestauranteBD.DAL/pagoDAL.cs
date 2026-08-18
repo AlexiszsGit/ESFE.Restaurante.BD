@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ESFE.RestauranteBD.DAL
 {
-    internal class pagoDAL
+    public class PagoDAL
     {
         public bool Insertar(Pago pago)
         {

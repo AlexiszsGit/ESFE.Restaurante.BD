@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ESFE.RestauranteBD.DAL
 {
-    internal class MenuDAL
+    public class MenuDAL
     {
         public bool Insertar(Menu menu)
         {
@@ -80,7 +80,7 @@ namespace ESFE.RestauranteBD.DAL
             {
                 Menu menu = new Menu();
 
-                menu.IdPostre = reader["IdPostre"]?.ToString();
+                menu.IdPostre = reader["IdPostre"].ToString.();
                 menu.IdBebida = reader["IdBebida"]?.ToString();
                 menu.IdProducto = reader["IdProducto"]?.ToString();
                 menu.IdCategoria = reader["IdCategoria"]?.ToString();

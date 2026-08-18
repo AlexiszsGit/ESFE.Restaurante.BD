@@ -253,14 +253,14 @@ namespace ESFE.RestauranteBD.UI
 
                 txtTelefono.Text =
                     fila.Cells["Telefono"].Value?.ToString() ?? "";
+            }
         }
-    }
 
         private void txtTelefono_MaskInputRejected(
             object sender,
             MaskInputRejectedEventArgs e)
         {
-}
+        }
 
         private void Cliente_Load(object sender, EventArgs e)
         {

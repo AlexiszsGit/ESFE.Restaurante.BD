@@ -300,7 +300,7 @@ namespace ESFE.RestauranteBD.UI
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
-        {
+            {
                 string nombre = txtNombre.Text.Trim();
 
                 List<ESFE.RestauranteBD.EN.Descuentos> lista =
@@ -326,6 +326,18 @@ namespace ESFE.RestauranteBD.UI
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+        }
+
+        private void numPorcentaje_ValueChanged(
+            object sender,
+            EventArgs e)
+        {
+        }
+
+        private void Descuentos_Load(object sender, EventArgs e)
+        {
+            CargarDescuentos();
         }
     }
 }

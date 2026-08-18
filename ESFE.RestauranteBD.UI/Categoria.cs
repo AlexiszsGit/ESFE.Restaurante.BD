@@ -12,9 +12,40 @@ namespace ESFE.RestauranteBD.UI
 {
     public partial class Categoria : Form
     {
+        private readonly CategoriaLN categoriaLN;
+
         public Categoria()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+            categoriaLN = new CategoriaLN();
+
+            CargarCategorias();
+        }
+
+        private void CargarCategorias()
+        {
+            try
+            {
+                List<ESFE.RestauranteBD.EN.Categoria> lista =
+                    categoriaLN.Buscar("");
+
+                dgvCategorias.DataSource = null;
+                dgvCategorias.DataSource = lista;
+                dgvCategorias.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al cargar las categorías:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -64,7 +95,7 @@ namespace ESFE.RestauranteBD.UI
 
                     CargarCategorias();
                     LimpiarCampos();
-        }
+                }
             }
             catch (Exception ex)
             {
@@ -214,7 +245,7 @@ namespace ESFE.RestauranteBD.UI
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
-        {
+            {
                 string nombre = txtNombre.Text.Trim();
 
                 List<ESFE.RestauranteBD.EN.Categoria> lista =
@@ -261,7 +292,7 @@ namespace ESFE.RestauranteBD.UI
 
                 txtNombre.Text =
                     fila.Cells["Nombre"].Value?.ToString() ?? "";
-        }
+            }
         }
 
         private void txtIdCategoria_TextChanged(object sender, EventArgs e)

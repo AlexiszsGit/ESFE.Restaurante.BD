@@ -9,11 +9,11 @@ namespace ESFE.RestauranteBD.DAL
     public class DBComun
     {
         //Alexis
-        //public const string _stringCnn = @"Server=localhost\SQLEXPRESS2;Database=RestauranteBD;Integrated Security=True;TrustServerCertificate=True;";
+        public const string _stringCnn = @"Server=localhost;Database=RestauranteBD;Integrated Security=True;TrustServerCertificate=True;";
         //Pinti
         // public const string _stringCnn = @"Server=(localdb)\MSSQLLocalDB;Database=RestauranteBD;Integrated Security=True;TrustServerCertificate=True;";
         //Henri
-        public const string _stringCnn = @"Server=HENRI\SQLEXPRESS;Database=RestauranteBD;Integrated Security=True;TrustServerCertificate=True;";
+        // public const string _stringCnn = @"Server=HENRI\SQLEXPRESS;Database=RestauranteBD;Integrated Security=True;TrustServerCertificate=True;";
 
         /// <summary>
         /// Metodo para obtener base de datos.

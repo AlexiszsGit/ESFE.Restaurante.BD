@@ -98,6 +98,7 @@
             dgvClientes.RowHeadersWidth = 82;
             dgvClientes.Size = new Size(1490, 1020);
             dgvClientes.TabIndex = 9;
+            dgvClientes.CellContentClick += dgvClientes_CellContentClick;
             // 
             // txtTelefono
             // 
@@ -133,6 +134,7 @@
             btmModificar.TabIndex = 13;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
+            btmModificar.Click += btmModificar_Click;
             // 
             // btnGuardar
             // 
@@ -146,6 +148,7 @@
             btnGuardar.TabIndex = 12;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label5
             // 

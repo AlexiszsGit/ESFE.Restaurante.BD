@@ -35,12 +35,17 @@
             lblPedido = new Label();
             lblId = new Label();
             grbMetodo = new GroupBox();
-            txtId = new TextBox();
-            cboMetodoPago = new ComboBox();
-            cboPedido = new ComboBox();
-            nudMonto = new NumericUpDown();
-            dtpFechaPago = new DateTimePicker();
             cboEstado = new ComboBox();
+            dtpFechaPago = new DateTimePicker();
+            nudMonto = new NumericUpDown();
+            cboPedido = new ComboBox();
+            cboMetodoPago = new ComboBox();
+            txtId = new TextBox();
+            btnLimpiar = new Button();
+            btnEliminar = new Button();
+            btnActualizar = new Button();
+            btnAgregar = new Button();
+            btnNuevo = new Button();
             grbMetodo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudMonto).BeginInit();
             SuspendLayout();
@@ -122,40 +127,14 @@
             grbMetodo.TabStop = false;
             grbMetodo.Text = "Datos del Pago";
             // 
-            // txtId
+            // cboEstado
             // 
-            txtId.Location = new Point(172, 38);
-            txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(100, 23);
-            txtId.TabIndex = 6;
-            // 
-            // cboMetodoPago
-            // 
-            cboMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboMetodoPago.FormattingEnabled = true;
-            cboMetodoPago.Location = new Point(172, 127);
-            cboMetodoPago.Name = "cboMetodoPago";
-            cboMetodoPago.Size = new Size(121, 23);
-            cboMetodoPago.TabIndex = 7;
-            // 
-            // cboPedido
-            // 
-            cboPedido.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboPedido.FormattingEnabled = true;
-            cboPedido.Location = new Point(172, 81);
-            cboPedido.Name = "cboPedido";
-            cboPedido.Size = new Size(121, 23);
-            cboPedido.TabIndex = 8;
-            // 
-            // nudMonto
-            // 
-            nudMonto.DecimalPlaces = 2;
-            nudMonto.Location = new Point(522, 45);
-            nudMonto.Maximum = new decimal(new int[] { 999999, 0, 0, 131072 });
-            nudMonto.Name = "nudMonto";
-            nudMonto.Size = new Size(120, 23);
-            nudMonto.TabIndex = 9;
+            cboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEstado.FormattingEnabled = true;
+            cboEstado.Location = new Point(507, 137);
+            cboEstado.Name = "cboEstado";
+            cboEstado.Size = new Size(121, 23);
+            cboEstado.TabIndex = 11;
             // 
             // dtpFechaPago
             // 
@@ -166,20 +145,96 @@
             dtpFechaPago.Size = new Size(200, 23);
             dtpFechaPago.TabIndex = 10;
             // 
-            // cboEstado
+            // nudMonto
             // 
-            cboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboEstado.FormattingEnabled = true;
-            cboEstado.Location = new Point(507, 137);
-            cboEstado.Name = "cboEstado";
-            cboEstado.Size = new Size(121, 23);
-            cboEstado.TabIndex = 11;
+            nudMonto.DecimalPlaces = 2;
+            nudMonto.Location = new Point(522, 45);
+            nudMonto.Maximum = new decimal(new int[] { 999999, 0, 0, 131072 });
+            nudMonto.Name = "nudMonto";
+            nudMonto.Size = new Size(120, 23);
+            nudMonto.TabIndex = 9;
+            // 
+            // cboPedido
+            // 
+            cboPedido.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPedido.FormattingEnabled = true;
+            cboPedido.Location = new Point(172, 81);
+            cboPedido.Name = "cboPedido";
+            cboPedido.Size = new Size(121, 23);
+            cboPedido.TabIndex = 8;
+            // 
+            // cboMetodoPago
+            // 
+            cboMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboMetodoPago.FormattingEnabled = true;
+            cboMetodoPago.Location = new Point(172, 127);
+            cboMetodoPago.Name = "cboMetodoPago";
+            cboMetodoPago.Size = new Size(121, 23);
+            cboMetodoPago.TabIndex = 7;
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(172, 38);
+            txtId.Name = "txtId";
+            txtId.ReadOnly = true;
+            txtId.Size = new Size(100, 23);
+            txtId.TabIndex = 6;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(632, 329);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.TabIndex = 16;
+            btnLimpiar.Text = "Limpiar ";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(488, 329);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 15;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(341, 329);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(75, 23);
+            btnActualizar.TabIndex = 14;
+            btnActualizar.Text = "Actualizar ";
+            btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(208, 328);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.TabIndex = 13;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.Location = new Point(58, 328);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.TabIndex = 12;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = true;
             // 
             // FrmPago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnActualizar);
+            Controls.Add(btnAgregar);
+            Controls.Add(btnNuevo);
             Controls.Add(grbMetodo);
             Name = "FrmPago";
             Text = "Mantenimiento de pagos";
@@ -205,5 +260,10 @@
         private ComboBox cboEstado;
         private DateTimePicker dtpFechaPago;
         private NumericUpDown nudMonto;
+        private Button btnLimpiar;
+        private Button btnEliminar;
+        private Button btnActualizar;
+        private Button btnAgregar;
+        private Button btnNuevo;
     }
 }

@@ -1,38 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+using ESFE.RestauranteBD.LN;
 
 namespace ESFE.RestauranteBD.UI
 {
     public partial class Bebida : Form
     {
-        private List<ESFE.RestauranteBD.EN.Bebida> listaBebidas = new List<ESFE.RestauranteBD.EN.Bebida>();
+        private readonly BebidaLN bebidaLN;
+
         public Bebida()
         {
             InitializeComponent();
+
+            // Configuración del formulario
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+            // Inicializar LN
+            bebidaLN = new BebidaLN();
+
+            // Cargar bebidas
+            CargarBebidas();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void CargarBebidas()
         {
+            try
+            {
+                List<ESFE.RestauranteBD.EN.Bebida> lista =
+                    bebidaLN.Buscar("");
 
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = lista;
+                dataGridView1.Refresh();
+        }
+            catch (Exception ex)
+        {
+                MessageBox.Show(
+                    "Error al cargar las bebidas:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+        }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            try
+            {
+                // Validar ID
+                if (string.IsNullOrWhiteSpace(txtIDBebida.Text))
+                {
+                    MessageBox.Show(
+                        "Ingrese el ID de la bebida.",
+                        "Validación",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
 
         }
 
@@ -49,6 +71,8 @@ namespace ESFE.RestauranteBD.UI
                 MessageBox.Show("Por favor complete todos los cambios.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+                // Validar precio
             if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
             {
                 MessageBox.Show("Ingrese un precio valido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

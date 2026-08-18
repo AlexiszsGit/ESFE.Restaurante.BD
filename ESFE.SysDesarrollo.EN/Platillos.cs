@@ -5,12 +5,12 @@ using System.Text;
 namespace ESFE.RestauranteBD.EN
 
     {
-        public class Platillos
+        public class Platillo
         {
-            public int IdPlatillo { get; set; }
-            public string Nombre { get; set; }
-            public decimal Precio { get; set; }
-            public string Descripcion  { get; set; }
-            public int IdCategoria { get; set; }
+            public string IdProducto { get; set; } = string.Empty;
+            public string Nombre { get; set; } = string.Empty;
+            public decimal Precio { get; set; } = 0;
+            public string IdCategoria { get; set; } = string.Empty;
+            public string IdDescuento { get; set; } = string.Empty;
         }
 }

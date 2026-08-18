@@ -7,8 +7,7 @@ namespace ESFE.RestauranteBD.EN
     
         public class TipoEmpleado
         {
-            public int IdTipoEmpleado { get; set; }
-            public string Nombre { get; set; }
-            public string Descripcion { get; set; }
+            public string IdTipo { get; set; } = string.Empty;
+            public string Nombre { get; set; } = string.Empty;
         }
 }

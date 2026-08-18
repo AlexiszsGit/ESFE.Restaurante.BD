@@ -1,49 +1,100 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using ESFE.RestauranteBD.EN;
 using Microsoft.Data.SqlClient;
 
 namespace ESFE.RestauranteBD.DAL
 {
-    public class PlatillosDAL
-    {
-        
-            public static int Guardar(Platillos pPlatillo)
+  
+    
+        public class PlatillosDAL
+        {
+            public bool Insertar(Platillo platillo)
             {
-                using (SqlConnection conn = (SqlConnection)DBComun.ObtenerConexion())
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
                 {
-                    conn.Open();
-                    string query = "INSERT INTO Platillos (Nombre, Precio, IdCategoria) VALUES (@Nombre, @Precio, @IdCategoria)";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Nombre", pPlatillo.Nombre);
-                    cmd.Parameters.AddWithValue("@Precio", pPlatillo.Precio);
-                    cmd.Parameters.AddWithValue("@IdCategoria", pPlatillo.IdCategoria);
-                    return cmd.ExecuteNonQuery();
+                    using (SqlCommand comando = new SqlCommand("InsertarPlatillo", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_producto", platillo.IdProducto);
+                        comando.Parameters.AddWithValue("@nombre", platillo.Nombre);
+                        comando.Parameters.AddWithValue("@precio", platillo.Precio);
+                        comando.Parameters.AddWithValue("@id_categoria", platillo.IdCategoria ?? (object)DBNull.Value);
+                        comando.Parameters.AddWithValue("@id_descuento", platillo.IdDescuento ?? (object)DBNull.Value);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
                 }
             }
 
-            public static List<Platillos> ObtenerTodos()
+            public bool Actualizar(Platillo platillo)
             {
-                List<Platillos> lista = new List<Platillos>();
-                using (SqlConnection conn = (SqlConnection)DBComun.ObtenerConexion())
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
                 {
-                    conn.Open();
-                    string query = "SELECT Id, Nombre, Precio, IdCategoria FROM Platillos";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    using (SqlCommand comando = new SqlCommand("ActualizarPlatillo", conexion))
                     {
-                        lista.Add(new Platillos
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_producto", platillo.IdProducto);
+                        comando.Parameters.AddWithValue("@nombre", platillo.Nombre);
+                        comando.Parameters.AddWithValue("@precio", platillo.Precio);
+                        comando.Parameters.AddWithValue("@id_categoria", platillo.IdCategoria ?? (object)DBNull.Value);
+                        comando.Parameters.AddWithValue("@id_descuento", platillo.IdDescuento ?? (object)DBNull.Value);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+            public bool Eliminar(string idProducto)
+            {
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand("EliminarPlatillo", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_producto", idProducto);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+            public List<Platillo> Buscar(string idProducto)
+            {
+                List<Platillo> lista = new List<Platillo>();
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand("BuscarPlatillo", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_producto", idProducto);
+
+                        conexion.Open();
+                        using (SqlDataReader reader = comando.ExecuteReader())
                         {
-                            IdPlatillo = reader.GetInt32(0), // Verifica si en EN es IdPlatillo o Id
-                            Nombre = reader.GetString(1),
-                            Precio = reader.GetDecimal(2),
-                            IdCategoria = reader.GetInt32(3)
-                        });
+                            while (reader.Read())
+                            {
+                                Platillo p = new Platillo();
+                                p.IdProducto = reader["id_producto"]?.ToString() ?? string.Empty;
+                                p.Nombre = reader["nombre"]?.ToString() ?? string.Empty;
+                                p.Precio = reader["precio"] != DBNull.Value ? Convert.ToDecimal(reader["precio"]) : 0m;
+                                p.IdCategoria = reader["id_categoria"]?.ToString() ?? string.Empty;
+                                p.IdDescuento = reader["id_descuento"]?.ToString() ?? string.Empty;
+
+                                lista.Add(p);
+                            }
+                        }
                     }
                 }
                 return lista;
             }
-    }
+        }
 }
+
+
+      

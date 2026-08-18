@@ -7,9 +7,9 @@ namespace ESFE.RestauranteBD.EN
     public class Mesa
     
         {
-            public int IdMesa { get; set; }
-            public int NumeroMesa { get; set; }
+            public string IdMesa { get; set; }
             public int Capacidad { get; set; }
-            public string Estado { get; set; }
+            public string Disponible { get; set; }
+            
         }
 }

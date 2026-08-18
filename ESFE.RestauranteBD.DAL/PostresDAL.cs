@@ -3,47 +3,88 @@ using System.Collections.Generic;
 using System.Text;
 using ESFE.RestauranteBD.EN;
 using Microsoft.Data.SqlClient;
-
+using System.Data;
 namespace ESFE.RestauranteBD.DAL
 {
-    public class PostresDAL
-    {
-        
-            public static int Guardar(Postres pPostre)
+   
+    
+        public class PostreDAL
+        {
+            public bool Insertar(Postre postre)
             {
-                using (SqlConnection conn = (SqlConnection)DBComun.ObtenerConexion())
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
                 {
-                    conn.Open();
-                    string query = "INSERT INTO Postres (Nombre, Precio, Descripcion) VALUES (@Nombre, @Precio, @Descripcion)";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Nombre", pPostre.Nombre);
-                    cmd.Parameters.AddWithValue("@Precio", pPostre.Precio);
-                    cmd.Parameters.AddWithValue("@Descripcion", pPostre.Descripcion);
-                    return cmd.ExecuteNonQuery();
+                    using (SqlCommand comando = new SqlCommand("InsertarPostre", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_postre", postre.IdPostre);
+                        comando.Parameters.AddWithValue("@nombre", postre.Nombre);
+                        comando.Parameters.AddWithValue("@precio", postre.Precio);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
                 }
             }
 
-            public static List<Postres> ObtenerTodos()
+            public bool Actualizar(Postre postre)
             {
-                List<Postres> lista = new List<Postres>();
-                using (SqlConnection conn = (SqlConnection)DBComun.ObtenerConexion())
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
                 {
-                    conn.Open();
-                    string query = "SELECT Id, Nombre, Precio, Descripcion FROM Postres";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    using (SqlCommand comando = new SqlCommand("ActualizarPostre", conexion))
                     {
-                        lista.Add(new Postres
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_postre", postre.IdPostre);
+                        comando.Parameters.AddWithValue("@nombre", postre.Nombre);
+                        comando.Parameters.AddWithValue("@precio", postre.Precio);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+            public bool Eliminar(string idPostre)
+            {
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand("EliminarPostre", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_postre", idPostre);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+            public List<Postre> Buscar(string idPostre)
+            {
+                List<Postre> lista = new List<Postre>();
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand("BuscarPostre", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_postre", idPostre);
+
+                        conexion.Open();
+                        using (SqlDataReader reader = comando.ExecuteReader())
                         {
-                            IdPostre = reader.GetInt32(0), // Verifica si en EN es IdPostre o Id
-                            Nombre = reader.GetString(1),
-                            Precio = reader.GetDecimal(2),
-                            Descripcion = reader.GetString(3)
-                        });
+                            while (reader.Read())
+                            {
+                                Postre postre = new Postre();
+                                postre.IdPostre = reader["id_postre"]?.ToString() ?? string.Empty;
+                                postre.Nombre = reader["nombre"]?.ToString() ?? string.Empty;
+                                postre.Precio = reader["precio"] != DBNull.Value ? Convert.ToDecimal(reader["precio"]) : 0m;
+
+                                lista.Add(postre);
+                            }
+                        }
                     }
                 }
                 return lista;
             }
-    }
+        }
 }

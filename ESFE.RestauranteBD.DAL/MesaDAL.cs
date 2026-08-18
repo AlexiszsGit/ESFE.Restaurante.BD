@@ -1,50 +1,91 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using ESFE.RestauranteBD.EN;
 using Microsoft.Data.SqlClient;
 
+
 namespace ESFE.RestauranteBD.DAL
 {
-    public class MesaDAL
-    {
-            public static int Guardar(Mesa pMesa)
+   
+        public class MesaDAL
+        {
+            public bool Insertar(Mesa mesa)
             {
-                using (SqlConnection conn = (SqlConnection)DBComun.ObtenerConexion())
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
                 {
-                    conn.Open();
-                    string query = "INSERT INTO Mesa (NumeroMesa, Capacidad, Estado) VALUES (@NumeroMesa, @Capacidad, @Estado)";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@NumeroMesa", pMesa.NumeroMesa);
-                    cmd.Parameters.AddWithValue("@Capacidad", pMesa.Capacidad);
-                    cmd.Parameters.AddWithValue("@Estado", pMesa.Estado);
-                    return cmd.ExecuteNonQuery();
+                    using (SqlCommand comando = new SqlCommand("InsertarMesa", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_mesa", mesa.IdMesa);
+                        comando.Parameters.AddWithValue("@capacidad", mesa.Capacidad);
+                        comando.Parameters.AddWithValue("@disponible", mesa.Disponible ?? (object)DBNull.Value);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
                 }
             }
 
-            public static List<Mesa> ObtenerTodos()
+            public bool Actualizar(Mesa mesa)
+            {
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand("ActualizarMesa", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_mesa", mesa.IdMesa);
+                        comando.Parameters.AddWithValue("@capacidad", mesa.Capacidad);
+                        comando.Parameters.AddWithValue("@disponible", mesa.Disponible ?? (object)DBNull.Value);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+            public bool Eliminar(string idMesa)
+            {
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand("EliminarMesa", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_mesa", idMesa);
+
+                        conexion.Open();
+                        return comando.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+            public List<Mesa> Buscar(string idMesa)
             {
                 List<Mesa> lista = new List<Mesa>();
-                using (SqlConnection conn = (SqlConnection)DBComun.ObtenerConexion())
+                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
                 {
-                    conn.Open();
-                    string query = "SELECT Id, NumeroMesa, Capacidad, Estado FROM Mesa";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    using (SqlCommand comando = new SqlCommand("BuscarMesa", conexion))
                     {
-                        lista.Add(new Mesa
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@id_mesa", idMesa);
+
+                        conexion.Open();
+                        using (SqlDataReader reader = comando.ExecuteReader())
                         {
-                            IdMesa = reader.GetInt32(0),
-                            NumeroMesa = reader.GetInt32(1),
-                            Capacidad = reader.GetInt32(2),
-                            Estado = reader.GetString(3) // Si Estado en Mesa.cs es byte/int, cámbialo a GetByte(3) o GetInt32(3)
-                        });
+                            while (reader.Read())
+                            {
+                                Mesa mesa = new Mesa();
+                                mesa.IdMesa = reader["id_mesa"]?.ToString() ?? string.Empty;
+                                mesa.Capacidad = reader["capacidad"] != DBNull.Value ? Convert.ToInt32(reader["capacidad"]) : 0;
+                                mesa.Disponible = reader["disponible"]?.ToString() ?? string.Empty;
+
+                                lista.Add(mesa);
+                            }
+                        }
                     }
                 }
                 return lista;
             }
-    }
+        }
 }
-
-

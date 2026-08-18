@@ -6,11 +6,11 @@ namespace ESFE.RestauranteBD.EN
 {
 
     
-        public class Postres
+        public class Postre
         {
-            public int IdPostre { get; set; }
-            public string Nombre { get; set; }
-            public decimal Precio { get; set; }
-            public string Descripcion { get; set; }
+            public string IdPostre { get; set; } = string.Empty;
+            public string Nombre { get; set; } = string.Empty;
+            public decimal Precio { get; set; } = 0;
+            
         }
 }

@@ -34,9 +34,9 @@
             label4 = new Label();
             label5 = new Label();
             grpDatosMenu = new GroupBox();
-            cboEstado = new ComboBox();
-            nudPrecio = new NumericUpDown();
-            cboCategoria = new ComboBox();
+            cbEstado = new ComboBox();
+            numPrecio = new NumericUpDown();
+            cbCategoria = new ComboBox();
             lblEstado = new Label();
             lblPrecio = new Label();
             lblCategoria = new Label();
@@ -52,7 +52,7 @@
             btnNuevo = new Button();
             dataGridView1 = new DataGridView();
             grpDatosMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudPrecio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numPrecio).BeginInit();
             pnlBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -104,9 +104,9 @@
             // grpDatosMenu
             // 
             grpDatosMenu.BackColor = SystemColors.ControlDarkDark;
-            grpDatosMenu.Controls.Add(cboEstado);
-            grpDatosMenu.Controls.Add(nudPrecio);
-            grpDatosMenu.Controls.Add(cboCategoria);
+            grpDatosMenu.Controls.Add(cbEstado);
+            grpDatosMenu.Controls.Add(numPrecio);
+            grpDatosMenu.Controls.Add(cbCategoria);
             grpDatosMenu.Controls.Add(lblEstado);
             grpDatosMenu.Controls.Add(lblPrecio);
             grpDatosMenu.Controls.Add(lblCategoria);
@@ -126,32 +126,32 @@
             grpDatosMenu.Text = "Datos del menu";
             grpDatosMenu.Enter += groupBox1_Enter;
             // 
-            // cboEstado
+            // cbEstado
             // 
-            cboEstado.FormattingEnabled = true;
-            cboEstado.Location = new Point(593, 153);
-            cboEstado.Margin = new Padding(3, 4, 3, 4);
-            cboEstado.Name = "cboEstado";
-            cboEstado.Size = new Size(138, 28);
-            cboEstado.TabIndex = 6;
+            cbEstado.FormattingEnabled = true;
+            cbEstado.Location = new Point(593, 153);
+            cbEstado.Margin = new Padding(3, 4, 3, 4);
+            cbEstado.Name = "cboEstado";
+            cbEstado.Size = new Size(138, 28);
+            cbEstado.TabIndex = 6;
             // 
-            // nudPrecio
+            // numPrecio
             // 
-            nudPrecio.Location = new Point(594, 88);
-            nudPrecio.Margin = new Padding(3, 4, 3, 4);
-            nudPrecio.Name = "nudPrecio";
-            nudPrecio.Size = new Size(137, 27);
-            nudPrecio.TabIndex = 5;
-            nudPrecio.ValueChanged += nudPrecio_ValueChanged;
+            numPrecio.Location = new Point(594, 88);
+            numPrecio.Margin = new Padding(3, 4, 3, 4);
+            numPrecio.Name = "nudPrecio";
+            numPrecio.Size = new Size(137, 27);
+            numPrecio.TabIndex = 5;
+            numPrecio.ValueChanged += numPrecio_ValueChanged;
             // 
-            // cboCategoria
+            // cbCategoria
             // 
-            cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(593, 40);
-            cboCategoria.Margin = new Padding(3, 4, 3, 4);
-            cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(138, 28);
-            cboCategoria.TabIndex = 4;
+            cbCategoria.FormattingEnabled = true;
+            cbCategoria.Location = new Point(593, 40);
+            cbCategoria.Margin = new Padding(3, 4, 3, 4);
+            cbCategoria.Name = "cboCategoria";
+            cbCategoria.Size = new Size(138, 28);
+            cbCategoria.TabIndex = 4;
             // 
             // lblEstado
             // 
@@ -266,6 +266,7 @@
             btnAgregar.TabIndex = 8;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnNuevo
             // 
@@ -276,7 +277,7 @@
             btnNuevo.TabIndex = 7;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
-           
+            btnNuevo.Click += btnNuevo_Click_1;
             // 
             // dataGridView1
             // 
@@ -307,7 +308,7 @@
             Name = "FrmMenu";
             grpDatosMenu.ResumeLayout(false);
             grpDatosMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numPrecio).EndInit();
             pnlBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -329,9 +330,9 @@
         private Label lblEstado;
         private Label lblPrecio;
         private Label lblCategoria;
-        private ComboBox cboEstado;
-        private NumericUpDown nudPrecio;
-        private ComboBox cboCategoria;
+        private ComboBox cbEstado;
+        private NumericUpDown numPrecio;
+        private ComboBox cbCategoria;
         private Panel pnlBotones;
         private Button btnLimpiar;
         private Button btnEliminar;

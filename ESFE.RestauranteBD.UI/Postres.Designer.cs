@@ -31,16 +31,15 @@
             lblTitulo = new Label();
             lblNombre = new Label();
             lblPrecio = new Label();
-            lblTipoPostre = new Label();
+            lblPostres = new Label();
             txtNombre = new TextBox();
             nudPrecio = new NumericUpDown();
-            cmbTipoPostre = new ComboBox();
-            chkDisponible = new CheckBox();
             dgvPostres = new DataGridView();
             button2 = new Button();
             btmModificar = new Button();
-            button3 = new Button();
+            btnGuardar = new Button();
             button1 = new Button();
+            txtIdPostre = new TextBox();
             ((System.ComponentModel.ISupportInitialize)nudPrecio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPostres).BeginInit();
             SuspendLayout();
@@ -62,7 +61,7 @@
             lblNombre.AutoSize = true;
             lblNombre.BackColor = SystemColors.ActiveCaptionText;
             lblNombre.ForeColor = Color.White;
-            lblNombre.Location = new Point(27, 101);
+            lblNombre.Location = new Point(27, 175);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(67, 20);
             lblNombre.TabIndex = 1;
@@ -73,56 +72,36 @@
             lblPrecio.AutoSize = true;
             lblPrecio.BackColor = SystemColors.ActiveCaptionText;
             lblPrecio.ForeColor = Color.White;
-            lblPrecio.Location = new Point(27, 175);
+            lblPrecio.Location = new Point(31, 237);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(53, 20);
             lblPrecio.TabIndex = 2;
             lblPrecio.Text = "Precio:";
             // 
-            // lblTipoPostre
+            // lblPostres
             // 
-            lblTipoPostre.AutoSize = true;
-            lblTipoPostre.BackColor = SystemColors.ActiveCaptionText;
-            lblTipoPostre.ForeColor = Color.White;
-            lblTipoPostre.Location = new Point(27, 245);
-            lblTipoPostre.Name = "lblTipoPostre";
-            lblTipoPostre.Size = new Size(82, 20);
-            lblTipoPostre.TabIndex = 3;
-            lblTipoPostre.Text = "TipoPostre:";
+            lblPostres.AutoSize = true;
+            lblPostres.BackColor = SystemColors.ActiveCaptionText;
+            lblPostres.ForeColor = Color.White;
+            lblPostres.Location = new Point(27, 111);
+            lblPostres.Name = "lblPostres";
+            lblPostres.Size = new Size(69, 20);
+            lblPostres.TabIndex = 3;
+            lblPostres.Text = "Id Postre:";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(128, 94);
+            txtNombre.Location = new Point(129, 172);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(125, 27);
+            txtNombre.Size = new Size(150, 27);
             txtNombre.TabIndex = 4;
             // 
             // nudPrecio
             // 
-            nudPrecio.Location = new Point(128, 168);
+            nudPrecio.Location = new Point(129, 230);
             nudPrecio.Name = "nudPrecio";
             nudPrecio.Size = new Size(150, 27);
             nudPrecio.TabIndex = 5;
-            // 
-            // cmbTipoPostre
-            // 
-            cmbTipoPostre.FormattingEnabled = true;
-            cmbTipoPostre.Location = new Point(128, 237);
-            cmbTipoPostre.Name = "cmbTipoPostre";
-            cmbTipoPostre.Size = new Size(151, 28);
-            cmbTipoPostre.TabIndex = 6;
-            // 
-            // chkDisponible
-            // 
-            chkDisponible.AutoSize = true;
-            chkDisponible.BackColor = SystemColors.ActiveCaptionText;
-            chkDisponible.ForeColor = Color.White;
-            chkDisponible.Location = new Point(27, 306);
-            chkDisponible.Name = "chkDisponible";
-            chkDisponible.Size = new Size(103, 24);
-            chkDisponible.TabIndex = 7;
-            chkDisponible.Text = "Disponible";
-            chkDisponible.UseVisualStyleBackColor = false;
             // 
             // dgvPostres
             // 
@@ -146,6 +125,7 @@
             button2.TabIndex = 36;
             button2.Text = "Eliminar";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // btmModificar
             // 
@@ -160,20 +140,22 @@
             btmModificar.TabIndex = 35;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
+            btmModificar.Click += btmModificar_Click;
             // 
-            // button3
+            // btnGuardar
             // 
-            button3.BackColor = Color.ForestGreen;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(31, 392);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 29);
-            button3.TabIndex = 34;
-            button3.Text = "Guardar";
-            button3.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.ForestGreen;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(31, 392);
+            btnGuardar.Margin = new Padding(2);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(92, 29);
+            btnGuardar.TabIndex = 34;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // button1
             // 
@@ -186,6 +168,14 @@
             button1.TabIndex = 33;
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // txtIdPostre
+            // 
+            txtIdPostre.Location = new Point(129, 104);
+            txtIdPostre.Name = "txtIdPostre";
+            txtIdPostre.Size = new Size(150, 27);
+            txtIdPostre.TabIndex = 37;
             // 
             // FrmPostres
             // 
@@ -193,17 +183,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtIdPostre);
             Controls.Add(button2);
             Controls.Add(btmModificar);
-            Controls.Add(button3);
+            Controls.Add(btnGuardar);
             Controls.Add(button1);
             Controls.Add(dgvPostres);
-            Controls.Add(chkDisponible);
-            Controls.Add(cmbTipoPostre);
             Controls.Add(nudPrecio);
             Controls.Add(txtNombre);
             Controls.Add(lblPrecio);
-            Controls.Add(lblTipoPostre);
+            Controls.Add(lblPostres);
             Controls.Add(lblNombre);
             Controls.Add(lblTitulo);
             Name = "FrmPostres";
@@ -227,7 +216,9 @@
         private DataGridView dgvPostres;
         private Button button2;
         private Button btmModificar;
-        private Button button3;
+        private Button btnGuardar;
         private Button button1;
+        private Label lblPostres;
+        private TextBox txtIdPostre;
     }
 }

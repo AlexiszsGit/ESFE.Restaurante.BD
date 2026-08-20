@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Bebida
+    partial class FrmBebida
     {
         /// <summary>
         /// Required designer variable.
@@ -34,13 +34,15 @@
             txtIDBebida = new TextBox();
             txtNombre = new TextBox();
             txtPrecio = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvBebidas = new DataGridView();
             label5 = new Label();
             btnGuardar = new Button();
             btnLimpiar = new Button();
             txtBuscar = new TextBox();
             btnBuscar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btmModificar = new Button();
+            btnEliminar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvBebidas).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -103,16 +105,18 @@
             txtPrecio.Size = new Size(201, 39);
             txtPrecio.TabIndex = 5;
             // 
-            // dataGridView1
+            // dgvBebidas
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(64, 64, 64);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(585, 147);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(1313, 914);
-            dataGridView1.TabIndex = 8;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgvBebidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBebidas.BackgroundColor = Color.FromArgb(64, 64, 64);
+            dgvBebidas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBebidas.Location = new Point(585, 147);
+            dgvBebidas.Name = "dgvBebidas";
+            dgvBebidas.RowHeadersWidth = 82;
+            dgvBebidas.Size = new Size(1313, 914);
+            dgvBebidas.TabIndex = 8;
+            dgvBebidas.CellClick += dataGridView1_CellClick;
+            dgvBebidas.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label5
             // 
@@ -173,28 +177,59 @@
             btnBuscar.TabIndex = 16;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click1;
             // 
-            // Bebida
+            // btmModificar
+            // 
+            btmModificar.BackColor = Color.RoyalBlue;
+            btmModificar.FlatAppearance.BorderSize = 0;
+            btmModificar.FlatStyle = FlatStyle.Flat;
+            btmModificar.ForeColor = Color.White;
+            btmModificar.Location = new Point(84, 797);
+            btmModificar.Name = "btmModificar";
+            btmModificar.Size = new Size(150, 46);
+            btmModificar.TabIndex = 17;
+            btmModificar.Text = "Modificar";
+            btmModificar.UseVisualStyleBackColor = false;
+            btmModificar.Click += btnModificar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.SteelBlue;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(315, 797);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(150, 46);
+            btnEliminar.TabIndex = 33;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // FrmBebida
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1924, 1054);
+            ClientSize = new Size(1924, 1100);
+            Controls.Add(btnEliminar);
+            Controls.Add(btmModificar);
             Controls.Add(btnBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(btnLimpiar);
             Controls.Add(btnGuardar);
             Controls.Add(label5);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvBebidas);
             Controls.Add(txtPrecio);
             Controls.Add(txtNombre);
             Controls.Add(txtIDBebida);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Bebida";
+            Name = "FrmBebida";
             Text = "Bebida";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBebidas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,11 +242,13 @@
         private TextBox txtIDBebida;
         private TextBox txtNombre;
         private TextBox txtPrecio;
-        private DataGridView dataGridView1;
+        private DataGridView dgvBebidas;
         private Label label5;
         private Button btnGuardar;
         private Button btnLimpiar;
         private TextBox txtBuscar;
         private Button btnBuscar;
+        private Button btmModificar;
+        private Button btnEliminar;
     }
 }

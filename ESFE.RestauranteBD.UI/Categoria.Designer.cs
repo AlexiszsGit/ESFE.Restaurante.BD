@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Categoria
+    partial class FrmCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -32,12 +32,13 @@
             txtIdCategoria = new TextBox();
             label2 = new Label();
             txtNombre = new TextBox();
-            dgvCategorias = new DataGridView();
+            dgvCategoria = new DataGridView();
             btnEliminar = new Button();
             btmModificar = new Button();
             btnGuardar = new Button();
             label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
+            btnLimpiar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvCategoria).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -78,15 +79,16 @@
             txtNombre.Size = new Size(200, 39);
             txtNombre.TabIndex = 3;
             // 
-            // dgvCategorias
+            // dgvCategoria
             // 
-            dgvCategorias.BackgroundColor = Color.FromArgb(64, 64, 64);
-            dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategorias.Location = new Point(716, 69);
-            dgvCategorias.Name = "dgvCategorias";
-            dgvCategorias.RowHeadersWidth = 82;
-            dgvCategorias.Size = new Size(1496, 1089);
-            dgvCategorias.TabIndex = 7;
+            dgvCategoria.BackgroundColor = Color.FromArgb(64, 64, 64);
+            dgvCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategoria.Location = new Point(716, 69);
+            dgvCategoria.Name = "dgvCategoria";
+            dgvCategoria.RowHeadersWidth = 82;
+            dgvCategoria.Size = new Size(1496, 1089);
+            dgvCategoria.TabIndex = 7;
+            dgvCategoria.CellClick += dgvCategoria_CellClick;
             // 
             // btnEliminar
             // 
@@ -94,12 +96,13 @@
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(245, 737);
+            btnEliminar.Location = new Point(92, 730);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(150, 46);
             btnEliminar.TabIndex = 11;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btmModificar
             // 
@@ -113,6 +116,7 @@
             btmModificar.TabIndex = 10;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
+            btmModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
@@ -126,7 +130,7 @@
             btnGuardar.TabIndex = 9;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click_1;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label5
             // 
@@ -139,25 +143,40 @@
             label5.TabIndex = 12;
             label5.Text = "RESTAURANTEBD - CATEGORIA";
             // 
-            // Categoria
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.Purple;
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(405, 739);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(150, 46);
+            btnLimpiar.TabIndex = 15;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // FrmCategoria
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(2254, 1195);
+            Controls.Add(btnLimpiar);
             Controls.Add(label5);
             Controls.Add(btnEliminar);
             Controls.Add(btmModificar);
             Controls.Add(btnGuardar);
-            Controls.Add(dgvCategorias);
+            Controls.Add(dgvCategoria);
             Controls.Add(txtNombre);
             Controls.Add(label2);
             Controls.Add(txtIdCategoria);
             Controls.Add(label1);
-            Name = "Categoria";
+            Name = "FrmCategoria";
             Text = "Categoria";
             Load += Categoria_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCategoria).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -168,10 +187,11 @@
         private TextBox txtIdCategoria;
         private Label label2;
         private TextBox txtNombre;
-        private DataGridView dgvCategorias;
+        private DataGridView dgvCategoria;
         private Button btnEliminar;
         private Button btmModificar;
         private Button btnGuardar;
         private Label label5;
+        private Button btnLimpiar;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Cliente
+    partial class FrmCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -161,7 +161,7 @@
             label5.TabIndex = 15;
             label5.Text = "RESTAURANTEBD - CLIENTE";
             // 
-            // Cliente
+            // FrmCliente
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -178,7 +178,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Cliente";
+            Name = "FrmCliente";
             Text = "Cliente";
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);

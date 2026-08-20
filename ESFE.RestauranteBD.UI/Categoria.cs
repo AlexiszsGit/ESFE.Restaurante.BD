@@ -10,11 +10,11 @@ using ESFE.RestauranteBD.LN;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Categoria : Form
+    public partial class FrmCategoria : Form
     {
         private readonly CategoriaLN categoriaLN;
 
-        public Categoria()
+        public FrmCategoria()
         {
             InitializeComponent();
 
@@ -34,9 +34,9 @@ namespace ESFE.RestauranteBD.UI
                 List<ESFE.RestauranteBD.EN.Categoria> lista =
                     categoriaLN.Buscar("");
 
-                dgvCategorias.DataSource = null;
-                dgvCategorias.DataSource = lista;
-                dgvCategorias.Refresh();
+                dgvCategoria.DataSource = null;
+                dgvCategoria.DataSource = lista;
+                dgvCategoria.Refresh();
             }
             catch (Exception ex)
             {
@@ -251,9 +251,9 @@ namespace ESFE.RestauranteBD.UI
                 List<ESFE.RestauranteBD.EN.Categoria> lista =
                     categoriaLN.BuscarPorNombre(nombre);
 
-                dgvCategorias.DataSource = null;
-                dgvCategorias.DataSource = lista;
-                dgvCategorias.Refresh();
+                dgvCategoria.DataSource = null;
+                dgvCategoria.DataSource = lista;
+                dgvCategoria.Refresh();
 
                 if (lista.Count == 0)
                 {
@@ -285,7 +285,7 @@ namespace ESFE.RestauranteBD.UI
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow fila = dgvCategorias.Rows[e.RowIndex];
+                DataGridViewRow fila = dgvCategoria.Rows[e.RowIndex];
 
                 txtIdCategoria.Text =
                     fila.Cells["IdCategoria"].Value?.ToString() ?? "";
@@ -300,10 +300,6 @@ namespace ESFE.RestauranteBD.UI
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
         }
     }

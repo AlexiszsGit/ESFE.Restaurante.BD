@@ -6,11 +6,11 @@ using ESFE.RestauranteBD.LN;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Cliente : Form
+    public partial class FrmCliente : Form
     {
         private readonly ClienteLN clienteLN;
 
-        public Cliente()
+        public FrmCliente()
         {
             InitializeComponent();
 

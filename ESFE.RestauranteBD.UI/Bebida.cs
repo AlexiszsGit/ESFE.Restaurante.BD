@@ -1,12 +1,13 @@
-﻿using ESFE.RestauranteBD.LN;
+﻿using ESFE.RestauranteBD.EN;
+using ESFE.RestauranteBD.LN;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Bebida : Form
+    public partial class FrmBebida : Form
     {
         private readonly BebidaLN bebidaLN;
 
-        public Bebida()
+        public FrmBebida()
         {
             InitializeComponent();
 
@@ -29,9 +30,9 @@ namespace ESFE.RestauranteBD.UI
                 List<ESFE.RestauranteBD.EN.Bebida> lista =
                     bebidaLN.Buscar("");
 
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = lista;
-                dataGridView1.Refresh();
+                dgvBebidas.DataSource = null;
+                dgvBebidas.DataSource = lista;
+                dgvBebidas.Refresh();
             }
             catch (Exception ex)
             {
@@ -137,7 +138,7 @@ namespace ESFE.RestauranteBD.UI
             button1_Click(sender, e);
         }
 
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -157,7 +158,7 @@ namespace ESFE.RestauranteBD.UI
             txtIDBebida.Focus();
         }
 
-       
+
         private void dataGridView1_CellClick(
             object sender,
             DataGridViewCellEventArgs e)
@@ -168,7 +169,7 @@ namespace ESFE.RestauranteBD.UI
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow fila =
-                        dataGridView1.Rows[e.RowIndex];
+                        dgvBebidas.Rows[e.RowIndex];
 
                     txtIDBebida.Text =
                         fila.Cells["IdBebida"].Value?.ToString() ?? "";
@@ -190,7 +191,7 @@ namespace ESFE.RestauranteBD.UI
             }
         }
 
-        
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -200,9 +201,9 @@ namespace ESFE.RestauranteBD.UI
                 List<ESFE.RestauranteBD.EN.Bebida> lista =
                     bebidaLN.BuscarPorNombre(nombre);
 
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = lista;
-                dataGridView1.Refresh();
+                dgvBebidas.DataSource = null;
+                dgvBebidas.DataSource = lista;
+                dgvBebidas.Refresh();
 
                 if (lista.Count == 0)
                 {
@@ -223,7 +224,7 @@ namespace ESFE.RestauranteBD.UI
             }
         }
 
-        
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -309,7 +310,7 @@ namespace ESFE.RestauranteBD.UI
             }
         }
 
-        
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
@@ -370,13 +371,13 @@ namespace ESFE.RestauranteBD.UI
             }
         }
 
-       
+
         private void Bebida_Load(object sender, EventArgs e)
         {
             CargarBebidas();
         }
 
-      
+
         private void label1_Click(object sender, EventArgs e)
         {
         }
@@ -406,5 +407,111 @@ namespace ESFE.RestauranteBD.UI
             DataGridViewCellEventArgs e)
         {
         }
+
+        private void btnBuscar_Click1(object sender, EventArgs e)
+        {
+            try
+            {
+                string busqueda = txtBuscar.Text.Trim();
+
+                List<ESFE.RestauranteBD.EN.Bebida> lista =
+                    bebidaLN.Buscar(busqueda);
+
+                dgvBebidas.DataSource = null;
+                dgvBebidas.DataSource = lista;
+
+                if (lista.Count == 0)
+                {
+                    MessageBox.Show(
+                        "No se encontraron bebidas.",
+                        "Buscar",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al buscar: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtIDBebida.Text))
+                {
+                    MessageBox.Show("Seleccione una bebida para modificar.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    MessageBox.Show("Ingrese el nombre de la bebida.");
+                    txtNombre.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+                {
+                    MessageBox.Show("Ingrese el precio.");
+                    txtPrecio.Focus();
+                    return;
+                }
+
+                if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
+                {
+                    MessageBox.Show("El precio debe ser un número válido.");
+                    txtPrecio.Focus();
+                    return;
+                }
+
+                Bebida bebida = new Bebida
+                {
+                    IdBebida = txtIDBebida.Text.Trim(),
+                    Nombre = txtNombre.Text.Trim(),
+                    Precio = precio
+                };
+
+                bool resultado = bebidaLN.Actualizar(bebida);
+
+                if (resultado)
+                {
+                    MessageBox.Show(
+                        "Bebida modificada correctamente.",
+                        "Modificar",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    CargarBebidas();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo modificar la bebida.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al modificar la bebida:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimpiarCampos()
+            {
+                    txtIDBebida.Clear();
+                    txtNombre.Clear();
+                    txtPrecio.Clear();
+
+                    txtIDBebida.Focus();
+             }
     }
-}
+    }

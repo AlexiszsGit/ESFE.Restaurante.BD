@@ -23,9 +23,9 @@ namespace ESFE.RestauranteBD.LN
             return bebidaDAL.Insertar(bebida);
         }
 
-        public List<Bebida> Buscar(string nombre)
+        public List<Bebida> Buscar(string busqueda)
         {
-            return bebidaDAL.Buscar(nombre);
+            return bebidaDAL.Buscar(busqueda);
         }
 
         public List<Bebida> BuscarPorNombre(string nombre)

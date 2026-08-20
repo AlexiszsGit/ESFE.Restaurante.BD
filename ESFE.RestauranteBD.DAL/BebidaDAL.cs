@@ -70,7 +70,7 @@ namespace ESFE.RestauranteBD.DAL
             return comando.ExecuteNonQuery() > 0;
         }
 
-        public List<Bebida> Buscar(string nombre)
+        public List<Bebida> Buscar(string busqueda)
         {
             List<Bebida> lista = new List<Bebida>();
 
@@ -82,7 +82,7 @@ namespace ESFE.RestauranteBD.DAL
 
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@busqueda", busqueda);
 
             conexion.Open();
 
@@ -119,7 +119,7 @@ namespace ESFE.RestauranteBD.DAL
 
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@busqueda", nombre);
 
             conexion.Open();
 

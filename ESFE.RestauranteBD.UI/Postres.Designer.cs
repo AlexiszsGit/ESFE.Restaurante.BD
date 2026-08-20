@@ -213,6 +213,12 @@
         private NumericUpDown nudPrecio;
         private ComboBox cmbTipoPostre;
         private CheckBox chkDisponible;
+
+        public FrmPostres(CheckBox chkDisponible)
+        {
+            this.chkDisponible = chkDisponible;
+        }
+
         private DataGridView dgvPostres;
         private Button button2;
         private Button btmModificar;

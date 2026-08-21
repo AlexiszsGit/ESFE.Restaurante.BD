@@ -229,6 +229,7 @@
             Controls.Add(label1);
             Name = "FrmBebida";
             Text = "Bebida";
+            Load += FrmBebida_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBebidas).EndInit();
             ResumeLayout(false);
             PerformLayout();

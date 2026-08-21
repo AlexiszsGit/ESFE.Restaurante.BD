@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using ESFE.RestauranteBD.EN;
 using ESFE.RestauranteBD.LN;
 
 namespace ESFE.RestauranteBD.UI
 {
-    public partial class Descuentos : Form
+    public partial class FrmDescuentos : Form
     {
         private readonly DescuentosLN descuentosLN;
 
-        public Descuentos()
+        // Guarda el ID original para poder modificarlo
+        private string idAnterior = "";
+
+        public FrmDescuentos()
         {
             InitializeComponent();
 
@@ -20,6 +24,17 @@ namespace ESFE.RestauranteBD.UI
 
             descuentosLN = new DescuentosLN();
 
+            // Eventos del buscador
+            txtBuscar.Enter += txtBuscar_Enter;
+            txtBuscar.Leave += txtBuscar_Leave;
+            txtBuscar.KeyDown += txtBuscar_KeyDown;
+
+            txtBuscar.Text = "Buscar descuentos";
+            txtBuscar.ForeColor = Color.Gray;
+        }
+
+        private void FrmDescuentos_Load(object sender, EventArgs e)
+        {
             CargarDescuentos();
         }
 
@@ -27,8 +42,7 @@ namespace ESFE.RestauranteBD.UI
         {
             try
             {
-                List<ESFE.RestauranteBD.EN.Descuentos> lista =
-                    descuentosLN.Buscar("");
+                List<Descuentos> lista = descuentosLN.Buscar("");
 
                 dgvDescuentos.DataSource = null;
                 dgvDescuentos.DataSource = lista;
@@ -63,7 +77,7 @@ namespace ESFE.RestauranteBD.UI
                 if (string.IsNullOrWhiteSpace(txtNombre.Text))
                 {
                     MessageBox.Show(
-                        "Ingrese el nombre o descripción del descuento.",
+                        "Ingrese el nombre del descuento.",
                         "Validación",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -84,26 +98,32 @@ namespace ESFE.RestauranteBD.UI
                     return;
                 }
 
-                ESFE.RestauranteBD.EN.Descuentos descuento =
-                    new ESFE.RestauranteBD.EN.Descuentos
-                    {
-                        IdDescuento = txtIdDescuento.Text.Trim(),
-                        Nombre = txtNombre.Text.Trim(),
-                        Porcentaje = numPorcentaje.Value
-                    };
+                Descuentos descuento = new Descuentos();
+
+                descuento.IdDescuento = txtIdDescuento.Text.Trim();
+                descuento.Nombre = txtNombre.Text.Trim();
+                descuento.Porcentaje = numPorcentaje.Value;
 
                 bool resultado = descuentosLN.Insertar(descuento);
 
                 if (resultado)
                 {
                     MessageBox.Show(
-                        "¡Descuento guardado correctamente!",
-                        "Guardar Descuento",
+                        "Descuento guardado correctamente.",
+                        "Guardar",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
                     CargarDescuentos();
                     LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No se pudo guardar el descuento.",
+                        "Guardar",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -120,21 +140,33 @@ namespace ESFE.RestauranteBD.UI
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIdDescuento.Text))
+                if (string.IsNullOrWhiteSpace(idAnterior))
                 {
                     MessageBox.Show(
-                        "Seleccione un descuento del DataGridView.",
-                        "Validación",
+                        "Seleccione un descuento de la tabla antes de modificar.",
+                        "Modificar",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
 
                     return;
                 }
 
+                if (string.IsNullOrWhiteSpace(txtIdDescuento.Text))
+                {
+                    MessageBox.Show(
+                        "Ingrese el ID del descuento.",
+                        "Validación",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    txtIdDescuento.Focus();
+                    return;
+                }
+
                 if (string.IsNullOrWhiteSpace(txtNombre.Text))
                 {
                     MessageBox.Show(
-                        "Ingrese el nombre o descripción del descuento.",
+                        "Ingrese el nombre del descuento.",
                         "Validación",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -155,21 +187,20 @@ namespace ESFE.RestauranteBD.UI
                     return;
                 }
 
-                ESFE.RestauranteBD.EN.Descuentos descuento =
-                    new ESFE.RestauranteBD.EN.Descuentos
-                    {
-                        IdDescuento = txtIdDescuento.Text.Trim(),
-                        Nombre = txtNombre.Text.Trim(),
-                        Porcentaje = numPorcentaje.Value
-                    };
+                Descuentos descuento = new Descuentos();
 
-                bool resultado = descuentosLN.Actualizar(descuento);
+                descuento.IdDescuento = txtIdDescuento.Text.Trim();
+                descuento.Nombre = txtNombre.Text.Trim();
+                descuento.Porcentaje = numPorcentaje.Value;
+
+                bool resultado =
+                    descuentosLN.Actualizar(descuento, idAnterior);
 
                 if (resultado)
                 {
                     MessageBox.Show(
-                        "¡Descuento actualizado correctamente!",
-                        "Actualizar Descuento",
+                        "Descuento modificado correctamente.",
+                        "Modificar",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
@@ -179,16 +210,16 @@ namespace ESFE.RestauranteBD.UI
                 else
                 {
                     MessageBox.Show(
-                        "No se pudo actualizar el descuento.",
-                        "Actualizar Descuento",
+                        "No se pudo modificar el descuento.",
+                        "Modificar",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error al actualizar el descuento:\n\n" + ex.Message,
+                    "Error al modificar el descuento:\n\n" + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -202,13 +233,15 @@ namespace ESFE.RestauranteBD.UI
                 if (string.IsNullOrWhiteSpace(txtIdDescuento.Text))
                 {
                     MessageBox.Show(
-                        "Seleccione un descuento.",
-                        "Validación",
+                        "Seleccione un descuento para eliminar.",
+                        "Eliminar",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
 
                     return;
                 }
+
+                string idEliminar = txtIdDescuento.Text.Trim();
 
                 DialogResult respuesta = MessageBox.Show(
                     "¿Está seguro de eliminar el descuento?",
@@ -219,27 +252,26 @@ namespace ESFE.RestauranteBD.UI
                 if (respuesta == DialogResult.Yes)
                 {
                     bool resultado =
-                        descuentosLN.Eliminar(
-                            txtIdDescuento.Text.Trim());
+                        descuentosLN.Eliminar(idEliminar);
 
                     if (resultado)
                     {
                         MessageBox.Show(
                             "Descuento eliminado correctamente.",
-                            "Eliminar Descuento",
+                            "Eliminar",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
 
-                        LimpiarCampos();
                         CargarDescuentos();
+                        LimpiarCampos();
                     }
                     else
                     {
                         MessageBox.Show(
                             "No se pudo eliminar el descuento.",
-                            "Eliminar Descuento",
+                            "Eliminar",
                             MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                            MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -262,7 +294,10 @@ namespace ESFE.RestauranteBD.UI
         {
             txtIdDescuento.Clear();
             txtNombre.Clear();
-            numPorcentaje.Value = 0;
+
+            numPorcentaje.Value = numPorcentaje.Minimum;
+
+            idAnterior = "";
 
             txtIdDescuento.Focus();
         }
@@ -271,8 +306,11 @@ namespace ESFE.RestauranteBD.UI
             object sender,
             DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
+                if (e.RowIndex < 0)
+                    return;
+
                 DataGridViewRow fila =
                     dgvDescuentos.Rows[e.RowIndex];
 
@@ -284,16 +322,21 @@ namespace ESFE.RestauranteBD.UI
 
                 if (fila.Cells["Porcentaje"].Value != null)
                 {
-                    decimal porcentaje =
+                    numPorcentaje.Value =
                         Convert.ToDecimal(
                             fila.Cells["Porcentaje"].Value);
-
-                    if (porcentaje >= numPorcentaje.Minimum &&
-                        porcentaje <= numPorcentaje.Maximum)
-                    {
-                        numPorcentaje.Value = porcentaje;
-                    }
                 }
+
+                // Guardamos el ID original
+                idAnterior = txtIdDescuento.Text.Trim();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al seleccionar el descuento:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -301,14 +344,23 @@ namespace ESFE.RestauranteBD.UI
         {
             try
             {
-                string nombre = txtNombre.Text.Trim();
+                string texto = txtBuscar.Text.Trim();
 
-                List<ESFE.RestauranteBD.EN.Descuentos> lista =
-                    descuentosLN.BuscarPorNombre(nombre);
+                if (texto == "Buscar descuentos")
+                {
+                    texto = "";
+                }
+
+                List<Descuentos> lista =
+                    descuentosLN.BuscarPorNombre(texto);
 
                 dgvDescuentos.DataSource = null;
                 dgvDescuentos.DataSource = lista;
                 dgvDescuentos.Refresh();
+
+                // Limpia lo escrito y vuelve a poner el placeholder
+                txtBuscar.Text = "Buscar descuentos";
+                txtBuscar.ForeColor = Color.Gray;
 
                 if (lista.Count == 0)
                 {
@@ -329,15 +381,35 @@ namespace ESFE.RestauranteBD.UI
             }
         }
 
-        private void numPorcentaje_ValueChanged(
-            object sender,
-            EventArgs e)
+        private void txtBuscar_Enter(object sender, EventArgs e)
         {
+            if (txtBuscar.Text == "Buscar descuentos")
+            {
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.Black;
+            }
         }
 
-        private void Descuentos_Load(object sender, EventArgs e)
+        private void txtBuscar_Leave(object sender, EventArgs e)
         {
-            CargarDescuentos();
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar descuentos";
+                txtBuscar.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtBuscar_KeyDown(
+            object sender,
+            KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBuscar_Click(sender, e);
+
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
         }
     }
 }

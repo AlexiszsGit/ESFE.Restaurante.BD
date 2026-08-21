@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 using ESFE.RestauranteBD.DAL;
 using ESFE.RestauranteBD.EN;
 
@@ -18,29 +13,38 @@ namespace ESFE.RestauranteBD.LN
             descuentosDAL = new DescuentosDAL();
         }
 
+
         public bool Insertar(Descuentos descuento)
         {
             return descuentosDAL.Insertar(descuento);
         }
 
-        public List<Descuentos> Buscar(string nombre)
+
+        public bool Actualizar(
+            Descuentos descuento,
+            string idAnterior)
         {
-            return descuentosDAL.Buscar(nombre);
+            return descuentosDAL.Actualizar(
+                descuento,
+                idAnterior);
         }
 
-        public List<Descuentos> BuscarPorNombre(string nombre)
-        {
-            return descuentosDAL.BuscarPorNombre(nombre);
-        }
-
-        public bool Actualizar(Descuentos descuento)
-        {
-            return descuentosDAL.Actualizar(descuento);
-        }
 
         public bool Eliminar(string idDescuento)
         {
             return descuentosDAL.Eliminar(idDescuento);
+        }
+
+
+        public List<Descuentos> Buscar(string texto)
+        {
+            return descuentosDAL.Buscar(texto);
+        }
+
+
+        public List<Descuentos> BuscarPorNombre(string nombre)
+        {
+            return descuentosDAL.BuscarPorNombre(nombre);
         }
     }
 }

@@ -56,7 +56,8 @@
             // 
             txtIdCategoria.Location = new Point(92, 266);
             txtIdCategoria.Name = "txtIdCategoria";
-            txtIdCategoria.Size = new Size(200, 39);
+            txtIdCategoria.PlaceholderText = "Agrega el ID de la categoria";
+            txtIdCategoria.Size = new Size(369, 39);
             txtIdCategoria.TabIndex = 1;
             txtIdCategoria.TextChanged += txtIdCategoria_TextChanged;
             // 
@@ -76,7 +77,8 @@
             // 
             txtNombre.Location = new Point(92, 415);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(200, 39);
+            txtNombre.PlaceholderText = "Agregar Nombre de Categoria";
+            txtNombre.Size = new Size(369, 39);
             txtNombre.TabIndex = 3;
             // 
             // dgvCategoria

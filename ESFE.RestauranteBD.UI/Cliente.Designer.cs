@@ -39,6 +39,9 @@
             btmModificar = new Button();
             btnGuardar = new Button();
             label5 = new Label();
+            btnLimpiar = new Button();
+            txtBuscar = new TextBox();
+            btnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -79,26 +82,30 @@
             // 
             txtIdCliente.Location = new Point(345, 268);
             txtIdCliente.Name = "txtIdCliente";
-            txtIdCliente.Size = new Size(200, 39);
+            txtIdCliente.PlaceholderText = "Agrega ID del Cliente";
+            txtIdCliente.Size = new Size(281, 39);
             txtIdCliente.TabIndex = 3;
             // 
             // txtNombre
             // 
             txtNombre.Location = new Point(345, 368);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(200, 39);
+            txtNombre.PlaceholderText = "Agrega Nombre del Cliente";
+            txtNombre.Size = new Size(281, 39);
             txtNombre.TabIndex = 4;
             // 
             // dgvClientes
             // 
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.BackgroundColor = Color.FromArgb(64, 64, 64);
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(631, 104);
+            dgvClientes.Location = new Point(671, 268);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowHeadersWidth = 82;
-            dgvClientes.Size = new Size(1490, 1020);
+            dgvClientes.Size = new Size(1527, 921);
             dgvClientes.TabIndex = 9;
-            dgvClientes.CellContentClick += dgvClientes_CellContentClick;
+            dgvClientes.CellClick += dgvClientes_CellClick;
+            dgvClientes.CellContentClick += dgvClientes_CellClick;
             // 
             // txtTelefono
             // 
@@ -115,12 +122,13 @@
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(225, 774);
+            btnEliminar.Location = new Point(71, 787);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(150, 46);
             btnEliminar.TabIndex = 14;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btmModificar
             // 
@@ -134,7 +142,7 @@
             btmModificar.TabIndex = 13;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
-            btmModificar.Click += btmModificar_Click;
+            btmModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
@@ -161,12 +169,53 @@
             label5.TabIndex = 15;
             label5.Text = "RESTAURANTEBD - CLIENTE";
             // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.Purple;
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(384, 767);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(150, 46);
+            btnLimpiar.TabIndex = 16;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(1175, 89);
+            txtBuscar.Multiline = true;
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar Cliente";
+            txtBuscar.Size = new Size(627, 48);
+            txtBuscar.TabIndex = 17;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.Green;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscar.ImageAlign = ContentAlignment.TopCenter;
+            btnBuscar.Location = new Point(1834, 89);
+            btnBuscar.Margin = new Padding(0);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(146, 48);
+            btnBuscar.TabIndex = 18;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
             // FrmCliente
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(2226, 1231);
+            Controls.Add(btnBuscar);
+            Controls.Add(txtBuscar);
+            Controls.Add(btnLimpiar);
             Controls.Add(label5);
             Controls.Add(btnEliminar);
             Controls.Add(btmModificar);
@@ -180,6 +229,7 @@
             Controls.Add(label1);
             Name = "FrmCliente";
             Text = "Cliente";
+            Load += FrmCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -198,5 +248,8 @@
         private Button btmModificar;
         private Button btnGuardar;
         private Label label5;
+        private Button btnLimpiar;
+        private TextBox txtBuscar;
+        private Button btnBuscar;
     }
 }

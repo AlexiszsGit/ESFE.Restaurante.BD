@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ESFE.RestauranteBD.EN
 {
@@ -9,6 +7,10 @@ namespace ESFE.RestauranteBD.EN
         public string IdDetalle { get; set; } = string.Empty;
 
         public string IdPedido { get; set; } = string.Empty;
+
+        public string IdProducto { get; set; } = string.Empty;
+
+        public string NombreProducto { get; set; } = string.Empty;
 
         public int Cantidad { get; set; }
     }

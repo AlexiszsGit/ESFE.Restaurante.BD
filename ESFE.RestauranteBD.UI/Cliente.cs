@@ -206,7 +206,6 @@ namespace ESFE.RestauranteBD.UI
                             MessageBoxIcon.Information);
 
                         LimpiarCampos();
-                        CargarClientes();
                     }
                     else
                     {

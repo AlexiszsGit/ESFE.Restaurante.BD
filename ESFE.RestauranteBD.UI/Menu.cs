@@ -129,6 +129,11 @@ namespace ESFE.RestauranteBD.UI
         private void groupBox1_Enter(object sender, EventArgs e) { }
         private void numPrecio_ValueChanged(object sender, EventArgs e) { }
         private void btnNuevo_Click_1(object sender, EventArgs e) { }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

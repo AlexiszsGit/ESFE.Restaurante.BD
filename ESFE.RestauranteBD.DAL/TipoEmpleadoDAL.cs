@@ -26,23 +26,23 @@ namespace ESFE.RestauranteBD.DAL;
             }
         }
 
-        public bool Actualizar(TipoEmpleado tipo)
+    public int Actualizar(TipoEmpleado tipo, string idViejo)
+    {
+        using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
         {
-            using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
-            {
-                using (SqlCommand comando = new SqlCommand("ActualizarTipoEmpleado", conexion))
-                {
-                    comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.AddWithValue("@id_tipo", tipo.IdTipo);
-                    comando.Parameters.AddWithValue("@nombre", tipo.Nombre);
+            SqlCommand comando = new SqlCommand("ActualizarTipoEmpleado", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
 
-                    conexion.Open();
-                    return comando.ExecuteNonQuery() > 0;
-                }
-            }
+            comando.Parameters.AddWithValue("@id_viejo", idViejo);
+            comando.Parameters.AddWithValue("@id_nuevo", tipo.IdTipo);
+            comando.Parameters.AddWithValue("@nombre", tipo.Nombre);
+
+            conexion.Open();
+            return comando.ExecuteNonQuery();
         }
+    }
 
-        public bool Eliminar(string idTipo)
+    public bool Eliminar(string idTipo)
         {
             using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
             {

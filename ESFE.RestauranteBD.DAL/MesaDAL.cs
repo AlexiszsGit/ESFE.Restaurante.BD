@@ -27,25 +27,32 @@ namespace ESFE.RestauranteBD.DAL
                     }
                 }
             }
-
-            public bool Actualizar(Mesa mesa)
+        public bool Actualizar(Mesa mesa)
+        {
+            using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
             {
-                using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
-                {
-                    using (SqlCommand comando = new SqlCommand("ActualizarMesa", conexion))
-                    {
-                        comando.CommandType = CommandType.StoredProcedure;
-                        comando.Parameters.AddWithValue("@id_mesa", mesa.IdMesa);
-                        comando.Parameters.AddWithValue("@capacidad", mesa.Capacidad);
-                        comando.Parameters.AddWithValue("@disponible", mesa.Disponible ?? (object)DBNull.Value);
+                // Abrimos conexión manualmente para asegurar
+                if (conexion.State != System.Data.ConnectionState.Open) conexion.Open();
 
-                        conexion.Open();
-                        return comando.ExecuteNonQuery() > 0;
-                    }
+                using (SqlCommand comando = new SqlCommand("ActualizarMesa", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@id_mesa", mesa.IdMesa.Trim());
+                    comando.Parameters.AddWithValue("@capacidad", mesa.Capacidad);
+                    // Si el estado es "Libre", mandamos "SI", si no, mandamos "NO"
+                    string disponible = (mesa.Disponible == "Libre" || mesa.Disponible == "SI") ? "SI" : "NO";
+                    comando.Parameters.AddWithValue("@disponible", disponible);
+
+                    int filas = comando.ExecuteNonQuery();
+
+                    // Debug: Si filas es 0, lanzamos un error para que el MessageBox del UI lo atrape
+                    if (filas == 0) throw new Exception("La consulta se ejecutó pero no encontró la mesa con ID: " + mesa.IdMesa);
+
+                    return filas > 0;
                 }
             }
-
-            public bool Eliminar(string idMesa)
+        }
+        public bool Eliminar(string idMesa)
             {
                 using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
                 {

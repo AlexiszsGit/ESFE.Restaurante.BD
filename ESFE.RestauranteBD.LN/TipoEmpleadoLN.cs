@@ -25,12 +25,12 @@
                 return tipoEmpleadoDAL.Buscar(idTipo);
             }
 
-            public bool Actualizar(TipoEmpleado tipoEmpleado)
-            {
-                return tipoEmpleadoDAL.Actualizar(tipoEmpleado);
-            }
+        public bool Actualizar(TipoEmpleado tipoEmpleado, string idViejo)
+        {
+            return tipoEmpleadoDAL.Actualizar(tipoEmpleado, idViejo) > 0;
+        }
 
-            public bool Eliminar(string idTipo)
+        public bool Eliminar(string idTipo)
             {
                 return tipoEmpleadoDAL.Eliminar(idTipo);
             }

@@ -116,10 +116,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(397, 81);
+            dataGridView1.Location = new Point(447, 72);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(429, 297);
+            dataGridView1.Size = new Size(521, 297);
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -136,6 +136,7 @@
             button2.TabIndex = 28;
             button2.Text = "Eliminar";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button3_Click;
             // 
             // btmModificar
             // 
@@ -150,6 +151,7 @@
             btmModificar.TabIndex = 27;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
+            btmModificar.Click += btnModificar_Click;
             // 
             // button3
             // 
@@ -164,7 +166,7 @@
             button3.TabIndex = 26;
             button3.Text = "Guardar";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button3.Click += button1_Click;
             // 
             // button1
             // 
@@ -177,14 +179,14 @@
             button1.TabIndex = 25;
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += btnLimpiar_Click;
             // 
             // FrmMesa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(850, 480);
+            ClientSize = new Size(992, 480);
             Controls.Add(button2);
             Controls.Add(btmModificar);
             Controls.Add(button3);

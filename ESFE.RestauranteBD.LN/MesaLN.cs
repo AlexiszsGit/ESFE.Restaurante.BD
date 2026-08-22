@@ -7,33 +7,33 @@ using ESFE.RestauranteBD.EN;
 namespace ESFE.RestauranteBD.BL
 {
     
-        public class PlatillosLN
+        public class MesaLN
         {
-            private readonly PlatillosDAL platillosDAL;
+            private readonly MesaDAL mesaDAL;
 
-            public PlatillosLN()
+            public MesaLN()
             {
-                platillosDAL = new PlatillosDAL();
+                mesaDAL = new MesaDAL();
             }
 
-            public bool Insertar(Platillo platillo)
+            public bool Insertar(Mesa mesa)
             {
-                return platillosDAL.Insertar(platillo);
+                return mesaDAL.Insertar(mesa);
             }
 
-            public bool Actualizar(Platillo platillo)
+            public bool Actualizar(Mesa mesa)
             {
-                return platillosDAL.Actualizar(platillo);
+                return mesaDAL.Actualizar(mesa);
             }
 
-            public bool Eliminar(string idProducto)
+            public bool Eliminar(string idMesa)
             {
-                return platillosDAL.Eliminar(idProducto);
+                return mesaDAL.Eliminar(idMesa);
             }
 
-            public List<Platillo> Buscar(string idProducto)
+            public List<Mesa> Buscar(string idMesa)
             {
-                return platillosDAL.Buscar(idProducto);
+                return mesaDAL.Buscar(idMesa);
             }
         }
 }

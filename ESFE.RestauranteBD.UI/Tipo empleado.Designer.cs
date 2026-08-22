@@ -30,14 +30,14 @@
         {
             lblTitulo = new Label();
             lblNombre = new Label();
-            lblDescripcion = new Label();
+            lblIdTipo = new Label();
             txtNombre = new TextBox();
             dataGridView1 = new DataGridView();
-            comboBox1 = new ComboBox();
             button2 = new Button();
             btmModificar = new Button();
             button3 = new Button();
             button1 = new Button();
+            txtIdTipo = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -52,7 +52,6 @@
             lblTitulo.Size = new Size(320, 24);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "GESTION DE TIPOS DE EMPLEADO";
-            lblTitulo.Click += lblTitulo_Click;
             // 
             // lblNombre
             // 
@@ -65,16 +64,16 @@
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre:";
             // 
-            // lblDescripcion
+            // lblIdTipo
             // 
-            lblDescripcion.AutoSize = true;
-            lblDescripcion.BackColor = SystemColors.ActiveCaptionText;
-            lblDescripcion.ForeColor = Color.White;
-            lblDescripcion.Location = new Point(166, 215);
-            lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(90, 20);
-            lblDescripcion.TabIndex = 2;
-            lblDescripcion.Text = "Descripcion:";
+            lblIdTipo.AutoSize = true;
+            lblIdTipo.BackColor = SystemColors.ActiveCaptionText;
+            lblIdTipo.ForeColor = Color.White;
+            lblIdTipo.Location = new Point(166, 215);
+            lblIdTipo.Name = "lblIdTipo";
+            lblIdTipo.Size = new Size(56, 20);
+            lblIdTipo.TabIndex = 2;
+            lblIdTipo.Text = "Id Tipo";
             // 
             // txtNombre
             // 
@@ -86,20 +85,12 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(551, 45);
+            dataGridView1.Location = new Point(552, 49);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(578, 439);
             dataGridView1.TabIndex = 9;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(307, 212);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 10;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // button2
             // 
@@ -114,6 +105,7 @@
             button2.TabIndex = 24;
             button2.Text = "Eliminar";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += btnEliminar_Click;
             // 
             // btmModificar
             // 
@@ -128,6 +120,7 @@
             btmModificar.TabIndex = 23;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
+            btmModificar.Click += btnModificar_Click;
             // 
             // button3
             // 
@@ -142,6 +135,7 @@
             button3.TabIndex = 22;
             button3.Text = "Guardar";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += btnGuardar_Click;
             // 
             // button1
             // 
@@ -154,6 +148,14 @@
             button1.TabIndex = 21;
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += btnLimpiar_Click;
+            // 
+            // txtIdTipo
+            // 
+            txtIdTipo.Location = new Point(319, 208);
+            txtIdTipo.Name = "txtIdTipo";
+            txtIdTipo.Size = new Size(125, 27);
+            txtIdTipo.TabIndex = 25;
             // 
             // FrmTipoEmpleado
             // 
@@ -161,18 +163,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(1184, 619);
+            Controls.Add(txtIdTipo);
             Controls.Add(button2);
             Controls.Add(btmModificar);
             Controls.Add(button3);
             Controls.Add(button1);
-            Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Controls.Add(txtNombre);
-            Controls.Add(lblDescripcion);
+            Controls.Add(lblIdTipo);
             Controls.Add(lblNombre);
             Controls.Add(lblTitulo);
             Name = "FrmTipoEmpleado";
             Text = "Tipo_empleado";
+            Load += FrmTipoEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -182,13 +185,13 @@
 
         private Label lblTitulo;
         private Label lblNombre;
-        private Label lblDescripcion;
+        private Label lblIdTipo;
         private TextBox txtNombre;
         private DataGridView dataGridView1;
-        private ComboBox comboBox1;
         private Button button2;
         private Button btmModificar;
         private Button button3;
         private Button button1;
+        private TextBox txtIdTipo;
     }
 }

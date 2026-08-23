@@ -1,38 +1,28 @@
 ﻿using ESFE.RestauranteBD.EN;
-using ESFE.RestauranteBD.DAL;   
+using ESFE.RestauranteBD.DAL;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ESFE.RestauranteBD.LN
 {
-    public class MetodoPago
+    public class MetodoPagoLN
     {
-        private readonly MetodoPago metodoDePagoDAL;
+        private MetodoPago metodoPagoDAL = new MetodoPago();
 
-        public MetodoPago()
+        public List<MetodoDePago> Buscar(MetodoDePago pMetodo)
         {
-           metodoDePagoDAL = new MetodoPago();
+            return metodoPagoDAL.Buscar(pMetodo);
         }
 
-        public bool Insertar(MetodoDePago metodo)
+        public int Agregar(MetodoDePago pMetodo)
         {
-            return metodoDePagoDAL.Insertar(metodo);
+            return metodoPagoDAL.Agregar(pMetodo);
         }
 
-        public bool Actualizar(MetodoDePago metodo)
+        public int Eliminar(string pIdMetodo)
         {
-            return metodoDePagoDAL.Actualizar(metodo);
-        }
-
-        public bool Eliminar(string idMetodoDePago)
-        {
-            return metodoDePagoDAL.Eliminar(idMetodoDePago);
-        }
-
-        public List<MetodoDePago> Buscar(string nombre)
-        {
-            return metodoDePagoDAL.Buscar(nombre);
+            return metodoPagoDAL.Eliminar(pIdMetodo);
         }
     }
 }

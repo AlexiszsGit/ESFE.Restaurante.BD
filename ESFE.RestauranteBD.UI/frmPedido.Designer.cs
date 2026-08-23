@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class frmPedido
+    partial class FrmPedido
     {
         /// <summary>
         /// Required designer variable.
@@ -29,48 +29,42 @@
         private void InitializeComponent()
         {
             grpDatos = new GroupBox();
+            txtIdCliente = new TextBox();
             cboEstado = new ComboBox();
-            nudTotal = new NumericUpDown();
             dtpFecha = new DateTimePicker();
             cboMesa = new ComboBox();
             cboEmpleado = new ComboBox();
-            cboCliente = new ComboBox();
-            txtId = new TextBox();
+            txtIdPedido = new TextBox();
             lblEstado = new Label();
-            lblTotal = new Label();
             lblFecha = new Label();
-            lblMesa = new Label();
-            lblEmpleado = new Label();
-            lblCliente = new Label();
-            lblId = new Label();
-            dataGridView1 = new DataGridView();
+            lblIdMesa = new Label();
+            lblIdEmpleado = new Label();
+            lblIdCliente = new Label();
+            lblIdPedido = new Label();
+            dgvPedido = new DataGridView();
             label1 = new Label();
             btnLimpiar = new Button();
             btnEliminar = new Button();
-            btnActualizar = new Button();
             btnAgregar = new Button();
-            btnNuevo = new Button();
+            btnBuscar = new Button();
             grpDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudTotal).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedido).BeginInit();
             SuspendLayout();
             // 
             // grpDatos
             // 
+            grpDatos.Controls.Add(txtIdCliente);
             grpDatos.Controls.Add(cboEstado);
-            grpDatos.Controls.Add(nudTotal);
             grpDatos.Controls.Add(dtpFecha);
             grpDatos.Controls.Add(cboMesa);
             grpDatos.Controls.Add(cboEmpleado);
-            grpDatos.Controls.Add(cboCliente);
-            grpDatos.Controls.Add(txtId);
+            grpDatos.Controls.Add(txtIdPedido);
             grpDatos.Controls.Add(lblEstado);
-            grpDatos.Controls.Add(lblTotal);
             grpDatos.Controls.Add(lblFecha);
-            grpDatos.Controls.Add(lblMesa);
-            grpDatos.Controls.Add(lblEmpleado);
-            grpDatos.Controls.Add(lblCliente);
-            grpDatos.Controls.Add(lblId);
+            grpDatos.Controls.Add(lblIdMesa);
+            grpDatos.Controls.Add(lblIdEmpleado);
+            grpDatos.Controls.Add(lblIdCliente);
+            grpDatos.Controls.Add(lblIdPedido);
             grpDatos.Location = new Point(12, 81);
             grpDatos.Name = "grpDatos";
             grpDatos.Size = new Size(776, 215);
@@ -78,22 +72,21 @@
             grpDatos.TabStop = false;
             grpDatos.Text = "Datos ";
             // 
+            // txtIdCliente
+            // 
+            txtIdCliente.Location = new Point(112, 68);
+            txtIdCliente.Name = "txtIdCliente";
+            txtIdCliente.Size = new Size(100, 23);
+            txtIdCliente.TabIndex = 14;
+            // 
             // cboEstado
             // 
             cboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             cboEstado.FormattingEnabled = true;
-            cboEstado.Location = new Point(566, 141);
+            cboEstado.Location = new Point(560, 87);
             cboEstado.Name = "cboEstado";
             cboEstado.Size = new Size(121, 23);
             cboEstado.TabIndex = 13;
-            // 
-            // nudTotal
-            // 
-            nudTotal.Location = new Point(580, 98);
-            nudTotal.Name = "nudTotal";
-            nudTotal.ReadOnly = true;
-            nudTotal.Size = new Size(120, 23);
-            nudTotal.TabIndex = 12;
             // 
             // dtpFecha
             // 
@@ -121,93 +114,74 @@
             cboEmpleado.Size = new Size(121, 23);
             cboEmpleado.TabIndex = 9;
             // 
-            // cboCliente
+            // txtIdPedido
             // 
-            cboCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboCliente.FormattingEnabled = true;
-            cboCliente.Location = new Point(102, 68);
-            cboCliente.Name = "cboCliente";
-            cboCliente.Size = new Size(121, 23);
-            cboCliente.TabIndex = 8;
-            // 
-            // txtId
-            // 
-            txtId.Location = new Point(112, 33);
-            txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(100, 23);
-            txtId.TabIndex = 7;
+            txtIdPedido.Location = new Point(112, 33);
+            txtIdPedido.Name = "txtIdPedido";
+            txtIdPedido.Size = new Size(100, 23);
+            txtIdPedido.TabIndex = 7;
             // 
             // lblEstado
             // 
             lblEstado.AutoSize = true;
-            lblEstado.Location = new Point(495, 146);
+            lblEstado.Location = new Point(495, 95);
             lblEstado.Name = "lblEstado";
             lblEstado.Size = new Size(45, 15);
             lblEstado.TabIndex = 6;
             lblEstado.Text = "Estado ";
-            // 
-            // lblTotal
-            // 
-            lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(495, 93);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(33, 15);
-            lblTotal.TabIndex = 5;
-            lblTotal.Text = "Total";
             // 
             // lblFecha
             // 
             lblFecha.AutoSize = true;
             lblFecha.Location = new Point(495, 36);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(38, 15);
+            lblFecha.Size = new Size(41, 15);
             lblFecha.TabIndex = 4;
-            lblFecha.Text = "Fecha";
+            lblFecha.Text = "Fecha:";
             // 
-            // lblMesa
+            // lblIdMesa
             // 
-            lblMesa.AutoSize = true;
-            lblMesa.Location = new Point(19, 146);
-            lblMesa.Name = "lblMesa";
-            lblMesa.Size = new Size(38, 15);
-            lblMesa.TabIndex = 3;
-            lblMesa.Text = "Mesa ";
+            lblIdMesa.AutoSize = true;
+            lblIdMesa.Location = new Point(19, 146);
+            lblIdMesa.Name = "lblIdMesa";
+            lblIdMesa.Size = new Size(38, 15);
+            lblIdMesa.TabIndex = 3;
+            lblIdMesa.Text = "Mesa:";
             // 
-            // lblEmpleado
+            // lblIdEmpleado
             // 
-            lblEmpleado.AutoSize = true;
-            lblEmpleado.Location = new Point(19, 105);
-            lblEmpleado.Name = "lblEmpleado";
-            lblEmpleado.Size = new Size(60, 15);
-            lblEmpleado.TabIndex = 2;
-            lblEmpleado.Text = "Empleado";
+            lblIdEmpleado.AutoSize = true;
+            lblIdEmpleado.Location = new Point(19, 105);
+            lblIdEmpleado.Name = "lblIdEmpleado";
+            lblIdEmpleado.Size = new Size(63, 15);
+            lblIdEmpleado.TabIndex = 2;
+            lblIdEmpleado.Text = "Empleado:";
             // 
-            // lblCliente
+            // lblIdCliente
             // 
-            lblCliente.AutoSize = true;
-            lblCliente.Location = new Point(19, 68);
-            lblCliente.Name = "lblCliente";
-            lblCliente.Size = new Size(44, 15);
-            lblCliente.TabIndex = 1;
-            lblCliente.Text = "Cliente";
+            lblIdCliente.AutoSize = true;
+            lblIdCliente.Location = new Point(19, 68);
+            lblIdCliente.Name = "lblIdCliente";
+            lblIdCliente.Size = new Size(47, 15);
+            lblIdCliente.TabIndex = 1;
+            lblIdCliente.Text = "Cliente:";
             // 
-            // lblId
+            // lblIdPedido
             // 
-            lblId.AutoSize = true;
-            lblId.Location = new Point(19, 36);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(17, 15);
-            lblId.TabIndex = 0;
-            lblId.Text = "Id";
+            lblIdPedido.AutoSize = true;
+            lblIdPedido.Location = new Point(19, 36);
+            lblIdPedido.Name = "lblIdPedido";
+            lblIdPedido.Size = new Size(47, 15);
+            lblIdPedido.TabIndex = 0;
+            lblIdPedido.Text = "Pedido:";
             // 
-            // dataGridView1
+            // dgvPedido
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(31, 323);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(741, 115);
-            dataGridView1.TabIndex = 1;
+            dgvPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPedido.Location = new Point(31, 323);
+            dgvPedido.Name = "dgvPedido";
+            dgvPedido.Size = new Size(741, 115);
+            dgvPedido.TabIndex = 1;
             // 
             // label1
             // 
@@ -226,6 +200,7 @@
             btnLimpiar.TabIndex = 16;
             btnLimpiar.Text = "Limpiar ";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnEliminar
             // 
@@ -235,54 +210,46 @@
             btnEliminar.TabIndex = 15;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnActualizar
-            // 
-            btnActualizar.Location = new Point(335, 285);
-            btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(75, 23);
-            btnActualizar.TabIndex = 14;
-            btnActualizar.Text = "Actualizar ";
-            btnActualizar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(202, 284);
+            btnAgregar.Location = new Point(312, 284);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 13;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
-            // btnNuevo
+            // btnBuscar
             // 
-            btnNuevo.Location = new Point(52, 284);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
-            btnNuevo.TabIndex = 12;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
+            btnBuscar.Location = new Point(114, 285);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 12;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
-            // frmPedido
+            // FrmPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
-            Controls.Add(btnActualizar);
             Controls.Add(btnAgregar);
-            Controls.Add(btnNuevo);
+            Controls.Add(btnBuscar);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPedido);
             Controls.Add(grpDatos);
-            Name = "frmPedido";
+            Name = "FrmPedido";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pedidos";
             grpDatos.ResumeLayout(false);
             grpDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudTotal).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedido).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,25 +258,24 @@
 
         private GroupBox grpDatos;
         private Label lblEstado;
-        private Label lblTotal;
         private Label lblFecha;
-        private Label lblMesa;
-        private Label lblEmpleado;
-        private Label lblCliente;
-        private Label lblId;
-        private ComboBox cboCliente;
+        private Label lblIdMesa;
+        private Label lblIdEmpleado;
+        private Label lblIdCliente;
+        private Label lblIdPedido;
         private TextBox txtId;
         private ComboBox cboEstado;
-        private NumericUpDown nudTotal;
         private DateTimePicker dtpFecha;
         private ComboBox cboMesa;
         private ComboBox cboEmpleado;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPedido;
         private Label label1;
         private Button btnLimpiar;
         private Button btnEliminar;
         private Button btnActualizar;
         private Button btnAgregar;
-        private Button btnNuevo;
+        private Button btnBuscar;
+        private TextBox txtIdCliente;
+        private TextBox txtIdPedido;
     }
 }

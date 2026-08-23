@@ -9,7 +9,7 @@ namespace ESFE.RestauranteBD.DAL
 {
     public class MenuDAL
     {
-        public bool Insertar(Menu menu)
+        public bool Insertar(MenuEN menu)
         {
             using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
             using SqlCommand comando = new SqlCommand("InsertarMenu", conexion);
@@ -28,7 +28,7 @@ namespace ESFE.RestauranteBD.DAL
             return true;
         }
 
-        public bool Actualizar(Menu menu)
+        public bool Actualizar(MenuEN menu)
         {
             using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
             using SqlCommand comando = new SqlCommand("ActualizarMenu", conexion);
@@ -47,26 +47,36 @@ namespace ESFE.RestauranteBD.DAL
             return true;
         }
 
-        public bool Eliminar(string idPedido)
+        public bool Eliminar(MenuEN pMenu)
         {
-            using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
-            using SqlCommand comando = new SqlCommand("EliminarMenu", conexion);
+            int resultado = 0;
+            using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+            {
+                using (SqlCommand comando = new SqlCommand("dbo.EliminarMenu", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
 
-            comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@IdPostre", (object)pMenu.IdPostre ?? DBNull.Value);
+                    comando.Parameters.AddWithValue("@IdBebida", (object)pMenu.IdBebida ?? DBNull.Value);
+                    comando.Parameters.AddWithValue("@IdProducto", (object)pMenu.IdProducto ?? DBNull.Value);
+                    comando.Parameters.AddWithValue("@IdCategoria", (object)pMenu.IdCategoria ?? DBNull.Value);
+                    comando.Parameters.AddWithValue("@IdPedido", pMenu.IdPedido?.Trim() ?? string.Empty);
 
-            comando.Parameters.AddWithValue("@IdPedido", idPedido);
-
-            conexion.Open();
-
-            return comando.ExecuteNonQuery() > 0;
+                    conexion.Open();
+                    resultado = comando.ExecuteNonQuery();
+                }
+            }
+            return resultado > 0;
         }
 
-        public List<Menu> Buscar(string idPedido)
+
+        public List<MenuEN> Buscar(string idPedido)
         {
-            List<Menu> lista = new List<Menu>();
+            List<MenuEN> lista = new List<MenuEN>();
 
             using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
-            using SqlCommand comando = new SqlCommand("BuscarMenu", conexion);
+            using SqlCommand comando = new SqlCommand("dbo.BuscarMenu", conexion);
+            //using SqlCommand comando = new SqlCommand("BuscarMenu", conexion);
 
             comando.CommandType = CommandType.StoredProcedure;
 
@@ -78,13 +88,14 @@ namespace ESFE.RestauranteBD.DAL
 
             while (reader.Read())
             {
-                Menu menu = new Menu();
+                MenuEN menu = new MenuEN();
 
-                menu.IdPostre = reader["IdPostre"].ToString();
-                menu.IdBebida = reader["IdBebida"]?.ToString();
-                menu.IdProducto = reader["IdProducto"]?.ToString();
-                menu.IdCategoria = reader["IdCategoria"]?.ToString();
-                menu.IdPedido = reader["IdPedido"]?.ToString();
+                // Validamos usando 'id_postre' en AMBOS lados
+                menu.IdPostre = reader["id_postre"] != DBNull.Value ? reader["id_postre"].ToString() : null;
+                menu.IdBebida = reader["id_bebida"] != DBNull.Value ? reader["id_bebida"].ToString() : null;
+                menu.IdProducto = reader["id_producto"] != DBNull.Value ? reader["id_producto"].ToString() : null;
+                menu.IdCategoria = reader["id_categoria"] != DBNull.Value ? reader["id_categoria"].ToString() : null;
+                menu.IdPedido = reader["id_pedido"] != DBNull.Value ? reader["id_pedido"].ToString() : null;
 
                 lista.Add(menu);
             }

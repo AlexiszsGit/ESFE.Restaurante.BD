@@ -9,77 +9,63 @@ namespace ESFE.RestauranteBD.DAL
 {
     public class MetodoPago
     {
-        public bool Insertar(MetodoDePago metodo)
-        {
-            using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
-            using SqlCommand comando = new SqlCommand("InsertarMetodoDePago", conexion);
-
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@Nombre", metodo.Nombre);
-
-            conexion.Open();
-            comando.ExecuteNonQuery();
-
-            return true;
-        }
-
-        public bool Actualizar(MetodoDePago metodo)
-        {
-            using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
-            using SqlCommand comando = new SqlCommand("ActualizarMetodoDePago", conexion);
-
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@IdMetodoDePago", metodo.IdMetodoDePago);
-            comando.Parameters.AddWithValue("@Nombre", metodo.Nombre);
-
-            conexion.Open();
-            comando.ExecuteNonQuery();
-
-            return true;
-        }
-
-        public bool Eliminar(string idMetodoDePago)
-        {
-            using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
-            using SqlCommand comando = new SqlCommand("EliminarMetodoDePago", conexion);
-
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@IdMetodoDePago", idMetodoDePago);
-
-            conexion.Open();
-
-            return comando.ExecuteNonQuery() > 0;
-        }
-
-        public List<MetodoDePago> Buscar(string nombre)
+        public List<MetodoDePago> Buscar(MetodoDePago pMetodo)
         {
             List<MetodoDePago> lista = new List<MetodoDePago>();
-
-            using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
-            using SqlCommand comando = new SqlCommand("BuscarMetodoDePagoNombre", conexion);
-
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@Nombre", nombre);
-
-            conexion.Open();
-
-            using SqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
             {
-                MetodoDePago metodo = new MetodoDePago();
+                using (SqlCommand comando = new SqlCommand("dbo.BuscarMetodoPago", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@IdMetodo", string.IsNullOrWhiteSpace(pMetodo.IdMetodoDePago) ? (object)DBNull.Value : pMetodo.IdMetodoDePago.Trim());
+                    comando.Parameters.AddWithValue("@Nombre", string.IsNullOrWhiteSpace(pMetodo.Nombre) ? (object)DBNull.Value : pMetodo.Nombre.Trim());
 
-                metodo.IdMetodoDePago = reader["IdMetodoDePago"]?.ToString();
-                metodo.Nombre = reader["Nombre"]?.ToString();
-
-                lista.Add(metodo);
+                    conexion.Open();
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new MetodoDePago
+                            {
+                                IdMetodoDePago = reader["IdMetodo"].ToString(),
+                                Nombre = reader["Nombre"].ToString()
+                            });
+                        }
+                    }
+                }
             }
-
             return lista;
+        }
+
+        public int Agregar(MetodoDePago pMetodo)
+        {
+            using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+            {
+                using (SqlCommand comando = new SqlCommand("dbo.AgregarMetodoPago", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@IdMetodo", pMetodo.IdMetodoDePago.Trim());
+                    comando.Parameters.AddWithValue("@Nombre", pMetodo.Nombre.Trim());
+
+                    conexion.Open();
+                    return comando.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public int Eliminar(string pIdMetodo)
+        {
+            using (SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion())
+            {
+                using (SqlCommand comando = new SqlCommand("dbo.EliminarMetodoPago", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@IdMetodo", pIdMetodo.Trim());
+
+                    conexion.Open();
+                    return comando.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

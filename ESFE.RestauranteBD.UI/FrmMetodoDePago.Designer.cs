@@ -28,49 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnNuevo = new Button();
+            btnBuscar = new Button();
             btnAgregar = new Button();
-            btnActualizar = new Button();
             btnEliminar = new Button();
             btnLimpiar = new Button();
             dgvMetodosDePago = new DataGridView();
             lblTitulo = new Label();
             grp = new GroupBox();
-            lblNombe = new Label();
-            lblDescripcion = new Label();
-            txbNombre = new TextBox();
             txtDescricion = new TextBox();
+            txbNombre = new TextBox();
+            lblIdMetodo = new Label();
+            lblNombe = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMetodosDePago).BeginInit();
             grp.SuspendLayout();
             SuspendLayout();
             // 
-            // btnNuevo
+            // btnBuscar
             // 
-            btnNuevo.Location = new Point(94, 259);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
-            btnNuevo.TabIndex = 4;
-            btnNuevo.Text = "nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
+            btnBuscar.Location = new Point(94, 259);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 4;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(215, 259);
+            btnAgregar.Location = new Point(253, 259);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar ";
             btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // btnActualizar
-            // 
-            btnActualizar.Location = new Point(334, 259);
-            btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(75, 23);
-            btnActualizar.TabIndex = 6;
-            btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = true;
-            btnActualizar.Click += button1_Click;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnEliminar
             // 
@@ -80,6 +71,7 @@
             btnEliminar.TabIndex = 7;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnLimpiar
             // 
@@ -89,6 +81,7 @@
             btnLimpiar.TabIndex = 8;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // dgvMetodosDePago
             // 
@@ -116,7 +109,7 @@
             // 
             grp.Controls.Add(txtDescricion);
             grp.Controls.Add(txbNombre);
-            grp.Controls.Add(lblDescripcion);
+            grp.Controls.Add(lblIdMetodo);
             grp.Controls.Add(lblNombe);
             grp.Location = new Point(12, 68);
             grp.Name = "grp";
@@ -124,6 +117,30 @@
             grp.TabIndex = 11;
             grp.TabStop = false;
             grp.Text = "metodo de pagos ";
+            grp.Enter += grp_Enter;
+            // 
+            // txtDescricion
+            // 
+            txtDescricion.Location = new Point(134, 99);
+            txtDescricion.Name = "txtDescricion";
+            txtDescricion.Size = new Size(100, 23);
+            txtDescricion.TabIndex = 3;
+            // 
+            // txbNombre
+            // 
+            txbNombre.Location = new Point(134, 49);
+            txbNombre.Name = "txbNombre";
+            txbNombre.Size = new Size(100, 23);
+            txbNombre.TabIndex = 2;
+            // 
+            // lblIdMetodo
+            // 
+            lblIdMetodo.AutoSize = true;
+            lblIdMetodo.Location = new Point(23, 99);
+            lblIdMetodo.Name = "lblIdMetodo";
+            lblIdMetodo.Size = new Size(98, 15);
+            lblIdMetodo.TabIndex = 1;
+            lblIdMetodo.Text = "Metodo de pago:";
             // 
             // lblNombe
             // 
@@ -133,29 +150,6 @@
             lblNombe.Size = new Size(54, 15);
             lblNombe.TabIndex = 0;
             lblNombe.Text = "Nombre ";
-            // 
-            // lblDescripcion
-            // 
-            lblDescripcion.AutoSize = true;
-            lblDescripcion.Location = new Point(23, 99);
-            lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(72, 15);
-            lblDescripcion.TabIndex = 1;
-            lblDescripcion.Text = "Descripcion ";
-            // 
-            // txbNombre
-            // 
-            txbNombre.Location = new Point(134, 49);
-            txbNombre.Name = "txbNombre";
-            txbNombre.Size = new Size(100, 23);
-            txbNombre.TabIndex = 2;
-            // 
-            // txtDescricion
-            // 
-            txtDescricion.Location = new Point(134, 99);
-            txtDescricion.Name = "txtDescricion";
-            txtDescricion.Size = new Size(100, 23);
-            txtDescricion.TabIndex = 3;
             // 
             // frmMetodoDePago
             // 
@@ -167,9 +161,8 @@
             Controls.Add(dgvMetodosDePago);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
-            Controls.Add(btnActualizar);
             Controls.Add(btnAgregar);
-            Controls.Add(btnNuevo);
+            Controls.Add(btnBuscar);
             Name = "frmMetodoDePago";
             Text = "Mantenimiento de Métodos de Pago";
             ((System.ComponentModel.ISupportInitialize)dgvMetodosDePago).EndInit();
@@ -180,9 +173,8 @@
         }
 
         #endregion
-        private Button btnNuevo;
+        private Button btnBuscar;
         private Button btnAgregar;
-        private Button btnActualizar;
         private Button btnEliminar;
         //private Button button1;
         private Button btnLimpiar;
@@ -191,7 +183,7 @@
         private GroupBox grp;
         //private Label label4;
         //private Label label3;
-        private Label lblDescripcion;
+        private Label lblIdMetodo;
         private Label lblNombe;
         private TextBox txtDescricion;
         private TextBox txbNombre;

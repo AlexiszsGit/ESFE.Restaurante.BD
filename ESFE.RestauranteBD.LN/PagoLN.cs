@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ESFE.RestauranteBD.LN
 {
-    internal class PagoLN
+    public class PagoLN
     {
         private readonly PagoDAL pagoDAL;
 
@@ -15,9 +15,9 @@ namespace ESFE.RestauranteBD.LN
             pagoDAL = new PagoDAL();
         }
 
-        public bool Insertar(Pago pago)
+        public int Agregar(Pago pPago)
         {
-            return pagoDAL.Insertar(pago);
+            return pagoDAL.Agregar(pPago);
         }
 
         public bool Actualizar(Pago pago)
@@ -25,14 +25,13 @@ namespace ESFE.RestauranteBD.LN
             return pagoDAL.Actualizar(pago);
         }
 
-        public bool Eliminar(string idPago)
+        public int Eliminar(string pIdPago)
         {
-            return pagoDAL.Eliminar(idPago);
+            return pagoDAL.Eliminar(pIdPago);
         }
-
-        public List<Pago> Buscar(string idPago)
+        public List<Pago> Buscar(Pago pPago)
         {
-            return pagoDAL.Buscar(idPago);
+            return pagoDAL.Buscar(pPago);
         }
     }
 }

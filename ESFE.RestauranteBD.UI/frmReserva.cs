@@ -14,5 +14,15 @@ namespace ESFE.RestauranteBD.UI
         {
             InitializeComponent();
         }
+
+        private void frmReserva_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -15,22 +15,23 @@ namespace ESFE.RestauranteBD.LN
             menuDAL = new MenuDAL();
         }
 
-        public bool Insertar(Menu menu)
+        public bool Insertar(MenuEN menu)
         {
             return menuDAL.Insertar(menu);
         }
 
-        public bool Actualizar(Menu menu)
+        public bool Actualizar(MenuEN menu)
         {
             return menuDAL.Actualizar(menu);
         }
 
-        public bool Eliminar(string idPedido)
+        public bool Eliminar(MenuEN pMenu)
         {
-            return menuDAL.Eliminar(idPedido);
+            return menuDAL.Eliminar(pMenu);
         }
+        
 
-        public List<Menu> Buscar(string idPedido)
+        public List<MenuEN> Buscar(string idPedido)
         {
             return menuDAL.Buscar(idPedido);
         }

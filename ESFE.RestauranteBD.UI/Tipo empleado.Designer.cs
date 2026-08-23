@@ -28,152 +28,174 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTitulo = new Label();
+            lblTitulo1 = new Label();
             lblNombre = new Label();
-            lblDescripcion = new Label();
+            lblIdTipo = new Label();
             txtNombre = new TextBox();
-            dataGridView1 = new DataGridView();
-            comboBox1 = new ComboBox();
-            button2 = new Button();
-            btmModificar = new Button();
-            button3 = new Button();
-            button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvTipoEmpleado = new DataGridView();
+            btnEliminar = new Button();
+            btnModificar = new Button();
+            btnGuardar = new Button();
+            btnLimpiar = new Button();
+            txtIdTipo = new TextBox();
+            lblTitulo1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvTipoEmpleado).BeginInit();
             SuspendLayout();
             // 
-            // lblTitulo
+            // lblTitulo1
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.Black;
-            lblTitulo.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.Gold;
-            lblTitulo.Location = new Point(138, 22);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(320, 24);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "GESTION DE TIPOS DE EMPLEADO";
-            lblTitulo.Click += lblTitulo_Click;
+            lblTitulo1.AutoSize = true;
+            lblTitulo1.BackColor = Color.Black;
+            lblTitulo1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo1.ForeColor = Color.Gold;
+            lblTitulo1.Location = new Point(12, 59);
+            lblTitulo1.Margin = new Padding(5, 0, 5, 0);
+            lblTitulo1.Name = "lblTitulo1";
+            lblTitulo1.Size = new Size(557, 37);
+            lblTitulo1.TabIndex = 0;
+            lblTitulo1 .Text = "GESTION DE TIPOS DE EMPLEADO";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
             lblNombre.BackColor = SystemColors.ActiveCaptionText;
             lblNombre.ForeColor = Color.White;
-            lblNombre.Location = new Point(166, 133);
+            lblNombre.Location = new Point(270, 213);
+            lblNombre.Margin = new Padding(5, 0, 5, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(67, 20);
+            lblNombre.Size = new Size(107, 32);
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre:";
             // 
-            // lblDescripcion
+            // lblIdTipo
             // 
-            lblDescripcion.AutoSize = true;
-            lblDescripcion.BackColor = SystemColors.ActiveCaptionText;
-            lblDescripcion.ForeColor = Color.White;
-            lblDescripcion.Location = new Point(166, 215);
-            lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(90, 20);
-            lblDescripcion.TabIndex = 2;
-            lblDescripcion.Text = "Descripcion:";
+            lblIdTipo.AutoSize = true;
+            lblIdTipo.BackColor = SystemColors.ActiveCaptionText;
+            lblIdTipo.ForeColor = Color.White;
+            lblIdTipo.Location = new Point(270, 344);
+            lblIdTipo.Margin = new Padding(5, 0, 5, 0);
+            lblIdTipo.Name = "lblIdTipo";
+            lblIdTipo.Size = new Size(88, 32);
+            lblIdTipo.TabIndex = 2;
+            lblIdTipo.Text = "Id Tipo";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(319, 126);
+            txtNombre.Location = new Point(518, 202);
+            txtNombre.Margin = new Padding(5);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(125, 27);
+            txtNombre.Size = new Size(201, 39);
             txtNombre.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgvTipoEmpleado
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(551, 45);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(578, 439);
-            dataGridView1.TabIndex = 9;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgvTipoEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTipoEmpleado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTipoEmpleado.Location = new Point(897, 78);
+            dgvTipoEmpleado.Margin = new Padding(5);
+            dgvTipoEmpleado.Name = "dgvTipoEmpleado";
+            dgvTipoEmpleado.RowHeadersWidth = 51;
+            dgvTipoEmpleado.Size = new Size(939, 702);
+            dgvTipoEmpleado.TabIndex = 9;
+            dgvTipoEmpleado.CellClick += dataGridView1_CellClick;
             // 
-            // comboBox1
+            // btnEliminar
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(307, 212);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 10;
+            btnEliminar.BackColor = Color.Crimson;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(466, 691);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(150, 46);
+            btnEliminar.TabIndex = 24;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // button2
+            // btnModificar
             // 
-            button2.BackColor = Color.Crimson;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(287, 432);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(92, 29);
-            button2.TabIndex = 24;
-            button2.Text = "Eliminar";
-            button2.UseVisualStyleBackColor = false;
+            btnModificar.BackColor = Color.RoyalBlue;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(297, 691);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(150, 46);
+            btnModificar.TabIndex = 23;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
-            // btmModificar
+            // btnGuardar
             // 
-            btmModificar.BackColor = Color.RoyalBlue;
-            btmModificar.FlatAppearance.BorderSize = 0;
-            btmModificar.FlatStyle = FlatStyle.Flat;
-            btmModificar.ForeColor = Color.White;
-            btmModificar.Location = new Point(183, 432);
-            btmModificar.Margin = new Padding(2);
-            btmModificar.Name = "btmModificar";
-            btmModificar.Size = new Size(92, 29);
-            btmModificar.TabIndex = 23;
-            btmModificar.Text = "Modificar";
-            btmModificar.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.ForestGreen;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(125, 691);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(150, 46);
+            btnGuardar.TabIndex = 22;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
-            // button3
+            // btnLimpiar
             // 
-            button3.BackColor = Color.ForestGreen;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(77, 432);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 29);
-            button3.TabIndex = 22;
-            button3.Text = "Guardar";
-            button3.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(128, 128, 255);
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(634, 691);
+            btnLimpiar.Margin = new Padding(5);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(153, 46);
+            btnLimpiar.TabIndex = 21;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // button1
+            // txtIdTipo
             // 
-            button1.BackColor = Color.FromArgb(128, 128, 255);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(390, 432);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 21;
-            button1.Text = "Limpiar";
-            button1.UseVisualStyleBackColor = false;
+            txtIdTipo.Location = new Point(518, 333);
+            txtIdTipo.Margin = new Padding(5);
+            txtIdTipo.Name = "txtIdTipo";
+            txtIdTipo.Size = new Size(201, 39);
+            txtIdTipo.TabIndex = 25;
+            // 
+            // lblTitulo1
+            // 
+            lblTitulo1.AutoSize = true;
+            lblTitulo1.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo1.ForeColor = Color.Gold;
+            lblTitulo1.Location = new Point(12, 9);
+            lblTitulo1.Name = "lblTitulo1";
+            lblTitulo1.Size = new Size(340, 50);
+            lblTitulo1.TabIndex = 26;
+            lblTitulo1.Text = "RESTAURANTEBD ";
             // 
             // FrmTipoEmpleado
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1184, 619);
-            Controls.Add(button2);
-            Controls.Add(btmModificar);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(comboBox1);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1924, 990);
+            Controls.Add(lblTitulo1);
+            Controls.Add(txtIdTipo);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnModificar);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnLimpiar);
+            Controls.Add(dgvTipoEmpleado);
             Controls.Add(txtNombre);
-            Controls.Add(lblDescripcion);
+            Controls.Add(lblIdTipo);
             Controls.Add(lblNombre);
-            Controls.Add(lblTitulo);
+            Controls.Add(lblTitulo1);
+            Margin = new Padding(5);
             Name = "FrmTipoEmpleado";
             Text = "Tipo_empleado";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += FrmTipoEmpleado_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvTipoEmpleado).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -182,13 +204,14 @@
 
         private Label lblTitulo;
         private Label lblNombre;
-        private Label lblDescripcion;
+        private Label lblIdTipo;
         private TextBox txtNombre;
-        private DataGridView dataGridView1;
-        private ComboBox comboBox1;
-        private Button button2;
-        private Button btmModificar;
-        private Button button3;
-        private Button button1;
+        private DataGridView dgvTipoEmpleado;
+        private Button btnEliminar;
+        private Button btnModificar;
+        private Button btnGuardar;
+        private Button btnLimpiar;
+        private TextBox txtIdTipo;
+        private Label lblTitulo1;
     }
 }

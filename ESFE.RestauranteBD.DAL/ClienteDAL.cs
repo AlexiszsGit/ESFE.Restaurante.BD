@@ -32,7 +32,7 @@ namespace ESFE.RestauranteBD.DAL
             return true;
         }
 
-        public bool Actualizar(Cliente cliente)
+        public bool Actualizar(Cliente cliente, string idClienteOriginal)
         {
             using SqlConnection conexion =
                 (SqlConnection)DBComun.ObtenerConexion();
@@ -42,9 +42,21 @@ namespace ESFE.RestauranteBD.DAL
 
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@id_cliente", cliente.IdCliente);
-            comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
-            comando.Parameters.AddWithValue("@telefono", cliente.Telefono ?? (object)DBNull.Value);
+            comando.Parameters.AddWithValue(
+                "@id_cliente_original",
+                idClienteOriginal);
+
+            comando.Parameters.AddWithValue(
+                "@id_cliente_nuevo",
+                cliente.IdCliente);
+
+            comando.Parameters.AddWithValue(
+                "@nombre",
+                cliente.Nombre);
+
+            comando.Parameters.AddWithValue(
+                "@telefono",
+                cliente.Telefono ?? (object)DBNull.Value);
 
             conexion.Open();
 
@@ -63,14 +75,18 @@ namespace ESFE.RestauranteBD.DAL
 
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@id_cliente", idCliente);
+            comando.Parameters.AddWithValue(
+                "@id_cliente",
+                idCliente);
 
             conexion.Open();
 
-            return comando.ExecuteNonQuery() > 0;
+            comando.ExecuteNonQuery();
+
+            return true;
         }
 
-        public List<Cliente> Buscar(string nombre)
+        public List<Cliente> Buscar(string texto)
         {
             List<Cliente> lista = new List<Cliente>();
 
@@ -78,11 +94,11 @@ namespace ESFE.RestauranteBD.DAL
                 (SqlConnection)DBComun.ObtenerConexion();
 
             using SqlCommand comando =
-                new SqlCommand("BuscarClienteNombre", conexion);
+                new SqlCommand("BuscarCliente", conexion);
 
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@texto", texto);
 
             conexion.Open();
 

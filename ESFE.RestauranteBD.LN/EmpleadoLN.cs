@@ -22,9 +22,9 @@ namespace ESFE.RestauranteBD.LN
             return empleadoDAL.Insertar(empleado);
         }
 
-        public bool Actualizar(Empleado empleado)
+        public bool Actualizar(Empleado pEmpleado, string idViejo)
         {
-            return empleadoDAL.Actualizar(empleado);
+            return empleadoDAL.Actualizar(pEmpleado, idViejo) > 0;
         }
 
         public bool Eliminar(string idEmpleado)

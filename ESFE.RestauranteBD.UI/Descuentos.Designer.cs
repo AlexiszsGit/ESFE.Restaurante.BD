@@ -1,6 +1,6 @@
 ﻿namespace ESFE.RestauranteBD.UI
 {
-    partial class Descuentos
+    partial class FrmDescuentos
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,9 @@
             btmModificar = new Button();
             btnGuardar = new Button();
             label5 = new Label();
+            btnBuscar = new Button();
+            txtBuscar = new TextBox();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)numPorcentaje).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDescuentos).BeginInit();
             SuspendLayout();
@@ -80,33 +83,37 @@
             // 
             txtIdDescuento.Location = new Point(414, 284);
             txtIdDescuento.Name = "txtIdDescuento";
-            txtIdDescuento.Size = new Size(200, 39);
+            txtIdDescuento.PlaceholderText = "Agregar ID de Descuento";
+            txtIdDescuento.Size = new Size(331, 39);
             txtIdDescuento.TabIndex = 3;
             // 
             // txtNombre
             // 
             txtNombre.Location = new Point(414, 383);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(200, 39);
+            txtNombre.PlaceholderText = "Agregar Nombre del Descuento";
+            txtNombre.Size = new Size(331, 39);
             txtNombre.TabIndex = 4;
             // 
             // numPorcentaje
             // 
+            numPorcentaje.ImeMode = ImeMode.Off;
             numPorcentaje.Location = new Point(414, 482);
             numPorcentaje.Name = "numPorcentaje";
-            numPorcentaje.Size = new Size(240, 39);
+            numPorcentaje.Size = new Size(331, 39);
             numPorcentaje.TabIndex = 5;
-            numPorcentaje.ValueChanged += numPorcentaje_ValueChanged;
             // 
             // dgvDescuentos
             // 
+            dgvDescuentos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDescuentos.BackgroundColor = Color.FromArgb(64, 64, 64);
             dgvDescuentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDescuentos.Location = new Point(701, 189);
+            dgvDescuentos.Location = new Point(818, 307);
             dgvDescuentos.Name = "dgvDescuentos";
             dgvDescuentos.RowHeadersWidth = 82;
-            dgvDescuentos.Size = new Size(1485, 974);
+            dgvDescuentos.Size = new Size(1360, 888);
             dgvDescuentos.TabIndex = 9;
+            dgvDescuentos.CellClick += dgvDescuentos_CellClick;
             // 
             // btnEliminar
             // 
@@ -114,12 +121,13 @@
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(246, 823);
+            btnEliminar.Location = new Point(92, 826);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(150, 46);
             btnEliminar.TabIndex = 17;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btmModificar
             // 
@@ -133,6 +141,7 @@
             btmModificar.TabIndex = 16;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
+            btmModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
@@ -159,12 +168,53 @@
             label5.TabIndex = 18;
             label5.Text = "RESTAURANTEBD - DESCUENTOS";
             // 
-            // Descuentos
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.Green;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscar.ImageAlign = ContentAlignment.TopCenter;
+            btnBuscar.Location = new Point(1813, 148);
+            btnBuscar.Margin = new Padding(0);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(146, 48);
+            btnBuscar.TabIndex = 20;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(1154, 148);
+            txtBuscar.Multiline = true;
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar descuentos ";
+            txtBuscar.Size = new Size(627, 48);
+            txtBuscar.TabIndex = 19;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.Purple;
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(405, 826);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(150, 46);
+            btnLimpiar.TabIndex = 21;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // FrmDescuentos
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(2226, 1267);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnBuscar);
+            Controls.Add(txtBuscar);
             Controls.Add(label5);
             Controls.Add(btnEliminar);
             Controls.Add(btmModificar);
@@ -176,8 +226,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Descuentos";
+            Name = "FrmDescuentos";
             Text = "Descuentos";
+            Load += FrmDescuentos_Load;
             ((System.ComponentModel.ISupportInitialize)numPorcentaje).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvDescuentos).EndInit();
             ResumeLayout(false);
@@ -197,5 +248,8 @@
         private Button btmModificar;
         private Button btnGuardar;
         private Label label5;
+        private Button btnBuscar;
+        private TextBox txtBuscar;
+        private Button btnLimpiar;
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 using ESFE.RestauranteBD.DAL;
 using ESFE.RestauranteBD.EN;
 
@@ -23,14 +18,9 @@ namespace ESFE.RestauranteBD.LN
             return detallePedidosDAL.Insertar(detalle);
         }
 
-        public List<DetallePedidos> Buscar(string idPedido)
+        public List<DetallePedidos> Buscar(string busqueda)
         {
-            return detallePedidosDAL.Buscar(idPedido);
-        }
-
-        public List<DetallePedidos> BuscarPorPedido(string idPedido)
-        {
-            return detallePedidosDAL.BuscarPorPedido(idPedido);
+            return detallePedidosDAL.Buscar(busqueda);
         }
 
         public bool Actualizar(DetallePedidos detalle)

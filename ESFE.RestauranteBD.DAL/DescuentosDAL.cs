@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ESFE.RestauranteBD.EN;
-using Microsoft.Data.SqlClient;
 using System.Data;
+using Microsoft.Data.SqlClient;
+using ESFE.RestauranteBD.EN;
 
 namespace ESFE.RestauranteBD.DAL
 {
@@ -13,135 +10,151 @@ namespace ESFE.RestauranteBD.DAL
     {
         public bool Insertar(Descuentos descuento)
         {
-            using SqlConnection conexion =
-                (SqlConnection)DBComun.ObtenerConexion();
+            using (SqlConnection conexion =
+                (SqlConnection)DBComun.ObtenerConexion())
+            {
+                using (SqlCommand comando =
+                    new SqlCommand("InsertarDescuento", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
 
-            using SqlCommand comando =
-                new SqlCommand("InsertarDescuento", conexion);
+                    comando.Parameters.AddWithValue(
+                        "@IdDescuento",
+                        descuento.IdDescuento);
 
-            comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue(
+                        "@Descripcion",
+                        descuento.Nombre);
 
-            comando.Parameters.AddWithValue("@id_descuento", descuento.IdDescuento);
-            comando.Parameters.AddWithValue("@descripcion", descuento.Nombre);
-            comando.Parameters.AddWithValue("@porcentaje", descuento.Porcentaje);
+                    comando.Parameters.AddWithValue(
+                        "@Porcentaje",
+                        descuento.Porcentaje);
 
-            conexion.Open();
+                    conexion.Open();
 
-            comando.ExecuteNonQuery();
+                    comando.ExecuteNonQuery();
 
-            return true;
+                    return true;
+                }
+            }
         }
 
-        public bool Actualizar(Descuentos descuento)
+
+        public bool Actualizar(
+            Descuentos descuento,
+            string idAnterior)
         {
-            using SqlConnection conexion =
-                (SqlConnection)DBComun.ObtenerConexion();
+            using (SqlConnection conexion =
+                (SqlConnection)DBComun.ObtenerConexion())
+            {
+                using (SqlCommand comando =
+                    new SqlCommand("ActualizarDescuento", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
 
-            using SqlCommand comando =
-                new SqlCommand("ActualizarDescuento", conexion);
+                    comando.Parameters.AddWithValue(
+                        "@IdDescuentoAnterior",
+                        idAnterior);
 
-            comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue(
+                        "@IdDescuentoNuevo",
+                        descuento.IdDescuento);
 
-            comando.Parameters.AddWithValue("@id_descuento", descuento.IdDescuento);
-            comando.Parameters.AddWithValue("@descripcion", descuento.Nombre);
-            comando.Parameters.AddWithValue("@porcentaje", descuento.Porcentaje);
+                    comando.Parameters.AddWithValue(
+                        "@Descripcion",
+                        descuento.Nombre);
 
-            conexion.Open();
+                    comando.Parameters.AddWithValue(
+                        "@Porcentaje",
+                        descuento.Porcentaje);
 
-            comando.ExecuteNonQuery();
+                    conexion.Open();
 
-            return true;
+                    comando.ExecuteNonQuery();
+
+                    return true;
+                }
+            }
         }
+
 
         public bool Eliminar(string idDescuento)
         {
-            using SqlConnection conexion =
-                (SqlConnection)DBComun.ObtenerConexion();
+            using (SqlConnection conexion =
+                (SqlConnection)DBComun.ObtenerConexion())
+            {
+                using (SqlCommand comando =
+                    new SqlCommand("EliminarDescuento", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
 
-            using SqlCommand comando =
-                new SqlCommand("EliminarDescuento", conexion);
+                    comando.Parameters.AddWithValue(
+                        "@IdDescuento",
+                        idDescuento);
 
-            comando.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
 
-            comando.Parameters.AddWithValue("@id_descuento", idDescuento);
+                    comando.ExecuteNonQuery();
 
-            conexion.Open();
-
-            return comando.ExecuteNonQuery() > 0;
+                    return true;
+                }
+            }
         }
 
-        public List<Descuentos> Buscar(string nombre)
+
+        public List<Descuentos> Buscar(string texto)
         {
-            List<Descuentos> lista = new List<Descuentos>();
+            List<Descuentos> lista =
+                new List<Descuentos>();
 
-            using SqlConnection conexion =
-                (SqlConnection)DBComun.ObtenerConexion();
-
-            using SqlCommand comando =
-                new SqlCommand("BuscarDescuentoDescripcion", conexion);
-
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@descripcion", nombre);
-
-            conexion.Open();
-
-            using SqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlConnection conexion =
+                (SqlConnection)DBComun.ObtenerConexion())
             {
-                Descuentos descuento = new Descuentos();
+                using (SqlCommand comando =
+                    new SqlCommand(
+                        "BuscarDescuentoDescripcion",
+                        conexion))
+                {
+                    comando.CommandType =
+                        CommandType.StoredProcedure;
 
-                descuento.IdDescuento =
-                    Convert.ToString(reader["id_descuento"]) ?? string.Empty;
+                    comando.Parameters.AddWithValue(
+                        "@Descripcion",
+                        texto);
 
-                descuento.Nombre =
-                    Convert.ToString(reader["descripcion"]) ?? string.Empty;
+                    conexion.Open();
 
-                descuento.Porcentaje =
-                    Convert.ToDecimal(reader["porcentaje"]);
+                    using (SqlDataReader reader =
+                        comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Descuentos descuento =
+                                new Descuentos();
 
-                lista.Add(descuento);
+                            descuento.IdDescuento =
+                                reader["IdDescuento"]?.ToString() ?? "";
+
+                            descuento.Nombre =
+                                reader["Nombre"]?.ToString() ?? "";
+
+                            descuento.Porcentaje =
+                                Convert.ToDecimal(
+                                    reader["Porcentaje"]);
+
+                            lista.Add(descuento);
+                        }
+                    }
+                }
             }
 
             return lista;
         }
+
 
         public List<Descuentos> BuscarPorNombre(string nombre)
         {
-            List<Descuentos> lista = new List<Descuentos>();
-
-            using SqlConnection conexion =
-                (SqlConnection)DBComun.ObtenerConexion();
-
-            using SqlCommand comando =
-                new SqlCommand("BuscarDescuentoDescripcion", conexion);
-
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@descripcion", nombre);
-
-            conexion.Open();
-
-            using SqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Descuentos descuento = new Descuentos();
-
-                descuento.IdDescuento =
-                    Convert.ToString(reader["id_descuento"]) ?? string.Empty;
-
-                descuento.Nombre =
-                    Convert.ToString(reader["descripcion"]) ?? string.Empty;
-
-                descuento.Porcentaje =
-                    Convert.ToDecimal(reader["porcentaje"]);
-
-                lista.Add(descuento);
-            }
-
-            return lista;
+            return Buscar(nombre);
         }
     }
 }

@@ -23,9 +23,9 @@ namespace ESFE.RestauranteBD.LN
             return clienteDAL.Insertar(cliente);
         }
 
-        public List<Cliente> Buscar(string nombre)
+        public List<Cliente> Buscar(string texto)
         {
-            return clienteDAL.Buscar(nombre);
+            return clienteDAL.Buscar(texto);
         }
 
         public List<Cliente> BuscarPorNombre(string nombre)
@@ -33,9 +33,13 @@ namespace ESFE.RestauranteBD.LN
             return clienteDAL.BuscarPorNombre(nombre);
         }
 
-        public bool Actualizar(Cliente cliente)
+        public bool Actualizar(
+    Cliente cliente,
+    string idClienteOriginal)
         {
-            return clienteDAL.Actualizar(cliente);
+            return clienteDAL.Actualizar(
+                cliente,
+                idClienteOriginal);
         }
 
         public bool Eliminar(string idCliente)

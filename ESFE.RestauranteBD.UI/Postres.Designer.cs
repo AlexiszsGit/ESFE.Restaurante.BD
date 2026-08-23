@@ -28,42 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTitulo = new Label();
+            lblTituloPostres = new Label();
             lblNombre = new Label();
             lblPrecio = new Label();
             lblPostres = new Label();
             txtNombre = new TextBox();
             nudPrecio = new NumericUpDown();
             dgvPostres = new DataGridView();
-            button2 = new Button();
-            btmModificar = new Button();
+            btnEliminar = new Button();
+            btnModificar = new Button();
             btnGuardar = new Button();
-            button1 = new Button();
+            btnLimpiar = new Button();
             txtIdPostre = new TextBox();
+            lblTitulo4 = new Label();
+            btnBuscar = new Button();
+            txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)nudPrecio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPostres).BeginInit();
             SuspendLayout();
             // 
-            // lblTitulo
+            // lblTituloPostres
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = SystemColors.ActiveCaptionText;
-            lblTitulo.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.Gold;
-            lblTitulo.Location = new Point(346, 21);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(291, 24);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "MANTENIMIENTO DE POSTRES";
+            lblTituloPostres.AutoSize = true;
+            lblTituloPostres.BackColor = SystemColors.ActiveCaptionText;
+            lblTituloPostres.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTituloPostres.ForeColor = Color.Gold;
+            lblTituloPostres.Location = new Point(394, 9);
+            lblTituloPostres.Margin = new Padding(5, 0, 5, 0);
+            lblTituloPostres.Name = "lblTituloPostres";
+            lblTituloPostres.Size = new Size(499, 37);
+            lblTituloPostres.TabIndex = 0;
+            lblTituloPostres.Text = "MANTENIMIENTO DE POSTRES";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
             lblNombre.BackColor = SystemColors.ActiveCaptionText;
             lblNombre.ForeColor = Color.White;
-            lblNombre.Location = new Point(27, 175);
+            lblNombre.Location = new Point(44, 280);
+            lblNombre.Margin = new Padding(5, 0, 5, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(67, 20);
+            lblNombre.Size = new Size(107, 32);
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre:";
             // 
@@ -72,9 +77,10 @@
             lblPrecio.AutoSize = true;
             lblPrecio.BackColor = SystemColors.ActiveCaptionText;
             lblPrecio.ForeColor = Color.White;
-            lblPrecio.Location = new Point(31, 237);
+            lblPrecio.Location = new Point(50, 379);
+            lblPrecio.Margin = new Padding(5, 0, 5, 0);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(53, 20);
+            lblPrecio.Size = new Size(84, 32);
             lblPrecio.TabIndex = 2;
             lblPrecio.Text = "Precio:";
             // 
@@ -83,64 +89,67 @@
             lblPostres.AutoSize = true;
             lblPostres.BackColor = SystemColors.ActiveCaptionText;
             lblPostres.ForeColor = Color.White;
-            lblPostres.Location = new Point(27, 111);
+            lblPostres.Location = new Point(44, 178);
+            lblPostres.Margin = new Padding(5, 0, 5, 0);
             lblPostres.Name = "lblPostres";
-            lblPostres.Size = new Size(69, 20);
+            lblPostres.Size = new Size(111, 32);
             lblPostres.TabIndex = 3;
             lblPostres.Text = "Id Postre:";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(129, 172);
+            txtNombre.Location = new Point(210, 275);
+            txtNombre.Margin = new Padding(5);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(150, 27);
+            txtNombre.Size = new Size(241, 39);
             txtNombre.TabIndex = 4;
             // 
             // nudPrecio
             // 
-            nudPrecio.Location = new Point(129, 230);
+            nudPrecio.Location = new Point(210, 368);
+            nudPrecio.Margin = new Padding(5);
             nudPrecio.Name = "nudPrecio";
-            nudPrecio.Size = new Size(150, 27);
+            nudPrecio.Size = new Size(244, 39);
             nudPrecio.TabIndex = 5;
             // 
             // dgvPostres
             // 
             dgvPostres.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPostres.Location = new Point(308, 78);
+            dgvPostres.Location = new Point(500, 125);
+            dgvPostres.Margin = new Padding(5);
             dgvPostres.Name = "dgvPostres";
             dgvPostres.RowHeadersWidth = 51;
-            dgvPostres.Size = new Size(443, 276);
+            dgvPostres.Size = new Size(720, 442);
             dgvPostres.TabIndex = 12;
+            dgvPostres.CellClick += dgvPostres_CellContentClick;
             // 
-            // button2
+            // btnEliminar
             // 
-            button2.BackColor = Color.Crimson;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(251, 392);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(92, 29);
-            button2.TabIndex = 36;
-            button2.Text = "Eliminar";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnEliminar.BackColor = Color.Crimson;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(408, 627);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(150, 46);
+            btnEliminar.TabIndex = 36;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // btmModificar
+            // btnModificar
             // 
-            btmModificar.BackColor = Color.RoyalBlue;
-            btmModificar.FlatAppearance.BorderSize = 0;
-            btmModificar.FlatStyle = FlatStyle.Flat;
-            btmModificar.ForeColor = Color.White;
-            btmModificar.Location = new Point(140, 392);
-            btmModificar.Margin = new Padding(2);
-            btmModificar.Name = "btmModificar";
-            btmModificar.Size = new Size(92, 29);
-            btmModificar.TabIndex = 35;
-            btmModificar.Text = "Modificar";
-            btmModificar.UseVisualStyleBackColor = false;
-            btmModificar.Click += btmModificar_Click;
+            btnModificar.BackColor = Color.RoyalBlue;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(228, 627);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(150, 46);
+            btnModificar.TabIndex = 35;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
@@ -148,55 +157,94 @@
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(31, 392);
-            btnGuardar.Margin = new Padding(2);
+            btnGuardar.Location = new Point(50, 627);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(92, 29);
+            btnGuardar.Size = new Size(150, 46);
             btnGuardar.TabIndex = 34;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // button1
+            // btnLimpiar
             // 
-            button1.BackColor = Color.FromArgb(128, 128, 255);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(368, 392);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 33;
-            button1.Text = "Limpiar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnLimpiar.BackColor = Color.FromArgb(128, 128, 255);
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(598, 627);
+            btnLimpiar.Margin = new Padding(5);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(153, 46);
+            btnLimpiar.TabIndex = 33;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // txtIdPostre
             // 
-            txtIdPostre.Location = new Point(129, 104);
+            txtIdPostre.Location = new Point(210, 166);
+            txtIdPostre.Margin = new Padding(5);
             txtIdPostre.Name = "txtIdPostre";
-            txtIdPostre.Size = new Size(150, 27);
+            txtIdPostre.Size = new Size(241, 39);
             txtIdPostre.TabIndex = 37;
+            // 
+            // lblTitulo4
+            // 
+            lblTitulo4.AutoSize = true;
+            lblTitulo4.BackColor = Color.Black;
+            lblTitulo4.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo4.ForeColor = Color.Gold;
+            lblTitulo4.Location = new Point(44, 21);
+            lblTitulo4.Margin = new Padding(5, 0, 5, 0);
+            lblTitulo4.Name = "lblTitulo4";
+            lblTitulo4.Size = new Size(340, 50);
+            lblTitulo4.TabIndex = 38;
+            lblTitulo4.Text = "RESTAURANTEBD ";
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.ForestGreen;
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(1066, 45);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(150, 46);
+            btnBuscar.TabIndex = 40;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(518, 49);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(514, 39);
+            txtBuscar.TabIndex = 39;
             // 
             // FrmPostres
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1300, 720);
+            Controls.Add(btnBuscar);
+            Controls.Add(txtBuscar);
+            Controls.Add(lblTitulo4);
             Controls.Add(txtIdPostre);
-            Controls.Add(button2);
-            Controls.Add(btmModificar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnModificar);
             Controls.Add(btnGuardar);
-            Controls.Add(button1);
+            Controls.Add(btnLimpiar);
             Controls.Add(dgvPostres);
             Controls.Add(nudPrecio);
             Controls.Add(txtNombre);
             Controls.Add(lblPrecio);
             Controls.Add(lblPostres);
             Controls.Add(lblNombre);
-            Controls.Add(lblTitulo);
+            Controls.Add(lblTituloPostres);
+            Margin = new Padding(5);
             Name = "FrmPostres";
             Text = "Postres";
+            Load += FrmPostres_Load;
             ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvPostres).EndInit();
             ResumeLayout(false);
@@ -205,7 +253,7 @@
 
         #endregion
 
-        private Label lblTitulo;
+        private Label lblTituloPostres;
         private Label lblNombre;
         private Label lblPrecio;
         private Label lblTipoPostre;
@@ -220,11 +268,14 @@
         }
 
         private DataGridView dgvPostres;
-        private Button button2;
-        private Button btmModificar;
+        private Button btnEliminar;
+        private Button btnModificar;
         private Button btnGuardar;
-        private Button button1;
+        private Button btnLimpiar;
         private Label lblPostres;
         private TextBox txtIdPostre;
+        private Label lblTitulo4;
+        private Button btnBuscar;
+        private TextBox txtBuscar;
     }
 }

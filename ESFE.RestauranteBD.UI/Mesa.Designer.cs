@@ -28,53 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTitulo = new Label();
-            lblNumero = new Label();
+            lblTituloMesa = new Label();
+            btnNumeroMesa = new Label();
             lblCapacidad = new Label();
             lblEstado = new Label();
             txtNumeroMesa = new TextBox();
             nudCapacidad = new NumericUpDown();
             cmbEstado = new ComboBox();
-            dataGridView1 = new DataGridView();
-            button2 = new Button();
+            dgvMesa = new DataGridView();
+            btnEliminar = new Button();
             btmModificar = new Button();
-            button3 = new Button();
-            button1 = new Button();
+            btnGuardar = new Button();
+            btnLimpiar = new Button();
+            lblTitulo6 = new Label();
+            txtBuscar = new TextBox();
+            btnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)nudCapacidad).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMesa).BeginInit();
             SuspendLayout();
             // 
-            // lblTitulo
+            // lblTituloMesa
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = SystemColors.ActiveCaptionText;
-            lblTitulo.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.Gold;
-            lblTitulo.Location = new Point(316, 32);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(254, 24);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "MANTENIMIETO DE MESAS";
+            lblTituloMesa.AutoSize = true;
+            lblTituloMesa.BackColor = SystemColors.ActiveCaptionText;
+            lblTituloMesa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTituloMesa.ForeColor = Color.Gold;
+            lblTituloMesa.Location = new Point(1163, 21);
+            lblTituloMesa.Margin = new Padding(5, 0, 5, 0);
+            lblTituloMesa.Name = "lblTituloMesa";
+            lblTituloMesa.Size = new Size(435, 37);
+            lblTituloMesa.TabIndex = 0;
+            lblTituloMesa.Text = "MANTENIMIETO DE MESAS";
             // 
-            // lblNumero
+            // btnNumeroMesa
             // 
-            lblNumero.AutoSize = true;
-            lblNumero.BackColor = SystemColors.ActiveCaptionText;
-            lblNumero.ForeColor = Color.White;
-            lblNumero.Location = new Point(47, 124);
-            lblNumero.Name = "lblNumero";
-            lblNumero.Size = new Size(132, 20);
-            lblNumero.TabIndex = 1;
-            lblNumero.Text = "Numero de Mesas:";
+            btnNumeroMesa.AutoSize = true;
+            btnNumeroMesa.BackColor = SystemColors.ActiveCaptionText;
+            btnNumeroMesa.ForeColor = Color.White;
+            btnNumeroMesa.Location = new Point(76, 198);
+            btnNumeroMesa.Margin = new Padding(5, 0, 5, 0);
+            btnNumeroMesa.Name = "btnNumeroMesa";
+            btnNumeroMesa.Size = new Size(215, 32);
+            btnNumeroMesa.TabIndex = 1;
+            btnNumeroMesa.Text = "Numero de Mesas:";
             // 
             // lblCapacidad
             // 
             lblCapacidad.AutoSize = true;
             lblCapacidad.BackColor = SystemColors.ActiveCaptionText;
             lblCapacidad.ForeColor = Color.White;
-            lblCapacidad.Location = new Point(47, 176);
+            lblCapacidad.Location = new Point(76, 282);
+            lblCapacidad.Margin = new Padding(5, 0, 5, 0);
             lblCapacidad.Name = "lblCapacidad";
-            lblCapacidad.Size = new Size(83, 20);
+            lblCapacidad.Size = new Size(129, 32);
             lblCapacidad.TabIndex = 2;
             lblCapacidad.Text = "Capacidad:";
             // 
@@ -83,60 +89,65 @@
             lblEstado.AutoSize = true;
             lblEstado.BackColor = SystemColors.ActiveCaptionText;
             lblEstado.ForeColor = Color.White;
-            lblEstado.Location = new Point(47, 230);
+            lblEstado.Location = new Point(76, 368);
+            lblEstado.Margin = new Padding(5, 0, 5, 0);
             lblEstado.Name = "lblEstado";
-            lblEstado.Size = new Size(57, 20);
+            lblEstado.Size = new Size(89, 32);
             lblEstado.TabIndex = 3;
             lblEstado.Text = "Estado:";
             // 
             // txtNumeroMesa
             // 
-            txtNumeroMesa.Location = new Point(201, 117);
+            txtNumeroMesa.Location = new Point(327, 187);
+            txtNumeroMesa.Margin = new Padding(5);
             txtNumeroMesa.Name = "txtNumeroMesa";
-            txtNumeroMesa.Size = new Size(125, 27);
+            txtNumeroMesa.Size = new Size(201, 39);
             txtNumeroMesa.TabIndex = 4;
             // 
             // nudCapacidad
             // 
             nudCapacidad.DecimalPlaces = 1;
-            nudCapacidad.Location = new Point(201, 169);
+            nudCapacidad.Location = new Point(327, 270);
+            nudCapacidad.Margin = new Padding(5);
             nudCapacidad.Name = "nudCapacidad";
-            nudCapacidad.Size = new Size(150, 27);
+            nudCapacidad.Size = new Size(244, 39);
             nudCapacidad.TabIndex = 5;
             nudCapacidad.ValueChanged += nudCapacidad_ValueChanged;
             // 
             // cmbEstado
             // 
             cmbEstado.FormattingEnabled = true;
-            cmbEstado.Location = new Point(201, 222);
+            cmbEstado.Location = new Point(327, 355);
+            cmbEstado.Margin = new Padding(5);
             cmbEstado.Name = "cmbEstado";
-            cmbEstado.Size = new Size(151, 28);
+            cmbEstado.Size = new Size(243, 40);
             cmbEstado.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvMesa
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(447, 72);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(521, 297);
-            dataGridView1.TabIndex = 11;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgvMesa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMesa.Location = new Point(750, 214);
+            dgvMesa.Margin = new Padding(5);
+            dgvMesa.Name = "dgvMesa";
+            dgvMesa.RowHeadersWidth = 51;
+            dgvMesa.Size = new Size(847, 475);
+            dgvMesa.TabIndex = 11;
+            dgvMesa.CellClick += dgvMesa_CellClick;
+            dgvMesa.CellContentClick += dgvMesa_CellContentClick;
             // 
-            // button2
+            // btnEliminar
             // 
-            button2.BackColor = Color.Crimson;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(250, 402);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(92, 29);
-            button2.TabIndex = 28;
-            button2.Text = "Eliminar";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button3_Click;
+            btnEliminar.BackColor = Color.Crimson;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(406, 643);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(150, 46);
+            btnEliminar.TabIndex = 28;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btmModificar
             // 
@@ -144,83 +155,128 @@
             btmModificar.FlatAppearance.BorderSize = 0;
             btmModificar.FlatStyle = FlatStyle.Flat;
             btmModificar.ForeColor = Color.White;
-            btmModificar.Location = new Point(138, 402);
-            btmModificar.Margin = new Padding(2);
+            btmModificar.Location = new Point(224, 643);
             btmModificar.Name = "btmModificar";
-            btmModificar.Size = new Size(92, 29);
+            btmModificar.Size = new Size(150, 46);
             btmModificar.TabIndex = 27;
             btmModificar.Text = "Modificar";
             btmModificar.UseVisualStyleBackColor = false;
             btmModificar.Click += btnModificar_Click;
             // 
-            // button3
+            // btnGuardar
             // 
-            button3.BackColor = Color.ForestGreen;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(22, 402);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 29);
-            button3.TabIndex = 26;
-            button3.Text = "Guardar";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button1_Click;
+            btnGuardar.BackColor = Color.ForestGreen;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(36, 643);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(150, 46);
+            btnGuardar.TabIndex = 26;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
-            // button1
+            // btnLimpiar
             // 
-            button1.BackColor = Color.FromArgb(128, 128, 255);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(361, 402);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 25;
-            button1.Text = "Limpiar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += btnLimpiar_Click;
+            btnLimpiar.BackColor = Color.FromArgb(128, 128, 255);
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(587, 643);
+            btnLimpiar.Margin = new Padding(5);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(153, 46);
+            btnLimpiar.TabIndex = 25;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // lblTitulo6
+            // 
+            lblTitulo6.AutoSize = true;
+            lblTitulo6.BackColor = Color.Transparent;
+            lblTitulo6.Font = new Font("Segoe UI", 26F, FontStyle.Bold);
+            lblTitulo6.ForeColor = Color.FromArgb(212, 175, 55);
+            lblTitulo6.Location = new Point(12, 6);
+            lblTitulo6.Name = "lblTitulo6";
+            lblTitulo6.Size = new Size(718, 93);
+            lblTitulo6.TabIndex = 29;
+            lblTitulo6.Text = "✦  RESTAURANTEBD";
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.BackColor = Color.FromArgb(35, 35, 35);
+            txtBuscar.BorderStyle = BorderStyle.FixedSingle;
+            txtBuscar.Font = new Font("Segoe UI", 11F);
+            txtBuscar.ForeColor = Color.FromArgb(245, 245, 245);
+            txtBuscar.Location = new Point(-28, 107);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar por ID o nombre...";
+            txtBuscar.Size = new Size(1480, 47);
+            txtBuscar.TabIndex = 30;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.FromArgb(212, 175, 55);
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnBuscar.ForeColor = Color.Black;
+            btnBuscar.Location = new Point(1442, 107);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(180, 42);
+            btnBuscar.TabIndex = 31;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // FrmMesa
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(992, 480);
-            Controls.Add(button2);
+            ClientSize = new Size(1612, 768);
+            Controls.Add(txtBuscar);
+            Controls.Add(btnBuscar);
+            Controls.Add(lblTitulo6);
+            Controls.Add(btnEliminar);
             Controls.Add(btmModificar);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnLimpiar);
+            Controls.Add(dgvMesa);
             Controls.Add(cmbEstado);
             Controls.Add(nudCapacidad);
             Controls.Add(txtNumeroMesa);
             Controls.Add(lblEstado);
             Controls.Add(lblCapacidad);
-            Controls.Add(lblNumero);
-            Controls.Add(lblTitulo);
+            Controls.Add(btnNumeroMesa);
+            Controls.Add(lblTituloMesa);
+            Margin = new Padding(5);
             Name = "FrmMesa";
             Text = "Mesa";
             Load += Mesa_Load;
             ((System.ComponentModel.ISupportInitialize)nudCapacidad).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMesa).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label lblTitulo;
-        private Label lblNumero;
+        private Label lblTituloMesa;
+        private Label btnNumeroMesa;
         private Label lblCapacidad;
         private Label lblEstado;
         private TextBox txtNumeroMesa;
         private NumericUpDown nudCapacidad;
         private ComboBox cmbEstado;
-        private DataGridView dataGridView1;
-        private Button button2;
+        private DataGridView dgvMesa;
+        private Button btnEliminar;
         private Button btmModificar;
-        private Button button3;
-        private Button button1;
+        private Button btnGuardar;
+        private Button btnLimpiar;
+        private Label lblTitulo6;
+        private TextBox txtBuscar;
+        private Button btnBuscar;
     }
 }

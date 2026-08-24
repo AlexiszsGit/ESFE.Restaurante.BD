@@ -70,7 +70,7 @@ namespace ESFE.RestauranteBD.DAL
         }
 
 
-        public List<MenuEN> Buscar(string idPedido)
+        public List<MenuEN> Buscar(MenuEN pMenu)
         {
             List<MenuEN> lista = new List<MenuEN>();
 
@@ -80,7 +80,11 @@ namespace ESFE.RestauranteBD.DAL
 
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@IdPedido", idPedido);
+            comando.Parameters.AddWithValue("@IdPedido", (object)pMenu.IdPedido ?? DBNull.Value);
+            comando.Parameters.AddWithValue("@IdCategoria", (object)pMenu.IdCategoria ?? DBNull.Value);
+            comando.Parameters.AddWithValue("@IdPostre", (object)pMenu.IdPostre ?? DBNull.Value);
+            comando.Parameters.AddWithValue("@IdProducto", (object)pMenu.IdProducto ?? DBNull.Value);
+            comando.Parameters.AddWithValue("@IdBebida", (object)pMenu.IdBebida ?? DBNull.Value);
 
             conexion.Open();
 

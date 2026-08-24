@@ -69,12 +69,13 @@ namespace ESFE.RestauranteBD.UI
         {
             try
             {
-                string idPedido = txtIdPedido.Text.Trim();
-                List<MenuEN> lista = menuLN.Buscar(idPedido);
+                MenuEN pMenu = ObtenerDatosFormulario();
+                List<MenuEN> lista = menuLN.Buscar(pMenu);
 
                 dgvMenu.DataSource = null;
                 dgvMenu.DataSource = lista;
 
+                dgvMenu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 if (lista.Count == 0)
                 {
                     MessageBox.Show("No se encontraron registros.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

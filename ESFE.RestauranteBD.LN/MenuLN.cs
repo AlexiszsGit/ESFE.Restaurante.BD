@@ -31,9 +31,9 @@ namespace ESFE.RestauranteBD.LN
         }
         
 
-        public List<MenuEN> Buscar(string idPedido)
+        public List<MenuEN> Buscar(MenuEN pMenu)
         {
-            return menuDAL.Buscar(idPedido);
+            return menuDAL.Buscar(pMenu);
         }
     }
 }

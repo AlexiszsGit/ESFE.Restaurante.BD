@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,7 +29,12 @@ namespace ESFE.RestauranteBD.UI
         private Button btnCategorias;
         private Button btnClientes;
         private Button btnDescuentos;
+        private Button btnDetallePedidos;
+        private Button btnEmpleado;
+        private Button btnTipoEmpleado;
+        private Button btnPostres;
         private Button btnPlatillos;
+        private Button btnMesas;
         private Button btnSalir;
 
         private Panel panelPlatillos;
@@ -296,8 +300,23 @@ namespace ESFE.RestauranteBD.UI
             btnDescuentos =
                 CrearBoton("DESCUENTOS");
 
+            btnDetallePedidos =
+                CrearBoton("DETALLE DE PEDIDOS");
+
+            btnEmpleado =
+                CrearBoton("EMPLEADOS");
+
+            btnTipoEmpleado =
+                CrearBoton("TIPO DE EMPLEADO");
+
+            btnPostres =
+                CrearBoton("POSTRES");
+
             btnPlatillos =
                 CrearBoton("PLATILLOS");
+
+            btnMesas =
+                CrearBoton("MESAS");
 
             btnSalir =
                 CrearBoton("SALIR");
@@ -309,21 +328,36 @@ namespace ESFE.RestauranteBD.UI
             panelMenu.Controls.Add(btnCategorias);
             panelMenu.Controls.Add(btnClientes);
             panelMenu.Controls.Add(btnDescuentos);
+            panelMenu.Controls.Add(btnDetallePedidos);
+            panelMenu.Controls.Add(btnEmpleado);
+            panelMenu.Controls.Add(btnTipoEmpleado);
+            panelMenu.Controls.Add(btnPostres);
             panelMenu.Controls.Add(btnPlatillos);
+            panelMenu.Controls.Add(btnMesas);
             panelMenu.Controls.Add(btnSalir);
 
             btnBebidas.Click += BtnBebidas_Click;
             btnCategorias.Click += BtnCategorias_Click;
             btnClientes.Click += BtnClientes_Click;
             btnDescuentos.Click += BtnDescuentos_Click;
+            btnDetallePedidos.Click += BtnDetallePedidos_Click;
+            btnEmpleado.Click += BtnEmpleado_Click;
+            btnTipoEmpleado.Click += BtnTipoEmpleado_Click;
+            btnPostres.Click += BtnPostres_Click;
             btnPlatillos.Click += BtnPlatillos_Click;
+            btnMesas.Click += BtnMesas_Click;
             btnSalir.Click += BtnSalir_Click;
 
             AgregarEfectoBoton(btnBebidas);
             AgregarEfectoBoton(btnCategorias);
             AgregarEfectoBoton(btnClientes);
             AgregarEfectoBoton(btnDescuentos);
+            AgregarEfectoBoton(btnDetallePedidos);
+            AgregarEfectoBoton(btnEmpleado);
+            AgregarEfectoBoton(btnTipoEmpleado);
+            AgregarEfectoBoton(btnPostres);
             AgregarEfectoBoton(btnPlatillos);
+            AgregarEfectoBoton(btnMesas);
         }
 
         private void AgregarEfectoBoton(
@@ -418,13 +452,6 @@ namespace ESFE.RestauranteBD.UI
             Panel panel,
             string[] nombres)
         {
-            /*
-             * 5 imágenes reales.
-             * Se repiten 3 veces.
-             * El carrusel tiene 15 tarjetas,
-             * pero solo se descargan 5 imágenes.
-             */
-
             for (int vuelta = 0;
                  vuelta < 3;
                  vuelta++)
@@ -541,9 +568,6 @@ namespace ESFE.RestauranteBD.UI
             timerPostres =
                 new System.Windows.Forms.Timer();
 
-            /*
-             * Movimiento fluido.
-             */
             timerPlatillos.Interval = 20;
             timerBebidas.Interval = 20;
             timerPostres.Interval = 20;
@@ -720,84 +744,46 @@ namespace ESFE.RestauranteBD.UI
             lblSeccion.Top = 25;
 
             int botonAncho = 320;
-            int botonAlto = 65;
-            int separacionY = 18;
+            int botonAlto = 55;
+            int separacionY = 10;
 
             int inicioX =
                 (panelMenu.Width -
                  botonAncho) / 2;
 
-            int inicioY = 80;
+            int inicioY = 70;
 
-            btnBebidas.Location =
-                new Point(
-                    inicioX,
-                    inicioY);
+            Button[] botones =
+            {
+                btnBebidas,
+                btnCategorias,
+                btnClientes,
+                btnDescuentos,
+                btnDetallePedidos,
+                btnEmpleado,
+                btnTipoEmpleado,
+                btnPostres,
+                btnPlatillos,
+                btnMesas,
+                btnSalir
+            };
 
-            btnCategorias.Location =
-                new Point(
-                    inicioX,
-                    inicioY +
-                    botonAlto +
-                    separacionY);
+            for (int i = 0;
+                 i < botones.Length;
+                 i++)
+            {
+                botones[i].Location =
+                    new Point(
+                        inicioX,
+                        inicioY +
+                        ((botonAlto +
+                          separacionY) * i));
 
-            btnClientes.Location =
-                new Point(
-                    inicioX,
-                    inicioY +
-                    ((botonAlto +
-                      separacionY) * 2));
-
-            btnDescuentos.Location =
-                new Point(
-                    inicioX,
-                    inicioY +
-                    ((botonAlto +
-                      separacionY) * 3));
-
-            btnPlatillos.Location =
-                new Point(
-                    inicioX,
-                    inicioY +
-                    ((botonAlto +
-                      separacionY) * 4));
-
-            btnSalir.Location =
-                new Point(
-                    inicioX,
-                    inicioY +
-                    ((botonAlto +
-                      separacionY) * 5));
-
-            btnBebidas.Size =
-                new Size(
-                    botonAncho,
-                    botonAlto);
-
-            btnCategorias.Size =
-                new Size(
-                    botonAncho,
-                    botonAlto);
-
-            btnClientes.Size =
-                new Size(
-                    botonAncho,
-                    botonAlto);
-
-            btnDescuentos.Size =
-                new Size(
-                    botonAncho,
-                    botonAlto);
-
-            btnPlatillos.Size =
-                new Size(
-                    botonAncho,
-                    botonAlto);
-
-            btnSalir.Size =
-                new Size(
-                    botonAncho,
-                    botonAlto);
+                botones[i].Size =
+                    new Size(
+                        botonAncho,
+                        botonAlto);
+            }
 
             int galeriaX =
                 margen + 415;
@@ -869,6 +855,10 @@ namespace ESFE.RestauranteBD.UI
             }
         }
 
+        // =========================================================
+        // NAVEGACIÓN
+        // =========================================================
+
         private void BtnBebidas_Click(
             object sender,
             EventArgs e)
@@ -901,12 +891,52 @@ namespace ESFE.RestauranteBD.UI
                 new FrmDescuentos());
         }
 
+        private void BtnDetallePedidos_Click(
+            object sender,
+            EventArgs e)
+        {
+            AbrirFormulario(
+                new FrmDetallePedidos());
+        }
+
+        private void BtnEmpleado_Click(
+            object sender,
+            EventArgs e)
+        {
+            AbrirFormulario(
+                new FrmEmpleado());
+        }
+
+        private void BtnTipoEmpleado_Click(
+            object sender,
+            EventArgs e)
+        {
+            AbrirFormulario(
+                new FrmTipoEmpleado());
+        }
+
+        private void BtnPostres_Click(
+            object sender,
+            EventArgs e)
+        {
+            AbrirFormulario(
+                new FrmPostres());
+        }
+
         private void BtnPlatillos_Click(
             object sender,
             EventArgs e)
         {
             AbrirFormulario(
-                new FrmMenu());
+                new FrmPlatillos());
+        }
+
+        private void BtnMesas_Click(
+            object sender,
+            EventArgs e)
+        {
+            AbrirFormulario(
+                new FrmMesa());
         }
 
         private void AbrirFormulario(
@@ -956,11 +986,6 @@ namespace ESFE.RestauranteBD.UI
 
         private async Task CargarTodasLasImagenes()
         {
-            /*
-             * Las tres categorías empiezan
-             * simultáneamente.
-             */
-
             Task tareaPlatillos =
                 CargarFilaRapida(
                     panelPlatillos,
@@ -1074,10 +1099,6 @@ namespace ESFE.RestauranteBD.UI
             }
             catch
             {
-                /*
-                 * Si una imagen falla,
-                 * no detiene las demás.
-                 */
             }
         }
 
@@ -1143,10 +1164,6 @@ namespace ESFE.RestauranteBD.UI
                         anterior.Dispose();
                     }
 
-                    /*
-                     * Las otras dos copias del
-                     * carrusel reciben la misma imagen.
-                     */
                     AplicarImagenARepeticiones(
                         panel,
                         indice,
@@ -1254,4 +1271,4 @@ namespace ESFE.RestauranteBD.UI
             base.OnFormClosed(e);
         }
     }
-} 
+}

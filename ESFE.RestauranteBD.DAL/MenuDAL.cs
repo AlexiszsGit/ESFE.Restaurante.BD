@@ -9,7 +9,7 @@ namespace ESFE.RestauranteBD.DAL
 {
     public class MenuDAL
     {
-        public bool Insertar(MenuEN menu)
+        public bool Agregar(MenuEN menu)
         {
             using SqlConnection conexion = (SqlConnection)DBComun.ObtenerConexion();
             using SqlCommand comando = new SqlCommand("InsertarMenu", conexion);

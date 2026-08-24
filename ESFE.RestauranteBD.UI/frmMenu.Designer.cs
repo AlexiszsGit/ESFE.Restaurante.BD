@@ -1,16 +1,14 @@
-﻿namespace ESFE.RestauranteBD.UI
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace ESFE.RestauranteBD.UI
 {
     partial class FrmMenu
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,279 +20,194 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            lblIdPedido = new Label();
+            dgvMenu = new DataGridView();
             lblIdPostre = new Label();
+            labelIdPostre = new Label();
             lblIdBebida = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            grpDatosMenu = new GroupBox();
-            txtProducto = new TextBox();
-            txtCategoria = new TextBox();
             lblIdCategoria = new Label();
             lblIdProducto = new Label();
-            txtBebida = new TextBox();
-            txtPostre = new TextBox();
-            txtPedido = new TextBox();
-            lblTitulo = new Label();
-            pnlBotones = new Panel();
+            txtIdCategoria = new TextBox();
+            txtIdProducto = new TextBox();
+            txtIdBebida = new TextBox();
+            txtIdPostre = new TextBox();
+            txtIdPedido = new TextBox();
             btnLimpiar = new Button();
             btnEliminar = new Button();
             btnAgregar = new Button();
             btnBuscar = new Button();
-            dgvMenu = new DataGridView();
-            grpDatosMenu.SuspendLayout();
-            pnlBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvMenu).BeginInit();
+            ((ISupportInitialize)dgvMenu).BeginInit();
             SuspendLayout();
             // 
-            // lblIdPedido
+            // dgvMenu
             // 
-            lblIdPedido.AutoSize = true;
-            lblIdPedido.BackColor = SystemColors.ControlDarkDark;
-            lblIdPedido.ForeColor = SystemColors.ControlLightLight;
-            lblIdPedido.Location = new Point(37, 30);
-            lblIdPedido.Name = "lblIdPedido";
-            lblIdPedido.Size = new Size(47, 15);
-            lblIdPedido.TabIndex = 0;
-            lblIdPedido.Text = "Pedido:";
-            lblIdPedido.Click += lblId_Click;
+            dgvMenu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMenu.Location = new Point(682, 0);
+            dgvMenu.Name = "dgvMenu";
+            dgvMenu.Size = new Size(287, 510);
+            dgvMenu.TabIndex = 0;
             // 
             // lblIdPostre
             // 
             lblIdPostre.AutoSize = true;
-            lblIdPostre.ForeColor = SystemColors.ControlLightLight;
-            lblIdPostre.Location = new Point(37, 66);
+            lblIdPostre.Location = new Point(34, 43);
             lblIdPostre.Name = "lblIdPostre";
-            lblIdPostre.Size = new Size(43, 15);
+            lblIdPostre.Size = new Size(47, 15);
             lblIdPostre.TabIndex = 1;
-            lblIdPostre.Text = "Postre:";
+            lblIdPostre.Text = "Pedido ";
+            // 
+            // labelIdPostre
+            // 
+            labelIdPostre.AutoSize = true;
+            labelIdPostre.Location = new Point(34, 231);
+            labelIdPostre.Name = "labelIdPostre";
+            labelIdPostre.Size = new Size(40, 15);
+            labelIdPostre.TabIndex = 2;
+            labelIdPostre.Text = "Postre";
             // 
             // lblIdBebida
             // 
             lblIdBebida.AutoSize = true;
-            lblIdBebida.ForeColor = SystemColors.ControlLightLight;
-            lblIdBebida.Location = new Point(37, 110);
+            lblIdBebida.Location = new Point(34, 427);
             lblIdBebida.Name = "lblIdBebida";
-            lblIdBebida.Size = new Size(46, 15);
-            lblIdBebida.TabIndex = 2;
-            lblIdBebida.Text = "Bebida:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(397, 234);
-            label4.Name = "label4";
-            label4.Size = new Size(0, 15);
-            label4.TabIndex = 3;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(405, 242);
-            label5.Name = "label5";
-            label5.Size = new Size(0, 15);
-            label5.TabIndex = 4;
-            label5.Click += label5_Click;
-            // 
-            // grpDatosMenu
-            // 
-            grpDatosMenu.BackColor = SystemColors.ControlDarkDark;
-            grpDatosMenu.Controls.Add(txtProducto);
-            grpDatosMenu.Controls.Add(txtCategoria);
-            grpDatosMenu.Controls.Add(lblIdCategoria);
-            grpDatosMenu.Controls.Add(lblIdProducto);
-            grpDatosMenu.Controls.Add(txtBebida);
-            grpDatosMenu.Controls.Add(txtPostre);
-            grpDatosMenu.Controls.Add(txtPedido);
-            grpDatosMenu.Controls.Add(lblIdPedido);
-            grpDatosMenu.Controls.Add(lblIdBebida);
-            grpDatosMenu.Controls.Add(lblIdPostre);
-            grpDatosMenu.Location = new Point(12, 47);
-            grpDatosMenu.Name = "grpDatosMenu";
-            grpDatosMenu.Size = new Size(751, 170);
-            grpDatosMenu.TabIndex = 5;
-            grpDatosMenu.TabStop = false;
-            grpDatosMenu.Text = "Datos del menu";
-            grpDatosMenu.Enter += groupBox1_Enter;
-            // 
-            // txtProducto
-            // 
-            txtProducto.Location = new Point(503, 27);
-            txtProducto.Name = "txtProducto";
-            txtProducto.Size = new Size(165, 23);
-            txtProducto.TabIndex = 9;
-            // 
-            // txtCategoria
-            // 
-            txtCategoria.Location = new Point(503, 66);
-            txtCategoria.Name = "txtCategoria";
-            txtCategoria.Size = new Size(165, 23);
-            txtCategoria.TabIndex = 8;
+            lblIdBebida.Size = new Size(43, 15);
+            lblIdBebida.TabIndex = 3;
+            lblIdBebida.Text = "Bebida";
             // 
             // lblIdCategoria
             // 
             lblIdCategoria.AutoSize = true;
-            lblIdCategoria.ForeColor = SystemColors.ControlLightLight;
-            lblIdCategoria.Location = new Point(415, 66);
+            lblIdCategoria.Location = new Point(364, 43);
             lblIdCategoria.Name = "lblIdCategoria";
             lblIdCategoria.Size = new Size(61, 15);
-            lblIdCategoria.TabIndex = 7;
+            lblIdCategoria.TabIndex = 4;
             lblIdCategoria.Text = "Categoria ";
             // 
             // lblIdProducto
             // 
             lblIdProducto.AutoSize = true;
-            lblIdProducto.ForeColor = SystemColors.ControlLightLight;
-            lblIdProducto.Location = new Point(415, 26);
+            lblIdProducto.Location = new Point(381, 231);
             lblIdProducto.Name = "lblIdProducto";
-            lblIdProducto.Size = new Size(59, 15);
-            lblIdProducto.TabIndex = 6;
-            lblIdProducto.Text = "Producto:";
+            lblIdProducto.Size = new Size(56, 15);
+            lblIdProducto.TabIndex = 5;
+            lblIdProducto.Text = "Producto";
             // 
-            // txtBebida
+            // txtIdCategoria
             // 
-            txtBebida.Location = new Point(131, 110);
-            txtBebida.Name = "txtBebida";
-            txtBebida.Size = new Size(165, 23);
-            txtBebida.TabIndex = 3;
+            txtIdCategoria.Location = new Point(480, 40);
+            txtIdCategoria.Name = "txtIdCategoria";
+            txtIdCategoria.Size = new Size(100, 23);
+            txtIdCategoria.TabIndex = 6;
             // 
-            // txtPostre
+            // txtIdProducto
             // 
-            txtPostre.Location = new Point(131, 66);
-            txtPostre.Name = "txtPostre";
-            txtPostre.Size = new Size(165, 23);
-            txtPostre.TabIndex = 2;
+            txtIdProducto.Location = new Point(480, 228);
+            txtIdProducto.Name = "txtIdProducto";
+            txtIdProducto.Size = new Size(100, 23);
+            txtIdProducto.TabIndex = 7;
             // 
-            // txtPedido
+            // txtIdBebida
             // 
-            txtPedido.Location = new Point(109, 30);
-            txtPedido.Multiline = true;
-            txtPedido.Name = "txtPedido";
-            txtPedido.Size = new Size(165, 23);
-            txtPedido.TabIndex = 1;
-            txtPedido.TextChanged += txtId_TextChanged;
+            txtIdBebida.Location = new Point(119, 424);
+            txtIdBebida.Name = "txtIdBebida";
+            txtIdBebida.Size = new Size(100, 23);
+            txtIdBebida.TabIndex = 8;
             // 
-            // lblTitulo
+            // txtIdPostre
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(313, 8);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(139, 15);
-            lblTitulo.TabIndex = 6;
-            lblTitulo.Text = "Mantenimiento de Menu";
+            txtIdPostre.Location = new Point(119, 228);
+            txtIdPostre.Name = "txtIdPostre";
+            txtIdPostre.Size = new Size(100, 23);
+            txtIdPostre.TabIndex = 9;
             // 
-            // pnlBotones
+            // txtIdPedido
             // 
-            pnlBotones.BorderStyle = BorderStyle.FixedSingle;
-            pnlBotones.Controls.Add(btnLimpiar);
-            pnlBotones.Controls.Add(btnEliminar);
-            pnlBotones.Controls.Add(btnAgregar);
-            pnlBotones.Controls.Add(btnBuscar);
-            pnlBotones.Location = new Point(12, 234);
-            pnlBotones.Name = "pnlBotones";
-            pnlBotones.Size = new Size(764, 83);
-            pnlBotones.TabIndex = 7;
+            txtIdPedido.Location = new Point(119, 40);
+            txtIdPedido.Name = "txtIdPedido";
+            txtIdPedido.Size = new Size(100, 23);
+            txtIdPedido.TabIndex = 10;
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(574, 25);
+            btnLimpiar.Location = new Point(534, 419);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(75, 23);
-            btnLimpiar.TabIndex = 11;
+            btnLimpiar.TabIndex = 20;
             btnLimpiar.Text = "Limpiar ";
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(414, 25);
+            btnEliminar.Location = new Point(534, 336);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
-            btnEliminar.TabIndex = 10;
+            btnEliminar.TabIndex = 19;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(52, 25);
+            btnAgregar.Location = new Point(280, 424);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
-            btnAgregar.TabIndex = 8;
+            btnAgregar.TabIndex = 18;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(237, 25);
+            btnBuscar.Location = new Point(280, 336);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(75, 23);
-            btnBuscar.TabIndex = 7;
+            btnBuscar.TabIndex = 17;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
-            // dgvMenu
-            // 
-            dgvMenu.AllowUserToAddRows = false;
-            dgvMenu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvMenu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMenu.Location = new Point(12, 323);
-            dgvMenu.Name = "dgvMenu";
-            dgvMenu.ReadOnly = true;
-            dgvMenu.RowHeadersWidth = 51;
-            dgvMenu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMenu.Size = new Size(764, 134);
-            dgvMenu.TabIndex = 8;
-            // 
             // FrmMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(967, 507);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnAgregar);
+            Controls.Add(btnBuscar);
+            Controls.Add(txtIdPedido);
+            Controls.Add(txtIdPostre);
+            Controls.Add(txtIdBebida);
+            Controls.Add(txtIdProducto);
+            Controls.Add(txtIdCategoria);
+            Controls.Add(lblIdProducto);
+            Controls.Add(lblIdCategoria);
+            Controls.Add(lblIdBebida);
+            Controls.Add(labelIdPostre);
+            Controls.Add(lblIdPostre);
             Controls.Add(dgvMenu);
-            Controls.Add(pnlBotones);
-            Controls.Add(lblTitulo);
-            Controls.Add(grpDatosMenu);
-            Controls.Add(label5);
-            Controls.Add(label4);
             Name = "FrmMenu";
-            grpDatosMenu.ResumeLayout(false);
-            grpDatosMenu.PerformLayout();
-            pnlBotones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvMenu).EndInit();
+            ((ISupportInitialize)dgvMenu).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label lblIdPedido;
-        private Label lblIdPostre;
-        private Label lblIdBebida;
-        private Label label4;
-        private Label label5;
-        private GroupBox grpDatosMenu;
-        private TextBox txtBebida;
-        private TextBox txtPostre;
-        private TextBox txtPedido;
-        private Label lblTitulo;
-        private Label lblIdCategoria;
-        private Label lblIdProducto;
-        private Panel pnlBotones;
-        private Button btnLimpiar;
-        private Button btnEliminar;
-        private Button btnAgregar;
-        private Button btnBuscar;
-        private DataGridView dgvMenu;
-        private TextBox txtProducto;
-        private TextBox txtCategoria;
+        private System.Windows.Forms.DataGridView dgvMenu;
+        private System.Windows.Forms.Label lblIdPostre;
+        private System.Windows.Forms.Label labelIdPostre;
+        private System.Windows.Forms.Label lblIdBebida;
+        private System.Windows.Forms.Label lblIdCategoria;
+        private System.Windows.Forms.Label lblIdProducto;
+        private System.Windows.Forms.TextBox txtIdCategoria;
+        private System.Windows.Forms.TextBox txtIdProducto;
+        private System.Windows.Forms.TextBox txtIdBebida;
+        private System.Windows.Forms.TextBox txtIdPostre;
+        private System.Windows.Forms.TextBox txtIdPedido;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

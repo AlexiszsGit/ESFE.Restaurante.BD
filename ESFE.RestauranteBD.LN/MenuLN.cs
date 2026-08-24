@@ -15,9 +15,9 @@ namespace ESFE.RestauranteBD.LN
             menuDAL = new MenuDAL();
         }
 
-        public bool Insertar(MenuEN menu)
+        public bool agregar(MenuEN menu)
         {
-            return menuDAL.Insertar(menu);
+            return menuDAL.Agregar(menu);
         }
 
         public bool Actualizar(MenuEN menu)

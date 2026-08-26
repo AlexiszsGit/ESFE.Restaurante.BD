@@ -1,8 +1,6 @@
 ﻿using ESFE.RestauranteBD.EN;
 using ESFE.RestauranteBD.DAL;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ESFE.RestauranteBD.LN
 {
@@ -18,6 +16,11 @@ namespace ESFE.RestauranteBD.LN
         public int Agregar(MetodoDePago pMetodo)
         {
             return metodoPagoDAL.Agregar(pMetodo);
+        }
+
+        public int Modificar(MetodoDePago pMetodo, string pIdAnterior)
+        {
+            return metodoPagoDAL.Modificar(pMetodo, pIdAnterior);
         }
 
         public int Eliminar(string pIdMetodo)

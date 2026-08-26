@@ -39,15 +39,17 @@
             txbNombre = new TextBox();
             lblIdMetodo = new Label();
             lblNombe = new Label();
+            btnModificar1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvMetodosDePago).BeginInit();
             grp.SuspendLayout();
             SuspendLayout();
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(94, 259);
+            btnBuscar.Location = new Point(175, 553);
+            btnBuscar.Margin = new Padding(6);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.Size = new Size(139, 49);
             btnBuscar.TabIndex = 4;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(253, 259);
+            btnAgregar.Location = new Point(470, 553);
+            btnAgregar.Margin = new Padding(6);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.Size = new Size(139, 49);
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar ";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -65,9 +68,10 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(571, 259);
+            btnEliminar.Location = new Point(1060, 553);
+            btnEliminar.Margin = new Padding(6);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.Size = new Size(139, 49);
             btnEliminar.TabIndex = 7;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -75,9 +79,10 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(433, 259);
+            btnLimpiar.Location = new Point(804, 553);
+            btnLimpiar.Margin = new Padding(6);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.Size = new Size(139, 49);
             btnLimpiar.TabIndex = 8;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -87,21 +92,24 @@
             // 
             dgvMetodosDePago.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvMetodosDePago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMetodosDePago.Location = new Point(3, 288);
+            dgvMetodosDePago.Location = new Point(6, 614);
+            dgvMetodosDePago.Margin = new Padding(6);
             dgvMetodosDePago.Name = "dgvMetodosDePago";
             dgvMetodosDePago.ReadOnly = true;
+            dgvMetodosDePago.RowHeadersWidth = 82;
             dgvMetodosDePago.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMetodosDePago.Size = new Size(799, 184);
+            dgvMetodosDePago.Size = new Size(1484, 393);
             dgvMetodosDePago.TabIndex = 9;
-            dgvMetodosDePago.CellContentClick += dgvMetodosDePago_CellContentClick;
+            dgvMetodosDePago.CellClick += dgvMetodosDePago_CellClick;
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Bernard MT Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(334, 27);
+            lblTitulo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(620, 58);
+            lblTitulo.Margin = new Padding(6, 0, 6, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(126, 22);
+            lblTitulo.Size = new Size(292, 44);
             lblTitulo.TabIndex = 10;
             lblTitulo.Text = "Metodo de pago";
             // 
@@ -111,9 +119,11 @@
             grp.Controls.Add(txbNombre);
             grp.Controls.Add(lblIdMetodo);
             grp.Controls.Add(lblNombe);
-            grp.Location = new Point(12, 68);
+            grp.Location = new Point(22, 145);
+            grp.Margin = new Padding(6);
             grp.Name = "grp";
-            grp.Size = new Size(709, 169);
+            grp.Padding = new Padding(6);
+            grp.Size = new Size(1317, 361);
             grp.TabIndex = 11;
             grp.TabStop = false;
             grp.Text = "metodo de pagos ";
@@ -121,41 +131,56 @@
             // 
             // txtDescricion
             // 
-            txtDescricion.Location = new Point(134, 99);
+            txtDescricion.Location = new Point(249, 211);
+            txtDescricion.Margin = new Padding(6);
             txtDescricion.Name = "txtDescricion";
-            txtDescricion.Size = new Size(100, 23);
+            txtDescricion.Size = new Size(182, 39);
             txtDescricion.TabIndex = 3;
             // 
             // txbNombre
             // 
-            txbNombre.Location = new Point(134, 49);
+            txbNombre.Location = new Point(249, 105);
+            txbNombre.Margin = new Padding(6);
             txbNombre.Name = "txbNombre";
-            txbNombre.Size = new Size(100, 23);
+            txbNombre.Size = new Size(182, 39);
             txbNombre.TabIndex = 2;
             // 
             // lblIdMetodo
             // 
             lblIdMetodo.AutoSize = true;
-            lblIdMetodo.Location = new Point(23, 99);
+            lblIdMetodo.Location = new Point(43, 211);
+            lblIdMetodo.Margin = new Padding(6, 0, 6, 0);
             lblIdMetodo.Name = "lblIdMetodo";
-            lblIdMetodo.Size = new Size(98, 15);
+            lblIdMetodo.Size = new Size(199, 32);
             lblIdMetodo.TabIndex = 1;
             lblIdMetodo.Text = "Metodo de pago:";
             // 
             // lblNombe
             // 
             lblNombe.AutoSize = true;
-            lblNombe.Location = new Point(23, 49);
+            lblNombe.Location = new Point(43, 105);
+            lblNombe.Margin = new Padding(6, 0, 6, 0);
             lblNombe.Name = "lblNombe";
-            lblNombe.Size = new Size(54, 15);
+            lblNombe.Size = new Size(109, 32);
             lblNombe.TabIndex = 0;
             lblNombe.Text = "Nombre ";
             // 
+            // btnModificar1
+            // 
+            btnModificar1.Location = new Point(633, 556);
+            btnModificar1.Name = "btnModificar1";
+            btnModificar1.Size = new Size(150, 46);
+            btnModificar1.TabIndex = 12;
+            btnModificar1.Text = "Modificar";
+            btnModificar1.UseVisualStyleBackColor = true;
+            btnModificar1.Click += btnModificar_Click;
+            // 
             // frmMetodoDePago
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1486, 960);
+            Controls.Add(btnModificar1);
             Controls.Add(grp);
             Controls.Add(lblTitulo);
             Controls.Add(dgvMetodosDePago);
@@ -163,8 +188,10 @@
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             Controls.Add(btnBuscar);
+            Margin = new Padding(6);
             Name = "frmMetodoDePago";
             Text = "Mantenimiento de Métodos de Pago";
+            Load += frmMetodoDePago_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMetodosDePago).EndInit();
             grp.ResumeLayout(false);
             grp.PerformLayout();
@@ -187,5 +214,6 @@
         private Label lblNombe;
         private TextBox txtDescricion;
         private TextBox txbNombre;
+        private Button btnModificar1;
     }
 }

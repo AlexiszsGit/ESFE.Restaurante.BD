@@ -13,7 +13,7 @@ namespace ESFE.RestauranteBD.DAL
         //Pinti (TU LÍNEA ACTIVA)
         //public const string _stringCnn = @"Server=.\SQLEXPRESS2;Database=RestauranteBD;Integrated Security=True;TrustServerCertificate=True;";
         //Henri
-        public const string _stringCnn = @"Server=HENRI\SQLEXPRESS;Database=RestauranteBD;Integrated Security=True;TrustServerCertificate=True;";
+       // public const string _stringCnn = @"Server=HENRI\SQLEXPRESS;Database=RestauranteBD;Integrated Security=True;TrustServerCertificate=True;";
 
         /// <summary>
         /// Metodo para obtener base de datos.

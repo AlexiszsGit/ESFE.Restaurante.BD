@@ -37,186 +37,211 @@
             txtIdReserva = new TextBox();
             dtpFecha = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
-            numericUpDown1 = new NumericUpDown();
+            numPersonas = new NumericUpDown();
             txtMesa = new TextBox();
             txtIdcliente = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvReserva = new DataGridView();
             btnLimpiar = new Button();
             btnEliminar = new Button();
             btnActualizar = new Button();
             btnAgregar = new Button();
             btnNuevo = new Button();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numPersonas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvReserva).BeginInit();
             SuspendLayout();
             // 
             // lbldReserva
             // 
             lbldReserva.AutoSize = true;
-            lbldReserva.Location = new Point(28, 33);
+            lbldReserva.Location = new Point(52, 70);
+            lbldReserva.Margin = new Padding(6, 0, 6, 0);
             lbldReserva.Name = "lbldReserva";
-            lbldReserva.Size = new Size(50, 15);
+            lbldReserva.Size = new Size(100, 32);
             lbldReserva.TabIndex = 0;
             lbldReserva.Text = "Reserva:";
             // 
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(28, 73);
+            lblFecha.Location = new Point(52, 156);
+            lblFecha.Margin = new Padding(6, 0, 6, 0);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(41, 15);
+            lblFecha.Size = new Size(81, 32);
             lblFecha.TabIndex = 1;
             lblFecha.Text = "Fecha:";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(28, 120);
+            lblNombre.Location = new Point(52, 256);
+            lblNombre.Margin = new Padding(6, 0, 6, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(36, 15);
+            lblNombre.Size = new Size(70, 32);
             lblNombre.TabIndex = 2;
             lblNombre.Text = "Hora:";
             // 
             // lblIdCliente
             // 
             lblIdCliente.AutoSize = true;
-            lblIdCliente.Location = new Point(463, 73);
+            lblIdCliente.Location = new Point(860, 156);
+            lblIdCliente.Margin = new Padding(6, 0, 6, 0);
             lblIdCliente.Name = "lblIdCliente";
-            lblIdCliente.Size = new Size(47, 15);
+            lblIdCliente.Size = new Size(94, 32);
             lblIdCliente.TabIndex = 3;
             lblIdCliente.Text = "Cliente:";
             // 
             // lblPersonas
             // 
             lblPersonas.AutoSize = true;
-            lblPersonas.Location = new Point(463, 33);
+            lblPersonas.Location = new Point(860, 70);
+            lblPersonas.Margin = new Padding(6, 0, 6, 0);
             lblPersonas.Name = "lblPersonas";
-            lblPersonas.Size = new Size(57, 15);
+            lblPersonas.Size = new Size(112, 32);
             lblPersonas.TabIndex = 4;
             lblPersonas.Text = "Personas:";
             // 
             // lblIdMesa
             // 
             lblIdMesa.AutoSize = true;
-            lblIdMesa.Location = new Point(462, 120);
+            lblIdMesa.Location = new Point(858, 256);
+            lblIdMesa.Margin = new Padding(6, 0, 6, 0);
             lblIdMesa.Name = "lblIdMesa";
-            lblIdMesa.Size = new Size(38, 15);
+            lblIdMesa.Size = new Size(76, 32);
             lblIdMesa.TabIndex = 5;
             lblIdMesa.Text = "Mesa:";
             // 
             // txtIdReserva
             // 
-            txtIdReserva.Location = new Point(122, 30);
+            txtIdReserva.Location = new Point(227, 64);
+            txtIdReserva.Margin = new Padding(6);
             txtIdReserva.Name = "txtIdReserva";
-            txtIdReserva.Size = new Size(100, 23);
+            txtIdReserva.Size = new Size(182, 39);
             txtIdReserva.TabIndex = 6;
             // 
             // dtpFecha
             // 
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(91, 73);
+            dtpFecha.Location = new Point(169, 156);
+            dtpFecha.Margin = new Padding(6);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(148, 23);
+            dtpFecha.Size = new Size(271, 39);
             dtpFecha.TabIndex = 7;
             dtpFecha.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Time;
-            dateTimePicker2.Location = new Point(91, 114);
+            dateTimePicker2.Location = new Point(169, 243);
+            dateTimePicker2.Margin = new Padding(6);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.ShowUpDown = true;
-            dateTimePicker2.Size = new Size(89, 23);
+            dateTimePicker2.Size = new Size(162, 39);
             dateTimePicker2.TabIndex = 8;
             // 
-            // numericUpDown1
+            // numPersonas
             // 
-            numericUpDown1.Location = new Point(542, 31);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(116, 23);
-            numericUpDown1.TabIndex = 9;
+            numPersonas.Location = new Point(1007, 66);
+            numPersonas.Margin = new Padding(6);
+            numPersonas.Name = "numPersonas";
+            numPersonas.Size = new Size(215, 39);
+            numPersonas.TabIndex = 9;
             // 
             // txtMesa
             // 
-            txtMesa.Location = new Point(542, 120);
+            txtMesa.Location = new Point(1007, 256);
+            txtMesa.Margin = new Padding(6);
             txtMesa.Name = "txtMesa";
-            txtMesa.Size = new Size(100, 23);
+            txtMesa.Size = new Size(182, 39);
             txtMesa.TabIndex = 10;
             // 
             // txtIdcliente
             // 
-            txtIdcliente.Location = new Point(542, 73);
+            txtIdcliente.Location = new Point(1007, 156);
+            txtIdcliente.Margin = new Padding(6);
             txtIdcliente.Name = "txtIdcliente";
-            txtIdcliente.Size = new Size(100, 23);
+            txtIdcliente.Size = new Size(182, 39);
             txtIdcliente.TabIndex = 11;
             // 
-            // dataGridView1
+            // dgvReserva
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(64, 247);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(670, 166);
-            dataGridView1.TabIndex = 12;
+            dgvReserva.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvReserva.Location = new Point(119, 527);
+            dgvReserva.Margin = new Padding(6);
+            dgvReserva.Name = "dgvReserva";
+            dgvReserva.RowHeadersWidth = 82;
+            dgvReserva.Size = new Size(1244, 354);
+            dgvReserva.TabIndex = 12;
+            dgvReserva.CellClick += dgvReserva_CellClick;
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(638, 180);
+            btnLimpiar.Location = new Point(1185, 384);
+            btnLimpiar.Margin = new Padding(6);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.Size = new Size(139, 49);
             btnLimpiar.TabIndex = 21;
             btnLimpiar.Text = "Limpiar ";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(494, 180);
+            btnEliminar.Location = new Point(917, 384);
+            btnEliminar.Margin = new Padding(6);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.Size = new Size(139, 49);
             btnEliminar.TabIndex = 20;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(347, 180);
+            btnActualizar.Location = new Point(644, 384);
+            btnActualizar.Margin = new Padding(6);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(75, 23);
+            btnActualizar.Size = new Size(139, 49);
             btnActualizar.TabIndex = 19;
             btnActualizar.Text = "Actualizar ";
             btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(214, 179);
+            btnAgregar.Location = new Point(397, 382);
+            btnAgregar.Margin = new Padding(6);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.Size = new Size(139, 49);
             btnAgregar.TabIndex = 18;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(64, 179);
+            btnNuevo.Location = new Point(119, 382);
+            btnNuevo.Margin = new Padding(6);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.Size = new Size(139, 49);
             btnNuevo.TabIndex = 17;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // frmReserva
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1486, 960);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
             Controls.Add(btnAgregar);
             Controls.Add(btnNuevo);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvReserva);
             Controls.Add(txtIdcliente);
             Controls.Add(txtMesa);
-            Controls.Add(numericUpDown1);
+            Controls.Add(numPersonas);
             Controls.Add(dateTimePicker2);
             Controls.Add(dtpFecha);
             Controls.Add(txtIdReserva);
@@ -226,11 +251,12 @@
             Controls.Add(lblNombre);
             Controls.Add(lblFecha);
             Controls.Add(lbldReserva);
+            Margin = new Padding(6);
             Name = "frmReserva";
             Text = "Reserva";
             Load += frmReserva_Load;
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numPersonas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvReserva).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -246,10 +272,10 @@
         private TextBox txtIdReserva;
         private DateTimePicker dtpFecha;
         private DateTimePicker dateTimePicker2;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numPersonas;
         private TextBox txtMesa;
         private TextBox txtIdcliente;
-        private DataGridView dataGridView1;
+        private DataGridView dgvReserva;
         private Button btnLimpiar;
         private Button btnEliminar;
         private Button btnActualizar;

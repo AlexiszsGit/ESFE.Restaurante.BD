@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ESFE.RestauranteBD.EN
+﻿namespace ESFE.RestauranteBD.EN
 {
     public class MenuEN
     {
-        public string IdPostre { get; set; }
-        public string IdBebida { get; set; }
-        public string IdProducto { get; set; }
-        public string IdCategoria { get; set; }
-        public string IdPedido { get; set; }
-
-
+        public string IdPostre { get; set; } = string.Empty;
+        public string IdBebida { get; set; } = string.Empty;
+        public string IdProducto { get; set; } = string.Empty;
+        public string IdCategoria { get; set; } = string.Empty;
+        public string IdPedido { get; set; } = string.Empty;
     }
 }

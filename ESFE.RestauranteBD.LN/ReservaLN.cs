@@ -1,8 +1,6 @@
-﻿using ESFE.RestauranteBD.EN;
-using ESFE.RestauranteBD.DAL;
-using System;
+﻿using ESFE.RestauranteBD.DAL;
+using ESFE.RestauranteBD.EN;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ESFE.RestauranteBD.LN
 {
@@ -12,23 +10,40 @@ namespace ESFE.RestauranteBD.LN
 
         public ReservaLN()
         {
-            reservaDAL = new ReservaDAL();
+            reservaDAL =
+                new ReservaDAL();
         }
+
+        // =========================================================
+        // AGREGAR
+        // =========================================================
 
         public bool Insertar(Reserva reserva)
         {
             return reservaDAL.Insertar(reserva);
         }
 
+        // =========================================================
+        // ACTUALIZAR
+        // =========================================================
+
         public bool Actualizar(Reserva reserva)
         {
             return reservaDAL.Actualizar(reserva);
         }
 
+        // =========================================================
+        // ELIMINAR
+        // =========================================================
+
         public bool Eliminar(string idReserva)
         {
             return reservaDAL.Eliminar(idReserva);
         }
+
+        // =========================================================
+        // BUSCAR / MOSTRAR
+        // =========================================================
 
         public List<Reserva> Buscar(string idReserva)
         {

@@ -740,6 +740,7 @@ namespace ESFE.RestauranteBD.UI
             {
                 if (string.IsNullOrWhiteSpace(
                     txtIdPostre.Text))
+
                 {
                     MessageBox.Show(
                         "Ingrese el ID del postre.",
@@ -753,6 +754,7 @@ namespace ESFE.RestauranteBD.UI
 
                 if (string.IsNullOrWhiteSpace(
                     txtNombre.Text))
+
                 {
                     MessageBox.Show(
                         "Ingrese el nombre del postre.",
@@ -763,7 +765,30 @@ namespace ESFE.RestauranteBD.UI
                     txtNombre.Focus();
                     return;
                 }
+                // 3. Validar Precio no vacío
+                if (string.IsNullOrWhiteSpace(nudPrecio.Text))
+                {
+                    MessageBox.Show("Ingrese el precio del postre.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    nudPrecio.Focus();
+                    return;
+                }
 
+                // 4. Validar Precio numérico, mayor a cero y en rango (1 a 500)
+                if (decimal.TryParse(nudPrecio.Text, out decimal precio))
+                {
+                    if (precio <= 0 || precio > 500)
+                    {
+                        MessageBox.Show("El precio debe ser mayor a cero y estar en el rango de 1 a 500.", "Validación de Rango", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        nudPrecio.Focus();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un precio válido.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    nudPrecio.Focus();
+                    return;
+                }
                 Postre postre =
                     new Postre
                     {
@@ -1027,6 +1052,16 @@ namespace ESFE.RestauranteBD.UI
             object sender,
             EventArgs e)
         {
+        }
+
+        
+        
+          private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Bloquea números y símbolos
+            }
         }
     }
 }

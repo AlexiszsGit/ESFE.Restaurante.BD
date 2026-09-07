@@ -2,5 +2,6 @@
   <Project Path="ESFE.RestauranteBD.DAL/ESFE.RestauranteBD.DAL.csproj" />
   <Project Path="ESFE.RestauranteBD.LN/ESFE.RestauranteBD.LN.csproj" />
   <Project Path="ESFE.RestauranteBD.UI/ESFE.RestauranteBD.UI.csproj" />
+  <Project Path="ESFE.RestauranteBD.web.UI/ESFE.RestauranteBD.web.UI.csproj" Id="4d71a932-798e-4db6-92b8-51478b057b02" />
   <Project Path="ESFE.SysDesarrollo.EN/ESFE.RestauranteBD.EN.csproj" />
 </Solution>

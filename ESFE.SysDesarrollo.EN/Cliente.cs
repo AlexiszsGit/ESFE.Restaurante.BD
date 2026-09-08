@@ -9,5 +9,6 @@ namespace ESFE.RestauranteBD.EN
         public string IdCliente { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }
+       // 123
     }
 }

@@ -13,30 +13,60 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ESFE.RestauranteBD.web.UI.styles.css" asp-append-version="true" />
 </head>
+
 <body class="bg-gray-100 font-sans text-gray-800 flex flex-col min-h-screen">
 
     <!-- Encabezado y Navegación Principal -->
     <header>
         <nav class="bg-gray-900 text-white shadow-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+
                 <!-- Marca del Sistema -->
-                <a class="text-xl font-bold text-amber-500 hover:text-amber-400" asp-area="" asp-controller="Home" asp-action="Index">
+                <a class="text-xl font-bold text-amber-500 hover:text-amber-400"
+                   asp-area=""
+                   asp-controller="Home"
+                   asp-action="Index">
                     ESFE.RestauranteBD
                 </a>
 
                 <!-- Enlaces del Menú -->
                 <div class="flex space-x-4">
-                    <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition"
-                       asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
 
                     <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition"
-                       asp-area="" asp-controller="Platillos" asp-action="Index">Platillos</a>
+                       asp-area=""
+                       asp-controller="Home"
+                       asp-action="Index">
+                        Inicio
+                    </a>
 
                     <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition"
-                       asp-area="" asp-controller="TipoEmpleado" asp-action="Index">Tipos de Empleado</a>
+                       asp-area=""
+                       asp-controller="Platillos"
+                       asp-action="Index">
+                        Platillos
+                    </a>
 
                     <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition"
-                       asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+                       asp-area=""
+                       asp-controller="Menu"
+                       asp-action="Index">
+                        Menú
+                    </a>
+
+                    <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition"
+                       asp-area=""
+                       asp-controller="TipoEmpleado"
+                       asp-action="Index">
+                        Tipos de Empleado
+                    </a>
+
+                    <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition"
+                       asp-area=""
+                       asp-controller="Home"
+                       asp-action="Privacy">
+                        Privacidad
+                    </a>
+
                 </div>
             </div>
         </nav>
@@ -53,14 +83,23 @@
     <footer class="bg-gray-900 text-gray-400 py-4 text-center border-t border-gray-800 text-sm">
         <div class="container mx-auto">
             &copy; 2026 - ESFE.RestauranteBD.web.UI -
-            <a class="text-amber-500 hover:underline" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <a class="text-amber-500 hover:underline"
+               asp-area=""
+               asp-controller="Home"
+               asp-action="Privacy">
+                Privacy
+            </a>
         </div>
     </footer>
 
     <!-- Scripts Base -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
     <!-- <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

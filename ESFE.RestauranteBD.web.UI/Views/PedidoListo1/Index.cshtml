@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Pedidos Listos para Entrega";
+}
+
+<div class="min-h-screen bg-slate-900 text-slate-100 p-6 sm:p-8">
+    <div class="max-w-7xl mx-auto space-y-8">
+        <div class="border-b border-slate-800 pb-6 flex items-center justify-between">
+            <div>
+                <h1 class="text-3xl font-extrabold text-amber-500 tracking-tight">Pedidos Listos</h1>
+                <p class="text-sm text-slate-400 mt-1">Pantalla de seguimiento para entrega en barra o mesa.</p>
+            </div>
+            <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold rounded-full animate-pulse">
+                ● En Tiempo Real
+            </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Tarjeta de Pedido Listo -->
+            <div class="bg-slate-800/90 border-2 border-emerald-500/60 rounded-2xl p-6 shadow-xl space-y-4">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-xs font-bold text-slate-400 uppercase">Orden</span>
+                        <h2 class="text-2xl font-black text-amber-400">#ORD-0104</h2>
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 font-bold text-xs rounded-lg border border-emerald-500/40">
+                        LISTO PARA ENTREGAR
+                    </span>
+                </div>
+
+                <div class="text-sm border-t border-b border-slate-700/60 py-3 space-y-1">
+                    <p class="text-slate-300"><strong class="text-white">Ubicación:</strong> Mesa 04</p>
+                    <p class="text-slate-300"><strong class="text-white">Cliente:</strong> Juan Pérez</p>
+                    <p class="text-slate-300"><strong class="text-white">Items:</strong> 2x Hamburguesa Doble, 2x Soda</p>
+                </div>
+
+                <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-2.5 rounded-xl transition-colors">
+                    Marcar como Entregado
+                </button>
+            </div>
+
+            <!-- Otra Tarjeta -->
+            <div class="bg-slate-800/90 border-2 border-emerald-500/60 rounded-2xl p-6 shadow-xl space-y-4">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-xs font-bold text-slate-400 uppercase">Orden</span>
+                        <h2 class="text-2xl font-black text-amber-400">#ORD-0105</h2>
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 font-bold text-xs rounded-lg border border-emerald-500/40">
+                        LISTO PARA ENTREGAR
+                    </span>
+                </div>
+
+                <div class="text-sm border-t border-b border-slate-700/60 py-3 space-y-1">
+                    <p class="text-slate-300"><strong class="text-white">Ubicación:</strong> Para Llevar</p>
+                    <p class="text-slate-300"><strong class="text-white">Cliente:</strong> María López</p>
+                    <p class="text-slate-300"><strong class="text-white">Items:</strong> 1x Pizza Familiar, 1x Te Helado</p>
+                </div>
+
+                <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-2.5 rounded-xl transition-colors">
+                    Marcar como Entregado
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

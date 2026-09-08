@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Pantalla de cocina";
+}
+
+<div class="p-6 bg-gray-100 min-h-screen">
+    <!-- Encabezado superior de la página -->
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">Pantalla de cocina</h1>
+    </div>
+
+    <!-- Contenedor Principal -->
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+        <!-- Subencabezado con indicador de estado -->
+        <div class="flex justify-between items-center pb-4 border-b border-gray-200 mb-6">
+            <h2 class="text-lg font-bold text-gray-800">Cocina — Pedidos en tiempo real</h2>
+            <div class="flex items-center space-x-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-green-500 inline-block"></span>
+                <span class="text-xs font-medium text-gray-600">Sistema activo</span>
+            </div>
+        </div>
+
+        <h3 class="text-base font-bold text-gray-800 mb-4">Pedidos pendientes</h3>
+
+        <!-- Grid de tarjetas de pedidos (4 columnas) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            <!-- TARJETA 1: #PED-1048 (Pendiente) -->
+            <div class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-white shadow-xs">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[11px] font-semibold px-2 py-0.5 rounded">Pendiente</span>
+                        <span class="font-bold text-gray-900 text-sm">#PED-1048</span>
+                    </div>
+                    <ul class="text-xs text-gray-700 space-y-1 mb-6">
+                        <li>Hamburguesa x2</li>
+                        <li>Limonada x1</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-lg font-bold text-gray-900 mb-3">12:45</div>
+                    <button type="button" class="w-full bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2 rounded-md transition-colors">
+                        Preparar
+                    </button>
+                </div>
+            </div>
+
+            <!-- TARJETA 2: #PED-1047 (Preparando) -->
+            <div class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-white shadow-xs">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[11px] font-semibold px-2 py-0.5 rounded">Preparando</span>
+                        <span class="font-bold text-gray-900 text-sm">#PED-1047</span>
+                    </div>
+                    <ul class="text-xs text-gray-700 space-y-1 mb-6">
+                        <li>Pasta Alfredo x2</li>
+                        <li>Pizza x1</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-lg font-bold text-gray-900 mb-3">08:21</div>
+                    <button type="button" class="w-full bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2 rounded-md transition-colors">
+                        Marcar terminado
+                    </button>
+                </div>
+            </div>
+
+            <!-- TARJETA 3: #PED-1046 (Terminado) -->
+            <div class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-white shadow-xs">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-emerald-100 text-emerald-800 text-[11px] font-semibold px-2 py-0.5 rounded">Terminado</span>
+                        <span class="font-bold text-gray-900 text-sm">#PED-1046</span>
+                    </div>
+                    <ul class="text-xs text-gray-700 space-y-1 mb-6">
+                        <li>Ensalada x2</li>
+                        <li>Café x2</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-lg font-bold text-gray-900 mb-3">15:03</div>
+                    <button type="button" disabled class="w-full bg-gray-200 text-gray-500 text-xs font-semibold py-2 rounded-md cursor-not-allowed">
+                        Entregado
+                    </button>
+                </div>
+            </div>
+
+            <!-- TARJETA 4: #PED-1045 (Pendiente) -->
+            <div class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-white shadow-xs">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[11px] font-semibold px-2 py-0.5 rounded">Pendiente</span>
+                        <span class="font-bold text-gray-900 text-sm">#PED-1045</span>
+                    </div>
+                    <ul class="text-xs text-gray-700 space-y-1 mb-6">
+                        <li>Pizza x1</li>
+                        <li>Té frío x2</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-lg font-bold text-gray-900 mb-3">11:05</div>
+                    <button type="button" class="w-full bg-black hover:bg-gray-800 text-white text-xs font-semibold py-2 rounded-md transition-colors">
+                        Preparar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

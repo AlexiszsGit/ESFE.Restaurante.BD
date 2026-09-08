@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Gestión del menú";
+}
+
+<div class="p-6 bg-gray-100 min-h-screen">
+    <div class="flex justify-between items-center mb-6">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Gestión del menú</h1>
+            <p class="text-sm text-gray-500">Agrega, edita o deshabilita platillos</p>
+        </div>
+        <button class="bg-gray-900 hover:bg-black text-white text-xs font-semibold px-4 py-2 rounded-md">
+            + Agregar Platillo
+        </button>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 overflow-x-auto">
+        <table class="w-full text-left text-sm text-gray-600">
+            <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+                <tr>
+                    <th class="p-3">Platillo</th>
+                    <th class="p-3">Categoría</th>
+                    <th class="p-3">Precio</th>
+                    <th class="p-3">Estado</th>
+                    <th class="p-3">Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                <tr>
+                    <td class="p-3 font-bold text-gray-800">Hamburguesa Especial</td>
+                    <td class="p-3">Platos fuertes</td>
+                    <td class="p-3">$6.50</td>
+                    <td class="p-3"><span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded">Disponible</span></td>
+                    <td class="p-3 space-x-2">
+                        <button class="text-indigo-600 font-semibold hover:underline">Editar</button>
+                        <button class="text-red-600 font-semibold hover:underline">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

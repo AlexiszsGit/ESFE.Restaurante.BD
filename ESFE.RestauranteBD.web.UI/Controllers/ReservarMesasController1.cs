@@ -1,12 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ESFE.RestauranteBD.web.UI.Controllers
+namespace ESFE.Restaurante.BD.Controllers
 {
-    public class ReservarMesasController1 : Controller
+    public class ReservarMesas1Controller : Controller
     {
+        // GET: /ReservarMesas/
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult GuardarReserva(string nombre, int personas, string fecha, string hora)
+        {
+            return RedirectToAction("Index", "MenuDigital");
         }
     }
 }

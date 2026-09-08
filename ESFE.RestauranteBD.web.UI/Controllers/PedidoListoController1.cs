@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ESFE.RestauranteBD.web.UI.Controllers
+namespace ESFE.Restaurante.BD.Controllers
 {
-    public class PedidoListoController1 : Controller
+    public class PedidoListo1Controller : Controller
     {
+        // GET: /PedidoListo/
         public IActionResult Index()
         {
             return View();

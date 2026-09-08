@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ESFE.RestauranteBD.web.UI.Controllers
+namespace ESFE.Restaurante.BD.Controllers
 {
-    public class ReportesController1 : Controller
+    public class Reportes1Controller : Controller
     {
+        // GET: /Reportes/
         public IActionResult Index()
         {
             return View();

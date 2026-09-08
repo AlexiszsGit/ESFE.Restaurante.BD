@@ -92,7 +92,7 @@
             // 
             dgvMetodosDePago.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvMetodosDePago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMetodosDePago.Location = new Point(6, 614);
+            dgvMetodosDePago.Location = new Point(6, 556);
             dgvMetodosDePago.Margin = new Padding(6);
             dgvMetodosDePago.Name = "dgvMetodosDePago";
             dgvMetodosDePago.ReadOnly = true;

@@ -1,5 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Información del Restaurante";
 }
+
+<div class="p-6 bg-slate-950 min-h-screen text-slate-200">
+    <div class="max-w-4xl mx-auto space-y-6">
+        <div>
+            <h1 class="text-2xl font-bold text-amber-400">Información del Restaurante</h1>
+            <p class="text-xs text-slate-400">Detalles del establecimiento y horarios de atención</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 shadow">
+                <h2 class="text-lg font-semibold text-white mb-2">Horarios de Atención</h2>
+                <p class="text-sm text-slate-400">Lunes a Viernes: 8:00 AM - 9:00 PM</p>
+                <p class="text-sm text-slate-400">Sábados y Domingos: 9:00 AM - 10:00 PM</p>
+            </div>
+
+            <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 shadow">
+                <h2 class="text-lg font-semibold text-white mb-2">Contacto</h2>
+                <p class="text-sm text-slate-400">Teléfono: +503 2222-0000</p>
+                <p class="text-sm text-slate-400">Dirección: Av. Principal, San Salvador</p>
+            </div>
+        </div>
+    </div>
+</div>

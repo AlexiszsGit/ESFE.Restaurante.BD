@@ -2,11 +2,11 @@
 
 namespace ESFE.RestauranteBD.web.UI.Controllers
 {
-    public class IniciarSecionController1 : Controller
+    public class GestionDeMenu1Controller : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/GestionDeMenu1/Index.cshtml");
         }
     }
 }

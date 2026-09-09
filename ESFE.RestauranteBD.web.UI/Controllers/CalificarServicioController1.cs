@@ -2,10 +2,18 @@
 
 namespace ESFE.RestauranteBD.web.UI.Controllers
 {
-    public class CalificarServicioController1 : Controller
+    public class CalificarServicio1Controller : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult GuardarCalificacion(int estrellas, string comentario)
+        {
+            ViewBag.Mensaje = "¡Gracias por tus comentarios!";
             return View();
         }
     }

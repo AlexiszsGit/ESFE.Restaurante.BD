@@ -2,7 +2,7 @@
 
 namespace ESFE.RestauranteBD.web.UI.Controllers
 {
-    public class InformacionController1 : Controller
+    public class Informacion1Controller : Controller
     {
         public IActionResult Index()
         {

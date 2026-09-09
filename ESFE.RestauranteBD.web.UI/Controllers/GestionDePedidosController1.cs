@@ -8,5 +8,11 @@ namespace ESFE.RestauranteBD.web.UI.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult EnviarACocina(int idPedido)
+        {
+            return RedirectToAction("Index", "PantallaDeCocina");
+        }
     }
 }

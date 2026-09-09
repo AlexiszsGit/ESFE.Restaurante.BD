@@ -2,50 +2,177 @@
     ViewData["Title"] = "Pedido / Carrito";
 }
 
-<div class="p-6 bg-gray-100 min-h-screen">
-    <div class="mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">Carrito de compras</h1>
-        <p class="text-sm text-gray-500">Revisa tus productos antes de confirmar</p>
-    </div>
+<div class="min-h-screen bg-slate-100 text-slate-900">
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- Lista de productos -->
-        <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-            <h2 class="font-bold text-gray-800 mb-4">Detalle del pedido</h2>
+    ```
+    <div class="mx-auto max-w-7xl px-6 py-8 sm:px-8">
 
-            <div class="divide-y divide-gray-200">
-                <div class="py-3 flex justify-between items-center">
-                    <div>
-                        <h4 class="font-bold text-sm text-gray-800">Hamburguesa x2</h4>
-                        <p class="text-xs text-gray-500">$6.50 c/u</p>
-                    </div>
-                    <span class="font-bold text-sm text-gray-900">$13.00</span>
-                </div>
-                <div class="py-3 flex justify-between items-center">
-                    <div>
-                        <h4 class="font-bold text-sm text-gray-800">Limonada x1</h4>
-                        <p class="text-xs text-gray-500">$2.00 c/u</p>
-                    </div>
-                    <span class="font-bold text-sm text-gray-900">$2.00</span>
-                </div>
-            </div>
+        <div class="mb-8">
+            <p class="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-amber-600">
+                Pedido
+            </p>
+
+            <h1 class="text-3xl font-black tracking-tight text-slate-900">
+                Carrito de compras
+            </h1>
+
+            <p class="mt-2 text-sm text-slate-500">
+                Revisa los productos seleccionados antes de confirmar tu pedido.
+            </p>
         </div>
 
-        <!-- Resumen de Pago -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-between h-fit">
-            <div>
-                <h2 class="font-bold text-gray-800 mb-4">Resumen</h2>
-                <div class="space-y-2 text-sm text-gray-600 mb-4">
-                    <div class="flex justify-between"><span>Subtotal</span><span>$15.00</span></div>
-                    <div class="flex justify-between"><span>IVA (13%)</span><span>$1.95</span></div>
-                    <div class="border-t border-gray-200 pt-2 flex justify-between font-bold text-gray-900 text-base">
-                        <span>Total</span><span>$16.95</span>
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+
+            <div class="rounded-2xl border border-slate-200 bg-white lg:col-span-2">
+
+                <div class="border-b border-slate-200 px-6 py-5">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-lg font-black text-slate-900">
+                                Detalle del pedido
+                            </h2>
+                            <p class="mt-1 text-sm text-slate-500">
+                                Productos seleccionados
+                            </p>
+                        </div>
+
+                        <span class="rounded-lg bg-amber-50 px-3 py-1.5 text-xs font-bold text-amber-700">
+                            2 productos
+                        </span>
                     </div>
                 </div>
+
+                <div class="divide-y divide-slate-200">
+
+                    <div class="flex items-center justify-between gap-6 px-6 py-5">
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-sm font-black text-amber-700">
+                                02
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">
+                                    Hamburguesa
+                                </h4>
+
+                                <p class="mt-1 text-xs text-slate-500">
+                                    $6.50 c/u
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="text-right">
+                            <p class="text-sm font-black text-slate-900">
+                                $13.00
+                            </p>
+
+                            <p class="mt-1 text-xs text-slate-400">
+                                Cantidad: 2
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between gap-6 px-6 py-5">
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-sm font-black text-amber-700">
+                                01
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">
+                                    Limonada
+                                </h4>
+
+                                <p class="mt-1 text-xs text-slate-500">
+                                    $2.00 c/u
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="text-right">
+                            <p class="text-sm font-black text-slate-900">
+                                $2.00
+                            </p>
+
+                            <p class="mt-1 text-xs text-slate-400">
+                                Cantidad: 1
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-            <a asp-controller="Pago" asp-action="Index" class="block text-center w-full bg-gray-900 hover:bg-black text-white text-sm font-semibold py-2.5 rounded-md">
-                Proceder al pago
-            </a>
+
+            <div class="h-fit rounded-2xl border border-slate-200 bg-white">
+
+                <div class="border-b border-slate-200 px-6 py-5">
+                    <h2 class="text-lg font-black text-slate-900">
+                        Resumen
+                    </h2>
+
+                    <p class="mt-1 text-sm text-slate-500">
+                        Total de tu pedido
+                    </p>
+                </div>
+
+                <div class="px-6 py-5">
+
+                    <div class="space-y-3 text-sm">
+
+                        <div class="flex justify-between text-slate-500">
+                            <span>Subtotal</span>
+                            <span class="font-semibold text-slate-700">
+                                $15.00
+                            </span>
+                        </div>
+
+                        <div class="flex justify-between text-slate-500">
+                            <span>IVA (13%)</span>
+                            <span class="font-semibold text-slate-700">
+                                $1.95
+                            </span>
+                        </div>
+
+                        <div class="my-4 border-t border-slate-200"></div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-base font-bold text-slate-900">
+                                Total
+                            </span>
+
+                            <span class="text-2xl font-black text-slate-900">
+                                $16.95
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-6 rounded-xl bg-slate-50 p-4">
+                        <p class="text-xs font-bold uppercase tracking-wide text-slate-400">
+                            Estado
+                        </p>
+
+                        <div class="mt-2 flex items-center gap-2">
+                            <span class="h-2 w-2 rounded-full bg-amber-500"></span>
+                            <span class="text-sm font-semibold text-slate-700">
+                                Pendiente de pago
+                            </span>
+                        </div>
+                    </div>
+
+                    <a asp-controller="Pago" asp-action="Index"
+                       class="mt-6 block w-full rounded-xl bg-slate-900 px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-slate-800">
+                        Proceder al pago
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
+    ```
+
 </div>

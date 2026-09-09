@@ -2,151 +2,294 @@
     ViewData["Title"] = "Reportes y Estadísticas";
 }
 
-<div class="min-h-screen bg-slate-900 text-slate-100 p-6 sm:p-8">
-    <div class="max-w-7xl mx-auto space-y-8">
+<div class="min-h-screen bg-slate-100 text-slate-900">
 
-        <!-- Encabezado y Filtros -->
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-800 pb-6">
+    ```
+    <div class="mx-auto max-w-7xl px-6 py-8 sm:px-8">
+
+        <div class="mb-8 flex flex-col gap-6 border-b border-slate-200 pb-6 xl:flex-row xl:items-end xl:justify-between">
+
             <div>
-                <h1 class="text-3xl font-extrabold text-amber-500 tracking-tight">Reportes y Estadísticas</h1>
-                <p class="text-sm text-slate-400 mt-1">Monitorea el rendimiento, ventas y métricas clave del restaurante.</p>
-            </div>
+                <p class="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-amber-600">
+                    Análisis
+                </p>
 
-            <div class="flex flex-wrap items-center gap-3">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Fecha Inicio</label>
-                    <input type="date" class="bg-slate-800 border border-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 focus:ring-2 focus:ring-amber-500 focus:outline-none" />
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Fecha Fin</label>
-                    <input type="date" class="bg-slate-800 border border-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 focus:ring-2 focus:ring-amber-500 focus:outline-none" />
-                </div>
-                <div class="flex items-end">
-                    <button class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-2 text-sm shadow-lg shadow-amber-500/20">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
-                        Filtrar
-                    </button>
-                </div>
-            </div>
-        </div>
+                <h1 class="text-3xl font-black tracking-tight text-slate-900">
+                    Reportes y Estadísticas
+                </h1>
 
-        <!-- Tarjetas de Resumen KPI -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Ventas Totales -->
-            <div class="bg-slate-800/80 border border-slate-700/60 p-6 rounded-2xl shadow-xl backdrop-blur-sm">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Ventas Totales</span>
-                    <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    </div>
-                </div>
-                <p class="text-3xl font-black text-white mt-4">$1,248.50</p>
-                <p class="text-xs text-emerald-400 font-medium mt-2 flex items-center gap-1">
-                    <span>↑ 12%</span> <span class="text-slate-400">vs. período anterior</span>
+                <p class="mt-2 text-sm text-slate-500">
+                    Monitorea el rendimiento, las ventas y las principales métricas del restaurante.
                 </p>
             </div>
 
-            <!-- Pedidos Atendidos -->
-            <div class="bg-slate-800/80 border border-slate-700/60 p-6 rounded-2xl shadow-xl backdrop-blur-sm">
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Pedidos Totales</span>
-                    <div class="p-2 bg-blue-500/10 rounded-lg text-blue-400">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-                    </div>
+            <div class="flex flex-wrap items-end gap-3">
+
+                <div>
+                    <label class="mb-1.5 block text-xs font-bold text-slate-500">
+                        Fecha Inicio
+                    </label>
+
+                    <input type="date"
+                           class="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 outline-none transition focus:border-amber-500 focus:ring-2 focus:ring-amber-100" />
                 </div>
-                <p class="text-3xl font-black text-white mt-4">142</p>
-                <p class="text-xs text-blue-400 font-medium mt-2 flex items-center gap-1">
-                    <span>↑ 8%</span> <span class="text-slate-400">pedidos completados</span>
+
+                <div>
+                    <label class="mb-1.5 block text-xs font-bold text-slate-500">
+                        Fecha Fin
+                    </label>
+
+                    <input type="date"
+                           class="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 outline-none transition focus:border-amber-500 focus:ring-2 focus:ring-amber-100" />
+                </div>
+
+                <button type="button"
+                        class="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-slate-800">
+                    Filtrar
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-5">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase tracking-wide text-slate-400">
+                        Ventas Totales
+                    </span>
+
+                    <span class="rounded-lg bg-emerald-50 px-2.5 py-2 text-sm font-black text-emerald-600">
+                        $
+                    </span>
+                </div>
+
+                <p class="mt-4 text-3xl font-black text-slate-900">
+                    $1,248.50
+                </p>
+
+                <p class="mt-2 text-xs font-semibold text-emerald-600">
+                    ↑ 12% <span class="font-medium text-slate-400">vs. período anterior</span>
                 </p>
             </div>
 
-            <!-- Producto Más Vendido -->
-            <div class="bg-slate-800/80 border border-slate-700/60 p-6 rounded-2xl shadow-xl backdrop-blur-sm">
+            <div class="rounded-2xl border border-slate-200 bg-white p-5">
                 <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Más Vendido</span>
-                    <div class="p-2 bg-amber-500/10 rounded-lg text-amber-400">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
-                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wide text-slate-400">
+                        Pedidos Totales
+                    </span>
+
+                    <span class="rounded-lg bg-slate-100 px-2.5 py-2 text-sm font-black text-slate-600">
+                        #
+                    </span>
                 </div>
-                <p class="text-xl font-bold text-amber-400 mt-4 truncate">Hamburguesa Doble</p>
-                <p class="text-xs text-slate-400 font-medium mt-2">58 órdenes registradas</p>
+
+                <p class="mt-4 text-3xl font-black text-slate-900">
+                    142
+                </p>
+
+                <p class="mt-2 text-xs font-semibold text-slate-500">
+                    ↑ 8% <span class="font-medium text-slate-400">pedidos completados</span>
+                </p>
             </div>
 
-            <!-- Ticket Promedio -->
-            <div class="bg-slate-800/80 border border-slate-700/60 p-6 rounded-2xl shadow-xl backdrop-blur-sm">
+            <div class="rounded-2xl border border-slate-200 bg-white p-5">
                 <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Ticket Promedio</span>
-                    <div class="p-2 bg-purple-500/10 rounded-lg text-purple-400">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wide text-slate-400">
+                        Más Vendido
+                    </span>
+
+                    <span class="rounded-lg bg-amber-50 px-2.5 py-2 text-sm font-black text-amber-600">
+                        ★
+                    </span>
                 </div>
-                <p class="text-3xl font-black text-white mt-4">$8.79</p>
-                <p class="text-xs text-slate-400 font-medium mt-2">por consumo/mesa</p>
+
+                <p class="mt-4 truncate text-xl font-black text-slate-900">
+                    Hamburguesa Doble
+                </p>
+
+                <p class="mt-2 text-xs font-medium text-slate-400">
+                    58 órdenes registradas
+                </p>
             </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-5">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase tracking-wide text-slate-400">
+                        Ticket Promedio
+                    </span>
+
+                    <span class="rounded-lg bg-slate-100 px-2.5 py-2 text-sm font-black text-slate-600">
+                        ↗
+                    </span>
+                </div>
+
+                <p class="mt-4 text-3xl font-black text-slate-900">
+                    $8.79
+                </p>
+
+                <p class="mt-2 text-xs font-medium text-slate-400">
+                    por consumo / mesa
+                </p>
+            </div>
+
         </div>
 
-        <!-- Tabla de Detalle de Reportes -->
-        <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl shadow-xl overflow-hidden">
-            <div class="p-6 border-b border-slate-700/60 flex items-center justify-between">
-                <h2 class="text-lg font-bold text-white">Historial de Transacciones Recientes</h2>
-                <button class="text-xs text-amber-400 hover:text-amber-300 font-semibold border border-amber-500/30 px-3 py-1.5 rounded-lg hover:bg-amber-500/10 transition-colors">
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+
+            <div class="flex flex-col gap-4 border-b border-slate-200 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+
+                <div>
+                    <h2 class="text-lg font-black text-slate-900">
+                        Historial de Transacciones Recientes
+                    </h2>
+
+                    <p class="mt-1 text-sm text-slate-500">
+                        Consulta los movimientos registrados durante el período seleccionado.
+                    </p>
+                </div>
+
+                <button type="button"
+                        class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-700 transition hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700">
                     Exportar a Excel
                 </button>
+
             </div>
 
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm text-slate-300">
-                    <thead class="bg-slate-900/50 text-xs uppercase text-slate-400 font-semibold border-b border-slate-700/60">
+
+                <table class="w-full min-w-[800px] text-left text-sm">
+
+                    <thead class="border-b border-slate-200 bg-slate-50">
                         <tr>
-                            <th class="px-6 py-4">ID Pedido</th>
-                            <th class="px-6 py-4">Fecha y Hora</th>
-                            <th class="px-6 py-4">Mesa / Tipo</th>
-                            <th class="px-6 py-4">Método de Pago</th>
-                            <th class="px-6 py-4">Total</th>
-                            <th class="px-6 py-4">Estado</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wide text-slate-400">
+                                ID Pedido
+                            </th>
+
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wide text-slate-400">
+                                Fecha y Hora
+                            </th>
+
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wide text-slate-400">
+                                Mesa / Tipo
+                            </th>
+
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wide text-slate-400">
+                                Método de Pago
+                            </th>
+
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wide text-slate-400">
+                                Total
+                            </th>
+
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wide text-slate-400">
+                                Estado
+                            </th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-700/40">
-                        <tr class="hover:bg-slate-700/30 transition-colors">
-                            <td class="px-6 py-4 font-mono font-bold text-amber-400">#ORD-0104</td>
-                            <td class="px-6 py-4 text-xs text-slate-400">2026-09-08 14:22</td>
-                            <td class="px-6 py-4 font-medium text-white">Mesa 04</td>
-                            <td class="px-6 py-4">Efectivo</td>
-                            <td class="px-6 py-4 font-bold text-white">$24.50</td>
+
+                    <tbody class="divide-y divide-slate-100">
+
+                        <tr class="transition hover:bg-slate-50">
+
+                            <td class="px-6 py-4 font-mono text-sm font-bold text-amber-600">
+                                #ORD-0104
+                            </td>
+
+                            <td class="px-6 py-4 text-xs text-slate-500">
+                                2026-09-08 14:22
+                            </td>
+
+                            <td class="px-6 py-4 font-semibold text-slate-700">
+                                Mesa 04
+                            </td>
+
+                            <td class="px-6 py-4 text-slate-600">
+                                Efectivo
+                            </td>
+
+                            <td class="px-6 py-4 font-bold text-slate-900">
+                                $24.50
+                            </td>
+
                             <td class="px-6 py-4">
-                                <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <span class="rounded-lg bg-emerald-50 px-2.5 py-1.5 text-xs font-bold text-emerald-700">
                                     Completado
                                 </span>
                             </td>
+
                         </tr>
-                        <tr class="hover:bg-slate-700/30 transition-colors">
-                            <td class="px-6 py-4 font-mono font-bold text-amber-400">#ORD-0103</td>
-                            <td class="px-6 py-4 text-xs text-slate-400">2026-09-08 13:50</td>
-                            <td class="px-6 py-4 font-medium text-white">Para Llevar</td>
-                            <td class="px-6 py-4">Tarjeta</td>
-                            <td class="px-6 py-4 font-bold text-white">$12.00</td>
+
+                        <tr class="transition hover:bg-slate-50">
+
+                            <td class="px-6 py-4 font-mono text-sm font-bold text-amber-600">
+                                #ORD-0103
+                            </td>
+
+                            <td class="px-6 py-4 text-xs text-slate-500">
+                                2026-09-08 13:50
+                            </td>
+
+                            <td class="px-6 py-4 font-semibold text-slate-700">
+                                Para Llevar
+                            </td>
+
+                            <td class="px-6 py-4 text-slate-600">
+                                Tarjeta
+                            </td>
+
+                            <td class="px-6 py-4 font-bold text-slate-900">
+                                $12.00
+                            </td>
+
                             <td class="px-6 py-4">
-                                <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <span class="rounded-lg bg-emerald-50 px-2.5 py-1.5 text-xs font-bold text-emerald-700">
                                     Completado
                                 </span>
                             </td>
+
                         </tr>
-                        <tr class="hover:bg-slate-700/30 transition-colors">
-                            <td class="px-6 py-4 font-mono font-bold text-amber-400">#ORD-0102</td>
-                            <td class="px-6 py-4 text-xs text-slate-400">2026-09-08 13:15</td>
-                            <td class="px-6 py-4 font-medium text-white">Mesa 02</td>
-                            <td class="px-6 py-4">Transferencia</td>
-                            <td class="px-6 py-4 font-bold text-white">$45.80</td>
+
+                        <tr class="transition hover:bg-slate-50">
+
+                            <td class="px-6 py-4 font-mono text-sm font-bold text-amber-600">
+                                #ORD-0102
+                            </td>
+
+                            <td class="px-6 py-4 text-xs text-slate-500">
+                                2026-09-08 13:15
+                            </td>
+
+                            <td class="px-6 py-4 font-semibold text-slate-700">
+                                Mesa 02
+                            </td>
+
+                            <td class="px-6 py-4 text-slate-600">
+                                Transferencia
+                            </td>
+
+                            <td class="px-6 py-4 font-bold text-slate-900">
+                                $45.80
+                            </td>
+
                             <td class="px-6 py-4">
-                                <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                                <span class="rounded-lg bg-amber-50 px-2.5 py-1.5 text-xs font-bold text-amber-700">
                                     Pendiente
                                 </span>
                             </td>
+
                         </tr>
+
                     </tbody>
+
                 </table>
+
             </div>
+
         </div>
 
     </div>
+    ```
+
 </div>
